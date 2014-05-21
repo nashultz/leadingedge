@@ -160,6 +160,10 @@ iframe {
   padding: 0;
 }
 
+select {
+  width: 100%;
+}
+
 /* ==========================================================
 ! Typography
 ========================================================== */
@@ -286,7 +290,7 @@ img.brand {
   border-top-color: #fff !important;
   border-bottom-color: #fff !important;
 }
-.navbar .divider-vertical{height:40px;margin:0 9px;border-right:0px solid #333;border-left:0px solid #000}
+.navbar .divider-vertical{height:40px;margin:0 9px;border-right:1px solid rgb(164,42,31);border-left:1px solid rgb(164,42,31)}
 .header-account-nav>li{
   display: inline-block;
   margin: 20px;

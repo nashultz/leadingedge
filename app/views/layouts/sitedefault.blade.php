@@ -221,7 +221,6 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="divider-vertical"></li>
                         <li class="active"><a href="{{URL::to('/')}}"><i class="fa fa-home"></i></a></li>
                         <!--<li class="divider-vertical"></li>
                         <li><a href="#">About</a></li>-->
@@ -288,12 +287,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>-->
-                        <li class="divider-vertical"></li>
+                        </li>
+                        <li class="divider-vertical"></li>-->
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="divider-vertical"></li>
-
                         @if (!Auth::check())
                             <li><a href="{{ URL::route('get.auth.login') }}">Login</a></li>
                             <li class="divider-vertical"></li>
@@ -301,7 +298,6 @@
                         @else 
                             <li><a href="{{ URL::route('get.auth.logout') }}">Logout</a></li>
                         @endif
-                        <li class="divider-vertical"></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>

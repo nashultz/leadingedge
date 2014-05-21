@@ -10,7 +10,7 @@
 	</div>
 	<div class="spacer-5"></div>
 	<div class="col-md-12 col-lg-12">
-		{{ Form::label('isd', 'ISD: ') }}<br>
+		{{ Form::label('isd', 'School District: ') }}<br>
 		{{ Form::select('isd', $isds, 0) }}
 	</div>
 	<div class="spacer-5"></div>
@@ -24,16 +24,24 @@
 		{{ Form::select('builder', $builders, 0) }}
 	</div>
 	<div class="spacer-5"></div>
-	<div class="col-md-12 col-lg-12">
+	<div class="col-md-6 col-lg-6">
 		{{ Form::label('min_price', 'Minimum Cost: ') }}<br>
 		{{ Form::select('min_price', $costOptions, 0) }}
 	</div>
-	<div class="spacer-5"></div>
-	<div class="col-md-12 col-lg-12">
+	<div class="col-md-6 col-lg-6">
 		{{ Form::label('max_price', 'Maximum Cost: ') }}<br>
 		{{ Form::select('max_price', $costOptions, 0) }}
 	</div>
-	<div class="spacer-10"></div>
+	<div class="spacer-5"></div>
+	<div class="col-md-6 col-lg-6">
+		{{ Form::label('min_price', 'Minimum Sq Ft: ') }}<br>
+		{{ Form::select('min_sqft') }}
+	</div>
+	<div class="col-md-6 col-lg-6">
+		{{ Form::label('max_price', 'Maximum Sq Ft: ') }}<br>
+		{{ Form::select('max_sqft') }}
+	</div>
+	<div class="spacer-15"></div>
 	<div class="col-md-2 col-lg-2"></div>
 	<div class="col-md-8 col-lg-8">
 		{{ Form::submit('Search',array('class'=>'btn btn-danger')) }}
