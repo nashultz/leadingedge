@@ -25,7 +25,43 @@
     {{js('site','markerclusterer.js')}}
 
     <script>
-
+        $(document).ready(function() {
+            $('#button1').click(function() {
+              $('.button1-form').slideToggle();
+              $('#button2').toggle();
+              $('#button3').toggle();
+              $('#button4').toggle();
+              $('#button5').toggle();
+            });
+            $('#button2').click(function() {
+              $('.button2-form').slideToggle();
+              $('#button1').toggle();
+              $('#button3').toggle();
+              $('#button4').toggle();
+              $('#button5').toggle();
+            });
+            $('#button3').click(function() {
+              $('.button3-form').slideToggle();
+              $('#button1').toggle();
+              $('#button2').toggle();
+              $('#button4').toggle();
+              $('#button5').toggle();
+            });
+            $('#button4').click(function() {
+              $('.button4-form').slideToggle();
+              $('#button1').toggle();
+              $('#button2').toggle();
+              $('#button3').toggle();
+              $('#button5').toggle();
+            });
+            $('#button5').click(function() {
+              $('.button5-form').slideToggle();
+              $('#button1').toggle();
+              $('#button2').toggle();
+              $('#button3').toggle();
+              $('#button4').toggle();
+            });
+        });
     </script>
 
 
@@ -308,7 +344,7 @@
 <div class="main-content container">
     <div class="row">
         <div class="col-md-3 col-lg-3">
-
+            @include('buttons.buttons')
         </div>
         <div class="col-md-4 col-lg-4">
             @include('search.form2')
@@ -325,7 +361,7 @@
     <div class="row footer">
         <div class="col-md-12 col-lg-12">
             <div class="pull-left">
-                Copyright &copy; <?php echo date('Y'); ?> &ndash; Buy New Homes Austin. All Rights Reserved.
+                Copyright &copy; <?php echo date('Y'); ?> &ndash; Leading Edge Realty &ndash; Austin, TX. All Rights Reserved.
             </div>
             <div class="pull-right">
                 <ul class="nav-footer">
