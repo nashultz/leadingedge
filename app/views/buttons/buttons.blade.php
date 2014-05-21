@@ -106,10 +106,11 @@
 		<button id="button2">New to the Austin area?</button>
 		<div class="button2-form">
 			{{ Form::open(array('method'=>'GET','route'=>'get.search.results')) }}
-				{{ Form::label('city','City: ') }}<br>
-				{{ Form::select('city', $cities, 0) }}
-				<div class="spacer-20"></div>
-				{{ Form::submit('Search',array('class'=>'btn btn-danger')) }}
+			
+					{{ Form::label('city','City: ') }}<br>
+					{{ Form::select('city', $cities, 0) }}
+					<div class="spacer-20"></div>
+					{{ Form::submit('Search',array('class'=>'btn btn-danger')) }}
 			{{ Form::close() }}
 		</div>
 	</div>
