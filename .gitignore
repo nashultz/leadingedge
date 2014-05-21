@@ -219,3 +219,7 @@ vendor/
 
 #Database settings
 app/config/database.php
+
+#Composer.lock
+composer.lock
+

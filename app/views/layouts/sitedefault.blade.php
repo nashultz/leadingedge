@@ -27,7 +27,7 @@
     <script>
         $(document).ready(function() {
             $('#button1').click(function() {
-              $('.button1-form').slideToggle();
+              $('.button1-form').slideToggle(800);
               /*$('.button-space').toggle();
               $('#button2').toggle();
               $('#button3').toggle();
@@ -35,7 +35,7 @@
               $('#button5').toggle();*/
             });
             $('#button2').click(function() {
-              $('.button2-form').slideToggle();
+              $('.button2-form').slideToggle(800);
               /*$('.button-space').toggle();
               $('#button1').toggle();
               $('#button3').toggle();
@@ -43,7 +43,7 @@
               $('#button5').toggle();*/
             });
             $('#button3').click(function() {
-              $('.button3-form').slideToggle();
+              $('.button3-form').slideToggle(800);
               /*$('.button-space').toggle();
               $('#button1').toggle();
               $('#button2').toggle();
@@ -51,7 +51,7 @@
               $('#button5').toggle();*/
             });
             $('#button4').click(function() {
-              $('.button4-form').slideToggle();
+              $('.button4-form').slideToggle(800);
               /*$('.button-space').toggle();
               $('#button1').toggle();
               $('#button2').toggle();
@@ -59,7 +59,7 @@
               $('#button5').toggle();*/
             });
             $('#button5').click(function() {
-              $('.button5-form').slideToggle();
+              $('.button5-form').slideToggle(800);
               /*$('.button-space').toggle();
               $('#button1').toggle();
               $('#button2').toggle();
