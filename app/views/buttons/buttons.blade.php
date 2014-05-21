@@ -150,6 +150,7 @@
 				{{ Form::submit('Search',array('class'=>'btn btn-danger')) }}
 			{{ Form::close() }}
 		</div>
+		<div class="button-space spacer-20"></div>
 	</div>
 	<div class="clearfix"></div>
 </div>
