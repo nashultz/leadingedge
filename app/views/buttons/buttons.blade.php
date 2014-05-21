@@ -101,18 +101,20 @@
 				<div class="clearfix"></div>
 			{{ Form::close() }}
 		</div>
+		<div class="button-space spacer-20"></div>
 	</div>
 	<div class="button2-text col-md-12 col-lg-12">
 		<button id="button2">New to the Austin area?</button>
 		<div class="button2-form">
 			{{ Form::open(array('method'=>'GET','route'=>'get.search.results')) }}
-			
+
 					{{ Form::label('city','City: ') }}<br>
 					{{ Form::select('city', $cities, 0) }}
 					<div class="spacer-20"></div>
 					{{ Form::submit('Search',array('class'=>'btn btn-danger')) }}
 			{{ Form::close() }}
 		</div>
+		<div class="button-space spacer-20"></div>
 	</div>
 	<div class="button3-text col-md-12 col-lg-12">
 		<button id="button3">Have a house to sell?</button>
@@ -124,6 +126,7 @@
 				{{ Form::submit('Search',array('class'=>'btn btn-danger')) }}
 			{{ Form::close() }}
 		</div>
+		<div class="button-space spacer-20"></div>
 	</div>
 	<div class="button4-text col-md-12 col-lg-12">
 		<button id="button4">Coupons</button>
@@ -135,6 +138,7 @@
 				{{ Form::submit('Search',array('class'=>'btn btn-danger')) }}
 			{{ Form::close() }}
 		</div>
+		<div class="button-space spacer-20"></div>
 	</div>
 	<div class="button5-text col-md-12 col-lg-12">
 		<button id="button5">How much can you afford?</button>
