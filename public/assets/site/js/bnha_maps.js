@@ -96,25 +96,42 @@
 
             for (var i = 0; i < myJson.count; ++i) {
 
+<<<<<<< HEAD
               if (typeof myJson.builders[i] !== 'undefined') 
               {
                 var latLng = new google.maps.LatLng(myJson.builders[i].neighborhood.latitude,
                   myJson.builders[i].neighborhood.longitude);
+=======
+              if (typeof myJson.neighborhoods[i] !== 'undefined') 
+              {
+                var latLng = new google.maps.LatLng(myJson.neighborhoods[i].latitude,
+                  myJson.neighborhoods[i].longitude);
+>>>>>>> 0ea6cd14664af93ca05aae6b9c8b731feeadb584
 
                   var marker = new google.maps.Marker({
                    position: latLng,
                    icon: markerImage,
+<<<<<<< HEAD
                    nid: myJson.builders[i].neighborhood.id
+=======
+                   nid: myJson.neighborhoods[i].id
+>>>>>>> 0ea6cd14664af93ca05aae6b9c8b731feeadb584
                   });
 
                 google.maps.event.addListener(marker, 'click', function(event) {
                     var lat = this.position.lat();
                     var lng = this.position.lng();
 
+<<<<<<< HEAD
                     infowindow.setPosition(this.position);
 
                     infowindow.close();
 
+=======
+                    infowindow.setContent('');
+                    infowindow.setPosition(this.position);
+
+>>>>>>> 0ea6cd14664af93ca05aae6b9c8b731feeadb584
                     var response = $.ajax({
 
                         type: 'GET',
@@ -122,22 +139,67 @@
                     });
 
                     response.success(function(resp) {
+<<<<<<< HEAD
                         infowindow.setContent(resp);
                         infowindow.open(map);
+=======
+
+                        infowindow.setContent(resp);
+                        infowindow.open(map);
+
+>>>>>>> 0ea6cd14664af93ca05aae6b9c8b731feeadb584
                     });
 
                 });                  
 
                   markers.push(marker);
                   marker.setMap(map);
+<<<<<<< HEAD
               }
             }
 
+=======
+
+                  console.log(markers.length);
+              }
+            }
+
+            /*
+            var zoom = parseInt(document.getElementById('zoom').value, 5);
+            var size = parseInt(document.getElementById('size').value, 1);
+            var style = parseInt(document.getElementById('style').value, 10);
+            //zoom = zoom == -1 ? 5 : zoom;
+            zoom = zoom == -1 ? null : zoom;
+            size = size == -1 ? 1 : size;
+            style = style == -1 ? null : style;
+
+            markerClusterer = new MarkerClusterer(map, markers, {
+              maxZoom: zoom,
+              gridSize: size,
+              styles: styles[style],
+              zoomOnClick: false
+            });
+
+            // Replace Click Event on Cluster
+            google.maps.event.addListener(markerClusterer,'clusterclick', function(cluster){
+              alert('center of cluster: '+cluster.getCenter())
+            });
+*/
+
+>>>>>>> 0ea6cd14664af93ca05aae6b9c8b731feeadb584
 
         });        
 
       }
 
+<<<<<<< HEAD
+=======
+      function makeInfoWindowEvent(map, infowindow, content, marker)
+      {
+      
+      }
+
+>>>>>>> 0ea6cd14664af93ca05aae6b9c8b731feeadb584
       function initialize() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,

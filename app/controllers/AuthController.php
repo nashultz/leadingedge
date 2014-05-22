@@ -6,14 +6,15 @@ use Carbon\Carbon;
 
 		public function getLogin()
 		{
-			return View::make('auth.login');
+			return View::make('auth.login-register');
 		}
 
 		public function postLogin()
 		{
 			$user = Input::get('user');
 			$creds['password'] = Input::get('password');
-
+			$remember = Input::get('remember');
+			
 			if (strpos($user, '@') !== false)
 			{
 				// Check via Email
@@ -24,7 +25,7 @@ use Carbon\Carbon;
 				$creds['username'] = $user;
 			}
 
-			if (!Auth::attempt($creds))
+			if (!Auth::attempt($creds,$remember))
 			{
 				// Login Failure
 				Session::flash('notification', 'Invalid Login');
@@ -54,7 +55,7 @@ use Carbon\Carbon;
 			if (!$user = $form->process())
 			{
 				Session::flash('notification', $form->getError());
-				return Redirect::route('get.auth.register')->withInput();
+				return Redirect::route('get.auth.login')->withInput();
 			}
 
 			Session::flash('notification', 'Success!');
@@ -134,6 +135,12 @@ use Carbon\Carbon;
 
 			Session::flash('notification', 'Invalid Confirmation Code');
 			return Redirect::route('get.auth.login');
+		}
+
+		public function getLogout()
+		{
+			Auth::logout();
+        	return Redirect::route('get.auth.login');
 		}
 
 	}

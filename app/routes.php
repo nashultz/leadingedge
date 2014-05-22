@@ -156,7 +156,7 @@ Route::post('search/save', array('as'=>'post.search.save', 'uses'=>'SearchContro
 Route::post('search/load', array('as'=>'post.search.load', 'uses'=>'SearchController@postSearchLoad'));
 
 // Auth Routes
-Route::get('auth/register', array('as'=>'get.auth.register', 'uses'=>'AuthController@getRegister'));
+//Route::get('auth/register', array('as'=>'get.auth.register', 'uses'=>'AuthController@getRegister'));
 Route::post('auth/register', array('as'=>'post.auth.register', 'uses'=>'AuthController@postRegister'));
 
 Route::get('auth/login', array('as'=>'get.auth.login', 'uses'=>'AuthController@getLogin'));

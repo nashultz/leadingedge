@@ -100,9 +100,9 @@
                         <li class="active"><a href="{{URL::to('/')}}"><i class="fa fa-home"></i></a></li>
                         <!--<li class="divider-vertical"></li>
                         <li><a href="#">About</a></li>-->
-                        <li class="divider-vertical"></li>
-                        <li><a href="{{ URL::route('get.search.index') }}">Search</a>
                         <!--<li class="divider-vertical"></li>
+                        <li><a href="{{ URL::route('get.search.index') }}">Search</a>
+                        <li class="divider-vertical"></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Neighborhoods <span class="caret"></span></a>
                             <div class="dropdown-menu categories">
@@ -168,9 +168,9 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         @if (!Auth::check())
-                            <li><a href="{{ URL::route('get.auth.login') }}">Login</a></li>
-                            <li class="divider-vertical"></li>
-                            <li><a href="{{ URL::route('get.auth.register') }}">Register</a></li>
+                            <li><a href="{{ URL::route('get.auth.login') }}">Login/Register</a></li>
+                            <!--<li class="divider-vertical"></li>
+                            <li><a href="{{-- URL::route('get.auth.register') --}}">Register</a></li>-->
                         @else 
                             <li><a href="{{ URL::route('get.auth.logout') }}">Logout</a></li>
                         @endif
@@ -183,16 +183,7 @@
 </div>
 <div class="main-content container">
     <div class="row">
-        <div class="col-md-3 col-lg-3">
-            @include('buttons.buttons')
-        </div>
-        <div class="col-md-4 col-lg-4">
-            @include('search.form2')
-        </div>
-        <div class="col-md-5 col-lg-5">
-            @yield('content')
-        </div>
-        <div class="clearfix"></div>
+        @yield('content')
     </div>
 </div>
 <div class="spacer-20"></div>
@@ -210,6 +201,7 @@
                     <li><a href="#">Privacy Policy</a></li>-->
                 </ul>
             </div>
+            <div class='spacer-30'></div>
         </div>
     </div>
 </div>
