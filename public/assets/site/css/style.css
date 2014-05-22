@@ -419,6 +419,7 @@ img.brand {
 
 .infowindow {
   padding: 15px;
+  border-radius: 5px;
 }
 
 .infowindow,
