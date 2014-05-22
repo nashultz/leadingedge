@@ -8,7 +8,7 @@
             @include('search.form2')
         </div>
         <div class="col-md-5 col-lg-5">
-            <div id="content">
+            <div id="map-content">
                 <div id="map-container col-md-12 col-lg-12">
                         <div id="map"></div>
                     </div>

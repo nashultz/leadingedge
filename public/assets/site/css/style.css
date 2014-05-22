@@ -334,15 +334,17 @@ img.brand {
   background:transparent;
 }
 
-#content {
-  background: #d3d3d3;
-  margin-left: -15px;
-  margin-right: -15px;
+#map-content {
+  background: rgb(164,42,31);
+  padding: 5px;
+  border-radius: 8px;
 }
 
 #map {
         width: 100%;
         height: 500px;
+        padding: 15px;
+        border-radius: 5px;
       }
 
 #inline-actions {
