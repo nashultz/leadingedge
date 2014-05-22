@@ -51,7 +51,7 @@ use Mail;
 				
 				$message->to($user->getEmail());
 
-				$message->subject('Welcome to Realty Stuff');
+				$message->subject('Account Registration for Leading Edge Realty');
 
 
 			});

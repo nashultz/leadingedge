@@ -331,11 +331,11 @@ img.brand {
 ! CONTENT SECTION
 ========================================================== */
 .main-content {
-  background:#d3d3d3;
+  background:transparent;
 }
 
 #content {
-  background: transparent;
+  background: #d3d3d3;
   margin-left: -15px;
   margin-right: -15px;
 }
@@ -347,6 +347,9 @@ img.brand {
 
 #inline-actions {
   display: none;
+}
+.search-form {
+  background: #d3d3d3;
 }
 
 .search-form,
@@ -403,7 +406,7 @@ img.brand {
 .button4-form,
 .button5-form {
   display: none;
-  background: rgb(255,255,255);
+  background: #d3d3d3;
   padding: 15px 0;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
