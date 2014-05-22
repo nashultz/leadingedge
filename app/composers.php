@@ -18,6 +18,7 @@ View::composer('*', function($view) {
 		$builders[0] = 'Any';
 		$neighborhoods[0] = 'Any';
 		$costOptions[0] = 'Any';
+		$sqFootageOptions[0] = 'Any';
 		foreach($c as $city)
 		{
 			$cities[$city->city] = $city->city;
@@ -43,11 +44,17 @@ View::composer('*', function($view) {
 			$costOptions[$a] = '$' . number_format($a,2);
 		}
 
+		for ($a = 500; $a <= 5000; $a += 100)
+		{
+			$sqFootageOptions[$a] = number_format($a, 0);
+		}
+
 		$view->with('cities', $cities);
 		$view->with('isds', $isds);
 		$view->with('builders', $builders);
 		$view->with('neighborhoods', $neighborhoods);
 		$view->with('costOptions', $costOptions);
+		$view->with('sqFootageOptions', $sqFootageOptions);
 })
 
 

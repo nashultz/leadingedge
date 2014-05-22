@@ -121,6 +121,7 @@ function refreshMap() {
           });
 
           response.success(function(resp) {
+            infowindow.setOptions({ disableAutoPan: true });
             infowindow.setContent(resp);
             infowindow.open(map);
           });
