@@ -4,99 +4,84 @@
 
 		public function getResults()
 		{
+			// Gather Input
 			$city = Input::get('city');
 			$isd = Input::get('isd');
 			$builder = Input::get('builder');
 			$neighborhood = Input::get('neighborhood');
 			$minPrice = Input::get('min_price');
 			$maxPrice = Input::get('max_price');
+			$minSqFootage = '0';
+			$maxSqFootage = '0';
+
+			// Find Neighborhoods with Criteria
+			$neighborhoods = new Neighborhood;
+			$neighborhoods = $neighborhoods->newQuery();
 			
-			$builders = new Builder;
-			$builders = $builders->newQuery();
-
-			if ($minPrice > $maxPrice)
-			{
-				Session::flash('notification', 'Min Price cannot be Greater than Max Price');
-				return Redirect::route('get.search.index');
-			}
-
 			if ($city != '0')
 			{
-				$builders->where('city', $city);
+				$neighborhoods->where('city', $city);
 			}
 
 			if ($isd != '0')
 			{
-				$builders->where('isd', $isd);
+				$neighborhoods->where('isd', $isd);
 			}
 
-			if ($builder != '0')
+			if ($neighborhood)
 			{
-				$builders->where('name', $builder);
+				$neighborhoods->where('id', $neighborhood);
 			}
 
-			if ($neighborhood != '0')
+			$neighborhoods = $neighborhoods->get();
+
+			// Neighborhoods Found
+
+			// Now let's load the builders within those neighborhoods with the criteria
+			$neighborhoods->load(array('builders' => function($query) use ($builder, $minPrice, $maxPrice, $minSqFootage, $maxSqFootage) {
+
+				if ($minPrice > $maxPrice)
+				{
+					Session::flash('notification', 'Min Price cannot be Greater than Max Price');
+					return Redirect::route('get.search.index');
+				}
+
+				if ($builder != '0')
+				{
+					$query->where('name', $builder);
+				}
+			
+				if ($minPrice != '0')
+				{
+					$query->where('min_price', '>=', $minPrice);
+				}
+
+				if ($maxPrice != '0')
+				{
+					$query->where('max_price', '<=', $maxPrice);
+				}
+
+			}));
+
+			foreach($neighborhoods as $n)
 			{
-				$n = Neighborhood::where('name', $neighborhood)->first();
-				$builders->where('neighborhood_id', $n->id);
+				if (!isset($builderResults))
+				{
+					$builderResults = $n->builders;
+				}
+				else 
+				{
+					$builderResults = $builderResults->merge($n->builders);
+				}
 			}
 
-			if ($minPrice != '0')
-			{
-				$builders->where('min_price', '>=', $minPrice);
-			}
-
-			if ($maxPrice != '0')
-			{
-				$builders->where('max_price', '<=', $maxPrice);
-			}
-
-			$builders = $builders->get();
-
-			return View::make('search.results', compact('builders'));
+			return View::make('search.results', compact('builderResults'));
 
 		}
 
 		public function getSearch()
 		{
-			$c = Neighborhood::select('city')->distinct()->get();
-
-			$i = Neighborhood::select('isd')->distinct()->get();
-			$b = Builder::select('name')->distinct()->get();
-			$n = Neighborhood::select('name')->distinct()->get();
-
-
-			$cities[0] = 'Any';
-			$isds[0] = 'Any';
-			$builders[0] = 'Any';
-			$neighborhoods[0] = 'Any';
-			$costOptions[0] = 'Any';
-			foreach($c as $city)
-			{
-				$cities[$city->city] = $city->city;
-			}
-
-			foreach($i as $isd)
-			{
-				$isds[$isd->isd] = $isd->isd;
-			}
-
-			foreach($b as $builder)
-			{
-				$builders[$builder->name] = $builder->name;
-			}
-
-			foreach($n as $neighborhood)
-			{
-				$neighborhoods[$neighborhood->name] = $neighborhood->name;
-			}
-
-			for ($a = 10000; $a <= 500000; $a += 10000)
-			{
-				$costOptions[$a] = $a;
-			}
-
-			return View::make('search.form',compact('cities','isds','builders','neighborhoods','costOptions'));
+			return View::make('search.form');
 		}
 
 		public function postSearchSave()
