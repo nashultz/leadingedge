@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<title>Builders Infowindow</title>
-		<link href="assets/site/css/infowindow.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<div class="infowindow">
