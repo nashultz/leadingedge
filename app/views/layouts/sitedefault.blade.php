@@ -22,8 +22,9 @@
     <![endif]-->
 
     <script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
-
+        {{js('site','infobox.js')}}
         {{js('site', 'bnha_maps.js')}}
+        
 
         {{js('site', 'search.js') }}
 

@@ -417,6 +417,13 @@ img.brand {
   font-size: 10px;
 }
 
+.infowindow,
+.infowindow .section-title,
+.infowindow .info-head {
+  color: rgb(255,255,255);
+  background: rgb(164,42,31);
+}
+
 /* ==========================================================
 ! Custom Footer
 ========================================================== */
