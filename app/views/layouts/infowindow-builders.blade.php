@@ -9,15 +9,15 @@
 
 		@if ($neighborhood)
 
-			<h2>{{ $neighborhood->name }}</h2>
+			<h3 class="section-title">{{ $neighborhood->name }}</h3>
 
 			@if ($ajaxBuilders)
 
 				@foreach($ajaxBuilders as $builder)
 
-					<h4>{{ $builder->name }}</h4> <br>
-					Minimum Price Range: $ {{ number_format($builder->min_price) }}<br>
-					Maximum Price Range: $ {{ number_format($builder->max_price) }}<br>
+					<h5 class="info-head">{{ $builder->name }}</h4> <br>
+					Minimum Price Range: ${{ number_format($builder->min_price) }}<br>
+					Maximum Price Range: ${{ number_format($builder->max_price) }}<br>
 					<hr>
 
 				@endforeach
