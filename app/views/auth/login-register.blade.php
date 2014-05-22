@@ -9,7 +9,7 @@
 
 		{{ Form::open(array('method'=>'POST','route'=>'post.auth.login')) }}
 
-		<div class="search-form">
+		<div class="login-form">
 			<div class="col-md-12 col-lg-12">
 				<h3 class="section-title">Login</h3>
 			</div>
@@ -29,6 +29,10 @@
 			<div class="spacer-20"></div>
 			<div class="col-md-12 col-lg-12">
 				{{ Form::submit('Login',array('class'=>'btn btn-success')) }}
+			</div>
+			<div class="spacer-20"></div>
+			<div class="forgot-links col-md-12 col-lg-12">
+				<a href="{{URL::route('get.auth.forgot.username')}}">Forgot Username</a> | <a href="{{URL::route('get.auth.forgot.email')}}">Forgot Email</a> | <a href="{{URL::route('get.auth.forgot.password')}}">Forgot Password</a>
 			</div>
 			<div class="clearfix"></div>
 		</div>

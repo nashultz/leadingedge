@@ -349,7 +349,9 @@ img.brand {
   display: none;
 }
 
-.search-form {
+.search-form,
+.login-form,
+.forgot-form {
   background: ;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -409,6 +411,10 @@ img.brand {
 
 .login-register input[type='submit'] {
   width: auto;
+}
+
+.forgot-links {
+  font-size: 10px;
 }
 
 /* ==========================================================

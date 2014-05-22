@@ -108,8 +108,5 @@ Route::post('auth/forgot_email', array('as'=>'post.auth.forgot.email', 'uses'=>'
 Route::get('auth/forgot_password', array('as'=>'get.auth.forgot.password', 'uses'=>'AuthController@getForgotPassword'));
 Route::post('auth/forgot_password', array('as'=>'post.auth.forgot.password', 'uses'=>'AuthController@postForgotPassword'));
 
-Route::get('auth/forgot_username', array('as'=>'get.auth.forgot.username', 'uses'=>'AuthController@getForgotUsername'));
-Route::post('auth/forgot_username', array('as'=>'post.auth.forgot.username', 'uses'=>'AuthController@postForgotUsername'));
-
 Route::get('auth/confirm/{user}/{code}', array('as'=>'get.auth.confirmation', 'uses'=>'AuthController@getConfirmation'));
 

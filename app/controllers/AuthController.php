@@ -81,25 +81,6 @@ use Carbon\Carbon;
 			return Redirect::route('get.auth.forgot.email');
 		}
 
-		public function getForgotUsername()
-		{
-			return View::make('auth.forgot_username');
-		}
-
-		public function postForgotUsername()
-		{
-			$form = new Forms\UserForgotUsername();
-
-			if (!$user = $form->process())
-			{
-				Session::flash('notification', $form->getError());
-				return Redirect::route('get.auth.forgot.username');
-			}
-
-			Session::flash('notification', 'Your Username is: ' . $user->getUsername());
-			return Redirect::route('get.auth.login');
-		}
-
 		public function getForgotPassword()
 		{
 			return View::make('auth.forgot_password');
