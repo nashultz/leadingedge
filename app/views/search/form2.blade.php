@@ -35,11 +35,11 @@
 	<div class="spacer-5"></div>
 	<div class="col-md-6 col-lg-6">
 		{{ Form::label('min_price', 'Minimum Sq Ft: ') }}<br>
-		{{ Form::select('min_sqft') }}
+		{{ Form::select('min_sqft', $sqFootageOptions, 0) }}
 	</div>
 	<div class="col-md-6 col-lg-6">
 		{{ Form::label('max_price', 'Maximum Sq Ft: ') }}<br>
-		{{ Form::select('max_sqft') }}
+		{{ Form::select('max_sqft', $sqFootageOptions, 0) }}
 	</div>
 	<div class="spacer-15"></div>
 	<div class="col-md-2 col-lg-2"></div>

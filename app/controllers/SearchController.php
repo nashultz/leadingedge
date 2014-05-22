@@ -11,8 +11,8 @@
 			$neighborhood = Input::get('neighborhood');
 			$minPrice = Input::get('min_price');
 			$maxPrice = Input::get('max_price');
-			$minSqFootage = '0';
-			$maxSqFootage = '0';
+			$minSqFootage = Input::get('min_sqft');
+			$maxSqFootage = Input::get('max_sqft');
 
 			// Find Neighborhoods with Criteria
 			$neighborhoods = new Neighborhood;
@@ -59,6 +59,16 @@
 				if ($maxPrice != '0')
 				{
 					$query->where('max_price', '<=', $maxPrice);
+				}
+
+				if ($minSqFootage != '0')
+				{
+					$query->where('min_size', $minSqFootage);
+				}
+
+				if ($maxSqFootage != '0')
+				{
+					$query->where('max_size', $maxSqFootage);
 				}
 
 			}));
