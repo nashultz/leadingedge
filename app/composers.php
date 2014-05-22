@@ -34,11 +34,6 @@ View::composer('*', function($view) {
 			$builders[$builder->name] = $builder->name;
 		}
 
-		foreach($n as $neighborhood)
-		{
-			$neighborhoods[$neighborhood->name] = $neighborhood->name;
-		}
-
 		for ($a = 10000; $a <= 500000; $a += 10000)
 		{
 			$costOptions[$a] = '$' . number_format($a,2);
