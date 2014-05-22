@@ -68,7 +68,7 @@
 
 				if ($maxSqFootage != '0')
 				{
-					$query->where('max_size', $maxSqFootage);
+					$query->where('max_size', $maxSqFootage);	
 				}
 
 			}));

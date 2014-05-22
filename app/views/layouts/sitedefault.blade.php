@@ -25,6 +25,8 @@
 
         {{js('site', 'bnha_maps.js')}}
 
+        {{js('site', 'search.js') }}
+
     <script>
         $(document).ready(function() {
             $('#button1').click(function() {
