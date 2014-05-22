@@ -10,7 +10,7 @@ View::composer('*', function($view) {
 
 		$i = Neighborhood::select('isd')->distinct()->get();
 		$b = Builder::select('name')->distinct()->get();
-		$n = Neighborhood::select('name')->distinct()->get();
+		$n = Neighborhood::lists('name', 'id');
 
 
 		$cities[0] = 'Any';
