@@ -352,6 +352,7 @@ img.brand {
 }
 .search-form {
   background: #d3d3d3;
+  min-height: 510px;
 }
 
 .search-form,
