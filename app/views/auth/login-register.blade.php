@@ -32,7 +32,7 @@
 			</div>
 			<div class="spacer-20"></div>
 			<div class="forgot-links col-md-12 col-lg-12">
-				<a href="{{URL::route('get.auth.forgot.username')}}">Forgot Username</a> | <a href="{{URL::route('get.auth.forgot.email')}}">Forgot Email</a> | <a href="{{URL::route('get.auth.forgot.password')}}">Forgot Password</a>
+				<a href="{{URL::route('get.auth.forgot.email')}}">Forgot Email</a> | <a href="{{URL::route('get.auth.forgot.password')}}">Forgot Password</a>
 			</div>
 			<div class="clearfix"></div>
 		</div>
