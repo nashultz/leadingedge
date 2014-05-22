@@ -407,6 +407,10 @@ img.brand {
   border-bottom-left-radius: 5px;
 }
 
+.login-register input[type='submit'] {
+  width: auto;
+}
+
 /* ==========================================================
 ! Custom Footer
 ========================================================== */
