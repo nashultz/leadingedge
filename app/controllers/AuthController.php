@@ -14,8 +14,7 @@ use Carbon\Carbon;
 			$user = Input::get('user');
 			$creds['password'] = Input::get('password');
 			$remember = Input::get('remember');
-			dd($remember);
-
+			
 			if (strpos($user, '@') !== false)
 			{
 				// Check via Email
