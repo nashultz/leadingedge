@@ -5,9 +5,6 @@
 		<link href="assets/site/css/infowindow.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-		<style>
-			html {background:rgb(164,42,31);}
-		</style>
 		<div class="infowindow">
 			@if ($neighborhood)
 				<h4 class="section-title">{{ $neighborhood->name }}</h4>

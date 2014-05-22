@@ -417,6 +417,10 @@ img.brand {
   font-size: 10px;
 }
 
+.infowindow {
+  padding: 15px;
+}
+
 .infowindow,
 .infowindow .section-title,
 .infowindow .info-head {
