@@ -70,13 +70,6 @@ var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&' +
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function refreshMap() {
-  console.log('called');
-
-  if (markerClusterer) {
-    markerClusterer.clearMarkers();
-  }
-
-  var markers = [];
 
   var response = $.ajax({
 
@@ -87,9 +80,23 @@ function refreshMap() {
 
   response.success(function(resp) {
 
+    doMap(resp, map);
+
+  });        
+
+}
+
+function doMap(resp, map)
+{
+    if (markerClusterer) {
+      markerClusterer.clearMarkers();
+    }
+
+    var markers = [];
+    
     var myJson = JSON.parse(resp);
 
-    var infowindow = new google.maps.InfoWindow();
+    var infowindow = new InfoBox();
 
     var markerImage = new google.maps.MarkerImage(imageUrl,
       new google.maps.Size(24, 32));
@@ -131,10 +138,7 @@ function refreshMap() {
         markers.push(marker);
         marker.setMap(map);
       }
-    }
-
-  });        
-
+    }  
 }
 
 function initialize() {

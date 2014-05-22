@@ -85,6 +85,13 @@
 				}
 			}
 
+			$builderResults->load('neighborhood');
+
+			if (Request::ajax())
+			{
+				return $builderResults->toArray();
+			}
+
 			return View::make('search.results', compact('builderResults'));
 
 		}

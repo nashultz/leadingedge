@@ -1,5 +1,5 @@
 	
-{{ Form::open(array('method'=>'GET','route'=>'get.search.results')) }}
+{{ Form::open(array('method'=>'GET','route'=>'get.search.results', 'id'=>'search')) }}
 <div class="search-form">
 	<div class="col-md-12 col-lg-12">
 		<h3 class="section-title">Search</h3>
