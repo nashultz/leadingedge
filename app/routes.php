@@ -14,6 +14,68 @@ $models = array(
 	
 );
 
+Route::get('neighborhood_add', function() {
+
+	$districts = array(
+		'' => 'Unknown',
+		'seniors' => 'Unknown',
+		'Seniors' => 'Unknown',
+		'AISD' => 'Austin ISD',
+		'DVISD' => 'Del Valley ISD',
+		'LTISD' => 'Lake Travis ISD',
+		'DSISD' => 'Dripping Springs ISD',
+		'LISD' => 'Leander ISD',
+		'MISD' => 'Manor ISD',
+		'RRISD' => 'Round Rock ISD',
+		'PISD' => 'Pflugerville ISD',
+		'EISD' => 'Eanes ISD',
+		'HCISD' => 'Hays County ISD',
+		'GISD' => 'Georgetown ISD',
+		'LHISD' => 'Liberty Hill ISD',
+		'JISD' => 'Jollyville ISD',
+		'HISD' => 'Hutto ISD'
+	);
+
+	$ns = Neighborhood::get();
+
+	foreach($ns as $n)
+	{
+		$n->district = $districts[$n->isd];
+		$n->save();
+	}
+
+});
+
+Route::get('adjust/min_price', function() {
+	$ns = Neighborhood::get();
+
+	foreach($ns as $n)
+	{
+		if ($n->min_price)
+		{
+			$n->min_price = $n->min_price / 1000;
+			$n->save();
+		}
+	}
+});
+
+Route::get('neighborhood/getBuilders', function() {
+
+	$id = Input::get('id');
+
+	$neighborhood = Neighborhood::with('builders')->where('id', $id)->first();
+
+	if ($neighborhood)
+	{
+		$ajaxBuilders = $neighborhood->builders;	
+	}	
+
+	return View::make('layouts.infowindow-builders', compact('ajaxBuilders','neighborhood'))->render();
+
+	//return json_encode($n->builders->toArray());
+
+});
+
 Route::get('builders/load', function() {
 
 	$builders = Builder::with('neighborhood')->get()->toArray();

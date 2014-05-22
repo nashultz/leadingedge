@@ -8,7 +8,7 @@
 
 		public function builders()
 		{
-			return $this->hasMany('builders');
+			return $this->hasMany('Builder');
 		}
 
 	}
