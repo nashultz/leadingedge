@@ -89,7 +89,12 @@
 
 			if (Request::ajax())
 			{
-				return $builderResults->toArray();
+				$array = array(
+					'count'=>$builderResults->count(),
+					'builders'=>$builderResults->toArray()
+				);
+
+				return json_encode($array);
 			}
 
 			return View::make('search.results', compact('builderResults'));

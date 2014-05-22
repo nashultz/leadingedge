@@ -64,6 +64,7 @@
 
 var markerClusterer = null;
 var map = null;
+var markers = [];
 var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&' +
 'chco=FFFFFF,008CFF,000000&ext=.png';
 
@@ -80,19 +81,22 @@ function refreshMap() {
 
   response.success(function(resp) {
 
-    doMap(resp, map);
+    doMap(resp);
 
   });        
 
 }
 
-function doMap(resp, map)
+function doMap(resp)
 {
-    if (markerClusterer) {
-      markerClusterer.clearMarkers();
-    }
 
-    var markers = [];
+    $.each(markers, function(index, value) {
+
+      value.setMap(null);
+
+    });
+
+    markers.length = 0;
     
     var myJson = JSON.parse(resp);
 

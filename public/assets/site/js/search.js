@@ -14,7 +14,7 @@ $(document).on('change', '#search select', function(e) {
 
 	response.success(function(resp) {
 
-		console.log(resp);
+		doMap(resp);
 
 	});
 
