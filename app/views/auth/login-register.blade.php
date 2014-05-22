@@ -46,7 +46,7 @@
 
 		{{ Form::open(array('method'=>'POST','route'=>'post.auth.register')) }}
 
-		<div class="search-form">
+		<div class="login-form">
 			<div class="col-md-12 col-lg-12">
 				<h3 class="section-title">Register an Account</h3>
 			</div>
