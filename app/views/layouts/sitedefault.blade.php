@@ -22,11 +22,8 @@
     <![endif]-->
 
     <script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
-<<<<<<< HEAD
-=======
-    {{-- js('site','markerclusterer.js') --}}
+
         {{js('site', 'bnha_maps.js')}}
->>>>>>> acc59313d60d97396521494a75488d631b24020c
 
     <script>
         $(document).ready(function() {
