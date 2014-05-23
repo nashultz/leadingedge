@@ -11,6 +11,8 @@
 				{{ $neighborhood->city }}<br>
 				{{ $neighborhood->district }}<br>
 
+				<hr>
+
 				@if ($ajaxBuilders)
 					@foreach($ajaxBuilders as $builder)
 						<h5 class="info-head">{{ $builder->name }}</h5> <br>
