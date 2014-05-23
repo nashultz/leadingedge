@@ -223,3 +223,4 @@ app/config/database.php
 #Composer.lock
 composer.lock
 
+app/config/database.php

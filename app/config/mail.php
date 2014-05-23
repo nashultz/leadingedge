@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'info@systemsedgeonline.com', 'name' => 'Systems Edge Online, LLC'),
+	'from' => array('address' => 'info@systemsedgeonline.com', 'name' => 'Leading Edge Realty'),
 
 	/*
 	|--------------------------------------------------------------------------

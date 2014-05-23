@@ -107,11 +107,48 @@
 		<button id="button2">New to the Austin area?</button>
 		<div class="button2-form">
 			{{ Form::open(array('method'=>'GET','route'=>'get.search.results')) }}
-
-					{{ Form::label('city','City: ') }}<br>
-					{{ Form::select('city', $cities, 0) }}
-					<div class="spacer-20"></div>
-					{{ Form::submit('Search',array('class'=>'btn btn-danger')) }}
+				<div class="col-md-12">
+					<h5>Request your FREE relocation guide!</h5>
+				</div>
+				<div class="col-md-12">
+					{{ Form::label('name','Full Name: ') }}
+					{{ Form::text('name') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('address','Mailing Address: ') }}
+					{{ Form::textarea('address') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('emailadd','Email Address: ') }}
+					{{ Form::text('emailadd') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('phone','Phone: ') }}
+					{{ Form::text('phone') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('movedate','Preferred Move Date: ') }}
+					{{ Form::text('movedate') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('realtor','Working with an Austin area Realtor: ') }}<br>
+					<div class="col-md-6">
+						{{ Form::radio('realtor', 1) }} Yes
+					</div>
+					<div class="col-md-6">
+						{{ Form::radio('realtor', 0, true) }} No
+					</div><div class="clearfix"></div>
+				</div>
+				<div class="spacer-20"></div>
+				<div class="col-md-12">
+					{{ Form::submit('Submit',array('class'=>'btn btn-danger')) }}
+				</div>
+				<div class="clearfix"></div>
 			{{ Form::close() }}
 		</div>
 		<div class="button-space spacer-20"></div>
@@ -120,10 +157,45 @@
 		<button id="button3">Have a house to sell?</button>
 		<div class="button3-form">
 			{{ Form::open(array('method'=>'GET','route'=>'get.search.results')) }}
-				{{ Form::label('city','City: ') }}<br>
-				{{ Form::select('city', $cities, 0) }}
+				<div class="col-md-12">
+					{{ Form::label('name','Full Name: ') }}
+					{{ Form::text('name') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('address','Address to be evaluated: ') }}
+					{{ Form::textarea('address') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('emailadd','Email Address: ') }}
+					{{ Form::text('emailadd') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('phone','Phone: ') }}
+					{{ Form::text('phone') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('movedate','Preferred Move Date: ') }}
+					{{ Form::text('movedate') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('realtor','Working with an Austin area Realtor: ') }}<br>
+					<div class="col-md-6">
+						{{ Form::radio('realtor', 1) }} Yes
+					</div>
+					<div class="col-md-6">
+						{{ Form::radio('realtor', 0, true) }} No
+					</div><div class="clearfix"></div>
+				</div>
 				<div class="spacer-20"></div>
-				{{ Form::submit('Search',array('class'=>'btn btn-danger')) }}
+				<div class="col-md-12">
+					{{ Form::submit('Submit',array('class'=>'btn btn-danger')) }}
+				</div>
+				<div class="clearfix"></div>
 			{{ Form::close() }}
 		</div>
 		<div class="button-space spacer-20"></div>
@@ -131,12 +203,7 @@
 	<div class="button4-text col-md-12 col-lg-12">
 		<button id="button4">Coupons</button>
 		<div class="button4-form">
-			{{ Form::open(array('method'=>'GET','route'=>'get.search.results')) }}
-				{{ Form::label('city','City: ') }}<br>
-				{{ Form::select('city', $cities, 0) }}
-				<div class="spacer-20"></div>
-				{{ Form::submit('Search',array('class'=>'btn btn-danger')) }}
-			{{ Form::close() }}
+			<div>PDF's</div>
 		</div>
 		<div class="button-space spacer-20"></div>
 	</div>
@@ -144,10 +211,55 @@
 		<button id="button5">How much can you afford?</button>
 		<div class="button5-form">
 			{{ Form::open(array('method'=>'GET','route'=>'get.search.results')) }}
-				{{ Form::label('city','City: ') }}<br>
-				{{ Form::select('city', $cities, 0) }}
+				<div class="col-md-12">
+					{{ Form::label('pprice','Purchase Price: ') }}
+					{{ Form::text('pprice') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('dpayment','% of Down Payment: ') }}
+					{{ Form::select('dpayment') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('credit','Credit: ') }}
+					{{ Form::select('credit') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('aincome','Annual Income: ') }}
+					{{ Form::text('aincome') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('mdebt','Monthly Debt (exclude Rent): ') }}
+					{{ Form::text('mdebt') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('email','Email Address: ') }}
+					{{ Form::text('email') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('phone','Phone: ') }}
+					{{ Form::text('phone') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('realtor','Working with an Austin area Realtor: ') }}<br>
+					<div class="col-md-6">
+						{{ Form::radio('realtor', 1) }} Yes
+					</div>
+					<div class="col-md-6">
+						{{ Form::radio('realtor', 0, true) }} No
+					</div><div class="clearfix"></div>
+				</div>
 				<div class="spacer-20"></div>
-				{{ Form::submit('Search',array('class'=>'btn btn-danger')) }}
+				<div class="col-md-12">
+					{{ Form::submit('Submit',array('class'=>'btn btn-danger')) }}
+				</div>
+				<div class="clearfix"></div>
 			{{ Form::close() }}
 		</div>
 		<div class="button-space spacer-20"></div>
