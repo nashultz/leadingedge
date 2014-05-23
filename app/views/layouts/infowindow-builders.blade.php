@@ -6,7 +6,7 @@
 	<body>
 		<div class="infowindow">
 			@if ($neighborhood)
-				<h4 class="section-title">{{ $neighborhood->name }}</h4>
+				<h4 class="section-title">{{ $neighborhood->name }} ({{ $ajaxBuilders->count() }})</h4>
 
 				{{ $neighborhood->city }}<br>
 				{{ $neighborhood->district }}<br>
