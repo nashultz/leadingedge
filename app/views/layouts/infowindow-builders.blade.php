@@ -14,11 +14,8 @@
 				@if ($ajaxBuilders)
 					@foreach($ajaxBuilders as $builder)
 						<h5 class="info-head">{{ $builder->name }}</h5> <br>
-						Minimum Price Range: ${{ number_format($builder->min_price) }}<br>
-						Maximum Price Range: ${{ number_format($builder->max_price) }}<br>
-
-						Minimum Sq Footage: {{ number_format($builder->min_size) }}<br>
-						Maximum Sq Footage: {{ number_format($builder->max_size) }}<br>
+						Price: ${{ number_format($builder->min_price) }} - ${{ number_format($builder->max_price) }}<br>
+						Square Footage: {{ number_format($builder->min_size) }} - {{ number_format($builder->max_size) }}<br>
 						<hr>
 					@endforeach
 				@else
