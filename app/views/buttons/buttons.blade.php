@@ -6,13 +6,13 @@
 		<div class="button1-form">
 			{{ Form::open(array('method'=>'POST','route'=>'post.perfecthome.send')) }}
 				<div class="col-md-12">
-					{{ Form::label('price','Price: ') }}
-					{{ Form::text('price') }}
+					{{ Form::label('maxprice','Maximum Price: ') }}
+					{{ Form::text('maxprice') }}
 				</div>
 				<div class="spacer-5"></div>
 				<div class="col-md-12">
-					{{ Form::label('sqft','Square Foot: ') }}
-					{{ Form::text('sqft') }}
+					{{ Form::label('maxsqft','Maximum Square Foot: ') }}
+					{{ Form::text('maxsqft') }}
 				</div>
 				<div class="spacer-5"></div>
 				<div class="col-md-12">
@@ -131,6 +131,16 @@
 				</div>
 				<div class="spacer-5"></div>
 				<div class="col-md-12">
+					{{ Form::label('maxprice','Maximum Price: ') }}
+					{{ Form::text('maxprice') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('maxsqft','Maximum Square Foot: ') }}
+					{{ Form::text('maxsqft') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
 					{{ Form::label('movedate','Preferred Move Date: ') }}
 					{{ Form::text('movedate') }}
 				</div>
@@ -175,6 +185,16 @@
 				<div class="col-md-12">
 					{{ Form::label('phone','Phone: ') }}
 					{{ Form::text('phone') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('maxprice','Maximum Price: ') }}
+					{{ Form::text('maxprice') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::label('maxsqft','Maximum Square Foot: ') }}
+					{{ Form::text('maxsqft') }}
 				</div>
 				<div class="spacer-5"></div>
 				<div class="col-md-12">

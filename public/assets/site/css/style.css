@@ -430,8 +430,9 @@ img.brand {
 .infowindow {
   padding: 15px;
   border-radius: 5px;
-  min-height: 300px;
-  overflow: scroll;
+  max-height: 300px;
+  overflow: auto;
+  width: 300px;
 }
 
 .infowindow,
