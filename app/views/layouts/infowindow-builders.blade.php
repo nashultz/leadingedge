@@ -6,12 +6,18 @@
 	<body>
 		<div class="infowindow">
 			@if ($neighborhood)
-				<h4 class="section-title">{{ $neighborhood->name }}</h4>
+				<h4 class="section-title">{{ $neighborhood->name }} ({{ $ajaxBuilders->count() }})</h4>
+
+				{{ $neighborhood->city }}<br>
+				{{ $neighborhood->district }}<br>
+
+				<hr>
+
 				@if ($ajaxBuilders)
 					@foreach($ajaxBuilders as $builder)
 						<h5 class="info-head">{{ $builder->name }}</h5> <br>
-						Minimum Price Range: ${{ number_format($builder->min_price) }}<br>
-						Maximum Price Range: ${{ number_format($builder->max_price) }}<br>
+						Price: ${{ number_format($builder->min_price) }} - ${{ number_format($builder->max_price) }}<br>
+						Square Footage: {{ number_format($builder->min_size) }} - {{ number_format($builder->max_size) }}<br>
 						<hr>
 					@endforeach
 				@else

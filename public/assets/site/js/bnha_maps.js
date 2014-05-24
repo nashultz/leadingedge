@@ -118,7 +118,7 @@ function doMap(resp)
          nid: myJson.builders[i].neighborhood.id
        });
 
-        google.maps.event.addListener(marker, 'mouseover', function(event) {
+        google.maps.event.addListener(marker, 'click', function(event) {
           var lat = this.position.lat();
           var lng = this.position.lng();
 

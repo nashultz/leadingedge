@@ -94,6 +94,8 @@
 					'builders'=>$builderResults->toArray()
 				);
 
+				dd(DB::getQueryLog());
+
 				return json_encode($array);
 			}
 
