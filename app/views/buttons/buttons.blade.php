@@ -4,7 +4,7 @@
 	<div class="button1-text col-md-12 col-lg-12">
 		<button id="button1">Let us help you find the perfect home!</button>
 		<div class="button1-form">
-			{{ Form::open(array('method'=>'GET','route'=>'get.search.results')) }}
+			{{ Form::open(array('method'=>'POST','route'=>'post.perfecthome.send')) }}
 				<div class="col-md-12">
 					{{ Form::label('price','Price: ') }}
 					{{ Form::text('price') }}
@@ -106,7 +106,7 @@
 	<div class="button2-text col-md-12 col-lg-12">
 		<button id="button2">New to the Austin area?</button>
 		<div class="button2-form">
-			{{ Form::open(array('method'=>'GET','route'=>'get.search.results')) }}
+			{{ Form::open(array('method'=>'POST','route'=>'post.newaustin.send')) }}
 				<div class="col-md-12">
 					<h5>Request your FREE relocation guide!</h5>
 				</div>
@@ -156,7 +156,7 @@
 	<div class="button3-text col-md-12 col-lg-12">
 		<button id="button3">Have a house to sell?</button>
 		<div class="button3-form">
-			{{ Form::open(array('method'=>'GET','route'=>'get.search.results')) }}
+			{{ Form::open(array('method'=>'POST','route'=>'post.sellhome.send')) }}
 				<div class="col-md-12">
 					{{ Form::label('name','Full Name: ') }}
 					{{ Form::text('name') }}
@@ -210,7 +210,7 @@
 	<div class="button5-text col-md-12 col-lg-12">
 		<button id="button5">How much can you afford?</button>
 		<div class="button5-form">
-			{{ Form::open(array('method'=>'GET','route'=>'get.search.results')) }}
+			{{ Form::open(array('method'=>'POST','route'=>'post.affordhome.send')) }}
 				<div class="col-md-12">
 					{{ Form::label('pprice','Purchase Price: ') }}
 					{{ Form::text('pprice') }}

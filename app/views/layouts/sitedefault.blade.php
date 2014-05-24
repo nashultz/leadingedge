@@ -101,8 +101,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="{{URL::to('/')}}"><i class="fa fa-home"></i></a></li>
-                        <!--<li class="divider-vertical"></li>
-                        <li><a href="#">About</a></li>-->
+                        <li class="divider-vertical"></li>
+                        <li><a href="http://www.tammytherealtor.com">About</a></li>
                         <!--<li class="divider-vertical"></li>
                         <li><a href="{{ URL::route('get.search.index') }}">Search</a>
                         <li class="divider-vertical"></li>

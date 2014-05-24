@@ -155,6 +155,11 @@ Route::get('search/results', array('as'=>'get.search.results', 'uses'=>'SearchCo
 Route::post('search/save', array('as'=>'post.search.save', 'uses'=>'SearchController@postSearchSave'));
 Route::post('search/load', array('as'=>'post.search.load', 'uses'=>'SearchController@postSearchLoad'));
 
+Route::post('perfect-home',array('as'=>'post.perfecthome.send','uses'=>'ButtonController@postPerfectHome'));
+Route::post('new-austin',array('as'=>'post.newaustin.send','uses'=>'ButtonController@postNewAustin'));
+Route::post('sell-home',array('as'=>'post.sellhome.send','uses'=>'ButtonController@postSellHome'));
+Route::post('afford-home',array('as'=>'post.affordhome.send','uses'=>'ButtonController@postAffordHome'));
+
 // Auth Routes
 //Route::get('auth/register', array('as'=>'get.auth.register', 'uses'=>'AuthController@getRegister'));
 Route::post('auth/register', array('as'=>'post.auth.register', 'uses'=>'AuthController@postRegister'));
