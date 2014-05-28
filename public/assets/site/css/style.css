@@ -202,7 +202,12 @@ select {
 ! Custom Header & Navigation
 ========================================================== */
 
-img.brand {
+.brand {
+  min-height: 108px;
+  background: top left 100% no-repeat url('../img/skyline.png');
+}
+
+img.logo {
   color:rgb(164,42,31);
   margin: 10px 0;
 }
@@ -274,7 +279,7 @@ img.brand {
 }
 .navbar {
   min-height: 30px;
-  margin-top: 32px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 .navbar-inverse {
@@ -382,7 +387,7 @@ img.brand {
 }*/
 
 .buttons {
-  margin: 30px -15px 0 -15px;
+  margin: 0 -15px 0 -15px;
 }
 
 #button1,

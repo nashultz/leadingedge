@@ -103,12 +103,12 @@
     </div>
     <div class="row print-hide">
         <!-- HEADER -->
-        <div class="col-md-3 col-lg-3">
-            {{img('site','mainlogo.png',array('class'=>'brand'))}}
+        <div class="brand col-md-12 col-lg-12">
+            {{img('site','mainlogo.png',array('class'=>'logo'))}}
         </div>
         <!-- /HEADER -->
         <!-- NAVIGATION -->
-        <div class="col-md-9 col-lg-9">
+        <div class="col-md-12 col-lg-12">
             <div class="navbar navbar-inverse main-nav" role="navigation">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -123,71 +123,16 @@
                         <li class="active"><a href="{{URL::to('/')}}"><i class="fa fa-home"></i></a></li>
                         <li class="divider-vertical"></li>
                         <li><a href="http://www.tammytherealtor.com">About</a></li>
-                        <!--<li class="divider-vertical"></li>
-                        <li><a href="{{ URL::route('get.search.index') }}">Search</a>
                         <li class="divider-vertical"></li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Neighborhoods <span class="caret"></span></a>
-                            <div class="dropdown-menu categories">
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-12 padding1030">
-                                        <h3 class="section-title">Top Neighborhoods</h3>
-                                        <div class="dropdown-inner col-md-3 col-lg-3">
-                                            <ul class="dropdown-menulinks nav-justified">
-                                                <li class="category-link"><a href="#"><span class="cat-img"><img src="../../assets/site/img/products/default.png"></span><span class="cat-title">Title</span></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="dropdown-inner col-md-3 col-lg-3">
-                                            <ul class="dropdown-menulinks nav-justified">
-                                                <li class="category-link"><a href="#"><span class="cat-img"><img src="../../assets/site/img/products/default.png"></span><span class="cat-title">Title</span></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="dropdown-inner col-md-3 col-lg-3">
-                                            <ul class="dropdown-menulinks nav-justified">
-                                                <li class="category-link"><a href="#"><span class="cat-img"><img src="../../assets/site/img/products/default.png"></span><span class="cat-title">Title</span></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="dropdown-inner col-md-3 col-lg-3">
-                                            <ul class="dropdown-menulinks nav-justified">
-                                                <li class="category-link"><a href="#"><span class="cat-img"><img src="../../assets/site/img/products/default.png"></span><span class="cat-title">Title</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                            </ul>
                         </li>
                         <li class="divider-vertical"></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Builders <span class="caret"></span></a>
-                            <div class="dropdown-menu categories">
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-12 padding1030">
-                                        <h3 class="section-title">Top Builders</h3>
-                                        <div class="dropdown-inner col-md-3 col-lg-3">
-                                            <ul class="dropdown-menulinks nav-justified">
-                                                <li class="category-link"><a href="#"><span class="cat-img"><img src="../../assets/site/img/products/default.png"></span><span class="cat-title">Title</span></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="dropdown-inner col-md-3 col-lg-3">
-                                            <ul class="dropdown-menulinks nav-justified">
-                                                <li class="category-link"><a href="#"><span class="cat-img"><img src="../../assets/site/img/products/default.png"></span><span class="cat-title">Title</span></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="dropdown-inner col-md-3 col-lg-3">
-                                            <ul class="dropdown-menulinks nav-justified">
-                                                <li class="category-link"><a href="#"><span class="cat-img"><img src="../../assets/site/img/products/default.png"></span><span class="cat-title">Title</span></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="dropdown-inner col-md-3 col-lg-3">
-                                            <ul class="dropdown-menulinks nav-justified">
-                                                <li class="category-link"><a href="#"><span class="cat-img"><img src="../../assets/site/img/products/default.png"></span><span class="cat-title">Title</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider-vertical"></li>-->
+                        <li><a href="#">Contact Us</a>
+                        <!--<li class="divider-vertical"></li>-->
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         @if (!Auth::check())
