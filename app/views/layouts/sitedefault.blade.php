@@ -104,7 +104,7 @@
     <div class="row print-hide">
         <!-- HEADER -->
         <div class="brand col-md-12 col-lg-12">
-            {{img('site','mainlogo.png',array('class'=>'logo'))}}
+            <a href="{{URL::to('/')}}">{{img('site','mainlogo.png',array('class'=>'logo'))}}</a>
         </div>
         <!-- /HEADER -->
         <!-- NAVIGATION -->

@@ -1,7 +1,7 @@
 @extends('layouts.sitedefault')
 
 @section('content')
-    <div class="col-md-5 col-lg-5">
+    <div class="col-md-5 col-md-push-7 col-lg-5 col-lg-push-7">
         <div id="map-content">
             <div id="map-container col-md-12 col-lg-12">
                 <div id="map"></div>
@@ -42,10 +42,10 @@
             </div><div class="clearfix"></div>
         </div>
     </div>
-    <div class="col-md-4 col-lg-4">
+    <div class="col-md-4 col-md-pull-2 col-lg-4 col-lg-pull-2">
         @include('search.form2')
     </div>
-    <div class="col-md-3 col-lg-3">
+    <div class="col-md-3 col-md-pull-9 col-lg-3 col-lg-pull-9">
         @include('buttons.buttons')
     </div>
     <div class="clearfix"></div>   
