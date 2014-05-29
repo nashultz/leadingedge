@@ -4,74 +4,95 @@
 
 		public function getResults()
 		{
-			// Gather Input
+			// Gather Neighborhood Data
 			$city = Input::get('city');
 			$isd = Input::get('isd');
-			$builder = Input::get('builder');
-			$neighborhood = Input::get('neighborhood');
-			$minPrice = Input::get('min_price');
-			$maxPrice = Input::get('max_price');
+			$neighborhoodId = Input::get('neighborhood');
+
+			// Gather Builder Data
+			$builderName = Input::get('builder');
 			$minSqFootage = Input::get('min_sqft');
 			$maxSqFootage = Input::get('max_sqft');
 
-			// Find Neighborhoods with Criteria
+			// Flipping the JOIN
+			$builders = new Builder;
+			$builders = $builders->newQuery();
+
+			if ($builderName != '0')
+			{
+				$builders->where('builders.name', $builderName);
+			}
+
+			if ($minSqFootage != '0')
+			{
+				$builders->where('builders.min_size', '>=', (int)$minSqFootage);
+			}
+
+			if ($maxSqFootage != '0')
+			{
+				$builders->where('builders.max_size', '<=', (int)$maxSqFootage);
+			} 
+
+			// Now try the FLIP JOIN
+			$builders->join('neighborhoods', function($join) use ($city, $isd, $neighborhoodId) {
+
+
+				$join->on('builders.neighborhood_id', '=', 'neighborhoods.id');
+
+				if ($city != '0')
+				{
+					$join->where('neighborhoods.city', '=', $city);
+				}
+
+				if ($isd != '0')
+				{
+					$join->where('neighborhoods.isd', '=', $isd);
+				}
+
+				if ($neighborhoodId != '0')
+				{
+					$join->where('neighborhoods.id', '=', $neighborhoodId);
+				}		
+
+			});
+
+			$builders = $builders->get();
+
+			//dd($builders);
+			dd(DB::getQueryLog());
+
+			// Trying a JOIN
 			$neighborhoods = new Neighborhood;
 			$neighborhoods = $neighborhoods->newQuery();
-			
-			if ($city != '0')
-			{
-				$neighborhoods->where('city', $city);
-			}
 
-			if ($isd != '0')
-			{
-				$neighborhoods->where('isd', $isd);
-			}
 
-			if ($neighborhood)
-			{
-				$neighborhoods->where('id', $neighborhood);
-			}
+			// Now let's "join" the builders with their criteria...
+			$neighborhoods->join('builders', function($join) use ($builderName, $minSqFootage, $maxSqFootage) {
 
-			$neighborhoods = $neighborhoods->get();
+				$join->on('neighborhoods.id', '=', 'builders.neighborhood_id');
 
-			// Neighborhoods Found
-
-			// Now let's load the builders within those neighborhoods with the criteria
-			$neighborhoods->load(array('builders' => function($query) use ($builder, $minPrice, $maxPrice, $minSqFootage, $maxSqFootage) {
-
-				if ($minPrice > $maxPrice)
+				/*
+				if ($builderName != '0')
 				{
-					Session::flash('notification', 'Min Price cannot be Greater than Max Price');
-					return Redirect::route('get.search.index');
-				}
-
-				if ($builder != '0')
-				{
-					$query->where('name', $builder);
-				}
-			
-				if ($minPrice != '0')
-				{
-					$query->where('min_price', '>=', $minPrice);
-				}
-
-				if ($maxPrice != '0')
-				{
-					$query->where('max_price', '<=', $maxPrice);
+					$join->where('builders.name', '=', $builderName);
 				}
 
 				if ($minSqFootage != '0')
 				{
-					$query->where('min_size', $minSqFootage);
+					$join->where('min_size', '>=', $minSqFootage);
 				}
 
 				if ($maxSqFootage != '0')
 				{
-					$query->where('max_size', $maxSqFootage);	
+					$join->where('max_size', '<=', $maxSqFootage);
 				}
+				*/
 
-			}));
+			});
+
+			$neighborhoods = $neighborhoods->get();
+
+			dd(DB::getQueryLog());
 
 			foreach($neighborhoods as $n)
 			{
