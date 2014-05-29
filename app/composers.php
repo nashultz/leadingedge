@@ -5,9 +5,8 @@
 	$view->with('slider', site\Listings::slider());
 });*/
 
-View::composer('*', function($view) {
-	$c = Neighborhood::select('city')->distinct()->get();
-
+View::composer('*', function($view) { 
+		$c = Neighborhood::select('city')->distinct()->get();
 		$i = Neighborhood::select('isd')->distinct()->get();
 		$b = Builder::select('name')->distinct()->get();
 		$n = Neighborhood::lists('name', 'id');
@@ -44,12 +43,18 @@ View::composer('*', function($view) {
 			$sqFootageOptions[$a] = number_format($a, 0);
 		}
 
+		for ($a = 0; $a <= 10; $a += 1)
+		{
+			$numRooms[$a] = $a;
+		}
+
 		$view->with('cities', $cities);
 		$view->with('isds', $isds);
 		$view->with('builders', $builders);
 		$view->with('neighborhoods', $neighborhoods);
 		$view->with('costOptions', $costOptions);
 		$view->with('sqFootageOptions', $sqFootageOptions);
+		$view->with('numRooms', $numRooms);
 })
 
 

@@ -24,6 +24,7 @@
     <script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
         {{js('site','infobox.js')}}
         {{js('site', 'bnha_maps.js')}}
+        {{js('site', 'buttonForms.js') }}
         
 
         {{js('site', 'search.js') }}
@@ -150,6 +151,13 @@
     <!-- /NAVIGATION -->
 </div>
 <div class="main-content container">
+
+    <div class="row">
+      @if (Session::has('notification'))
+        {{ Session::get('notification') }}
+      @endif
+    </div>
+
     <div class="row">
         @yield('content')
     </div>

@@ -8,12 +8,26 @@
 
 			if (!$user = $form->process())
 			{
+				if (Request::ajax())
+				{
+					$data['error'] = true;
+					$data['errorMsg'] = $form->getError();
+					return Response::json($data);
+				}
+
 				Session::flash('notification', $form->getError());
-				return Redirect::route('get.auth.login')->withInput();
+				return Redirect::to('/')->withInput();
+			}
+
+			if (Request::ajax())
+			{
+				$data['error'] = false;
+				$data['message'] = 'Your submission has been received';
+				return Response::json($data);
 			}
 
 			Session::flash('notification', 'Success!');
-			return Redirect::route('get.auth.login');
+			return Redirect::to('/');
 		}
 
 		public function postNewAustin()

@@ -33,92 +33,43 @@
 				$builders->where('builders.max_size', '<=', (int)$maxSqFootage);
 			} 
 
+			if ($city != '0')
+			{
+				$builders->where('neighborhoods.city', '=', $city);
+			}
+
+			if ($neighborhoodId != '0')
+			{
+				$builders->where('neighborhoods.id', '=', $neighborhoodId);
+			}				
+
+			if ($isd != '0')
+			{
+				$builders->where('neighborhoods.isd', '=', $isd);
+			}
+
 			// Now try the FLIP JOIN
 			$builders->join('neighborhoods', function($join) use ($city, $isd, $neighborhoodId) {
 
-
-				$join->on('builders.neighborhood_id', '=', 'neighborhoods.id');
-
-				if ($city != '0')
-				{
-					$join->where('neighborhoods.city', '=', $city);
-				}
-
-				if ($isd != '0')
-				{
-					$join->where('neighborhoods.isd', '=', $isd);
-				}
-
-				if ($neighborhoodId != '0')
-				{
-					$join->where('neighborhoods.id', '=', $neighborhoodId);
-				}		
+				$join->on('builders.neighborhood_id', '=', 'neighborhoods.id');	
 
 			});
 
 			$builders = $builders->get();
 
-			//dd($builders);
-			dd(DB::getQueryLog());
-
-			// Trying a JOIN
-			$neighborhoods = new Neighborhood;
-			$neighborhoods = $neighborhoods->newQuery();
-
-
-			// Now let's "join" the builders with their criteria...
-			$neighborhoods->join('builders', function($join) use ($builderName, $minSqFootage, $maxSqFootage) {
-
-				$join->on('neighborhoods.id', '=', 'builders.neighborhood_id');
-
-				/*
-				if ($builderName != '0')
-				{
-					$join->where('builders.name', '=', $builderName);
-				}
-
-				if ($minSqFootage != '0')
-				{
-					$join->where('min_size', '>=', $minSqFootage);
-				}
-
-				if ($maxSqFootage != '0')
-				{
-					$join->where('max_size', '<=', $maxSqFootage);
-				}
-				*/
-
-			});
-
-			$neighborhoods = $neighborhoods->get();
-
-			dd(DB::getQueryLog());
-
-			foreach($neighborhoods as $n)
-			{
-				if (!isset($builderResults))
-				{
-					$builderResults = $n->builders;
-				}
-				else 
-				{
-					$builderResults = $builderResults->merge($n->builders);
-				}
-			}
-
-			$builderResults->load('neighborhood');
+			$builders->load('neighborhood');
 
 			if (Request::ajax())
 			{
 				$array = array(
-					'count'=>$builderResults->count(),
-					'builders'=>$builderResults->toArray()
+					'count'=>$builders->count(),
+					'builders'=>$builders->toArray()
 				);
-
-				dd(DB::getQueryLog());
 
 				return json_encode($array);
 			}
+
+			$builderResults = $builders;
 
 			return View::make('search.results', compact('builderResults'));
 

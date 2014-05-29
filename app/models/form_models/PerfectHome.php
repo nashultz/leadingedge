@@ -10,17 +10,18 @@ use Mail;
 		protected $user;
 
 		protected $rules = array(
-			'fname'=>'required',
-			'lname'=>'required',
-			'username'=>'required|validUsername',
-			'password'=>'required|min:6|confirmed',
-			'email'=>'required|email'
+			'maxprice'=>'required',
+			'maxsqft'=>'required',
+			'movedate'=>'required',
+			'emailadd'=>'required|email'
 		);
 
 		protected $messages = array(
-			'fname.required'=>'The First Name field is required',
-			'lname.required'=>'The Last name field is required',
-			'username.valid_username'=>'Username can only contain A-Z, 0-9 and _'
+			'maxprice.required'=>'You must enter a Maximum Price',
+			'maxsqft.required'=>'You must enter a Maximum Square Footage',
+			'movedate.required'=>'You must enter a Preferred Moving Date',
+			'emailadd.required'=>'You must enter an Email Address',
+			'emailadd.email'=>'You must enter a valid Email Address'
 		);
 
 		public function __construct()
@@ -28,12 +29,6 @@ use Mail;
 			parent::__construct();
 
 			$this->input = Input::except('_token');
-
-			$this->user = new User;
-
-			Validator::extend('valid_username', function($attribute, $value, $parameters) {
-				return preg_match("/^[a-zA-Z0-9]+$/", $value);
-			});
 		}
 
 		public function process()
@@ -44,17 +39,34 @@ use Mail;
 				return false;
 			}
 
-			$user = $this->user->create(Input::except('_token','password_confirmation'));
+			if (!$this->input['realtor'])
+			{
+				$toRealtor = Mail::send(array('emails.text.buttons.perfecthome_info','emails.html.buttons.perfecthome_info'), array(), function($message) {
+					$message->to('RomanL@systemsedgeonline.com');
+					$message->subject('Filled out form');
+				});
 
-			// Send Validation Email
-			$mail = Mail::send(array('emails.html.auth.register', 'emails.text.auth.register'), array('user'=>$user), function($message) use ($user) {
-				
-				$message->to($user->getEmail());
+				if (!$toRealtor)
+				{
+					$this->validationErrors->add('failedEmail', 'There was a problem with the Email System. Please Contact the System Administrator.');
+					return false;
+				}
 
-				$message->subject('Account Registration for Leading Edge Realty');
+				// Send Has No Realtor Email
+				$txtEmail = 'emails.text.buttons.perfecthome_norealtor';
+				$htmlEmail = 'emails.html.buttons.perfecthome_norealtor';
+			}
+			else
+			{
+				// Send Has Realtor Email
+				$txtEmail = 'emails.text.buttons.perfecthome_hasrealtor';
+				$htmlEmail = 'emails.html.buttons.perfecthome_hasrealtor';
+			}
 
-
-			});
+			$mail = Mail::send(array($txtEmail, $htmlEmail), array(), function($message) {
+				$message->to($this->input['emailadd']);
+				$message->subject('Thank you for contacting Leading Edge Realty');
+			});			
 
 			if (!$mail)
 			{
@@ -62,8 +74,7 @@ use Mail;
 				return false;
 			}
 
-			// Create User :)
-			return $user;
+			return true;
 		}
 
 	}

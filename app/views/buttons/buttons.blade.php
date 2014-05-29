@@ -4,7 +4,7 @@
 	<div class="button1-text col-md-12 col-lg-12">
 		<button id="button1">Let us help you find the perfect home!</button>
 		<div class="button1-form">
-			{{ Form::open(array('method'=>'POST','route'=>'post.perfecthome.send')) }}
+			{{ Form::open(array('method'=>'POST','route'=>'post.perfecthome.send', 'class'=>'ajaxButtonForm1')) }}
 				<div class="col-md-12">
 					{{ Form::label('maxprice','Maximum Price: ') }}
 					{{ Form::text('maxprice') }}
@@ -27,7 +27,7 @@
 				<div class="spacer-5"></div>
 				<div class="col-md-12">
 					{{ Form::label('beds','Bedrooms: ') }}
-					{{ Form::select('beds') }}
+					{{ Form::select('beds', $numRooms, 0) }}
 				</div>
 				<div class="spacer-5"></div>
 				<div class="col-md-12">
