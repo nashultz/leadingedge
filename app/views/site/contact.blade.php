@@ -52,7 +52,7 @@
 			<div class="spacer-20"></div>
 			<div class="col-md-12 col-lg-12">
 				<input name="sum" type="hidden" id="sum" class="hvalue" value="{{$sum}}">
-				{{ Form::submit('Login',array('class'=>'btn btn-success')) }}
+				{{ Form::submit('Send Message',array('class'=>'btn btn-danger')) }}
 			</div>
 			<div class="clearfix"></div>
 		</div>
