@@ -7,10 +7,10 @@
 			<div class="col-md-12 col-lg-12">
 				<h2 class="section-title">About Us</h2>
 			</div>
-			<div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+			<div class="col-md-6 col-lg-6">
 				<div class="login-form">
 					<div class="about-photo col-md-4 col-lg-4">
-						{{img('site','tammy-young.jpg',array('class'=>'img-thumbnail'))}}
+						{{img('site','tammy-young.jpg',array('class'=>'img-circle img-thumbnail'))}}
 					</div>
 					<div class="col-md-8 col-lg-8">
 						<h3 class="info-head">Tammy Young</h3>
