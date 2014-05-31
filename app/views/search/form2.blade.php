@@ -6,22 +6,22 @@
 	</div>
 	<div class="col-md-12 col-lg-12">
 		{{ Form::label('city','City: ') }}<br>
-		{{ Form::select('city', $cities, 0) }}
+		{{ Form::select('city', $cities, 0,array('class'=>'form-control')) }}
 	</div>
 	<div class="spacer-5"></div>
 	<div class="col-md-12 col-lg-12">
 		{{ Form::label('isd', 'School District: ') }}<br>
-		{{ Form::select('isd', $isds, 0) }}
+		{{ Form::select('isd', $isds, 0,array('class'=>'form-control')) }}
 	</div>
 	<div class="spacer-5"></div>
 	<div class="col-md-12 col-lg-12">
 		{{ Form::label('neighborhood', 'Neighborhood') }}<br>
-		{{ Form::select('neighborhood', $neighborhoods, 0) }}
+		{{ Form::select('neighborhood', $neighborhoods, 0,array('class'=>'form-control')) }}
 	</div>
 	<div class="spacer-5"></div>
 	<div class="col-md-12 col-lg-12">
 		{{ Form::label('builder', 'Builders: ') }}<br>
-		{{ Form::select('builder', $builders, 0) }}
+		{{ Form::select('builder', $builders, 0,array('class'=>'form-control')) }}
 	</div>
 	<div class="spacer-5"></div>
 	<!--
@@ -37,11 +37,11 @@
 	-->
 	<div class="col-md-6 col-lg-6">
 		{{ Form::label('min_price', 'Minimum Sq Ft: ') }}<br>
-		{{ Form::select('min_sqft', $sqFootageOptions, 0) }}
+		{{ Form::select('min_sqft', $sqFootageOptions, 0,array('class'=>'form-control')) }}
 	</div>
 	<div class="col-md-6 col-lg-6">
 		{{ Form::label('max_price', 'Maximum Sq Ft: ') }}<br>
-		{{ Form::select('max_sqft', $sqFootageOptions, 0) }}
+		{{ Form::select('max_sqft', $sqFootageOptions, 0,array('class'=>'form-control')) }}
 	</div>
 	<div class="spacer-15"></div>
 	<div class="col-md-2 col-lg-2"></div>

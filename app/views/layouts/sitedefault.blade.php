@@ -10,6 +10,8 @@
     {{css('site','framework/bootstrap.css')}}
     {{css('site','framework/bootstrap-theme.css')}}
     {{css('site','style.css')}}
+    {{css('site','datepicker.css')}}
+    {{css('site','datepicker3.css')}}
 
     <!-- Fonts -->
     {{css('site','font-awesome.min.css')}}
@@ -25,6 +27,7 @@
         {{js('site','infobox.js')}}
         {{js('site', 'bnha_maps.js')}}
         {{js('site', 'buttonForms.js') }}
+        {{js('site','bootstrap-datepicker.js')}}
         
 
         {{js('site', 'search.js') }}
@@ -90,6 +93,12 @@
               $('#button2').toggle();
               $('#button3').toggle();
               $('#button4').toggle();*/
+            });
+        });
+        $(document).ready(function() {
+            $('.input-group.date').datepicker({
+                format: 'yyyy-mm-dd',
+                startDate: '-0d'
             });
         });
     </script>
@@ -184,7 +193,6 @@
 <!-- /FOOTER -->
 
 <!-- Javascript/Jquery -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     {{js('site','framework/bootstrap.js')}}
 
 </body>

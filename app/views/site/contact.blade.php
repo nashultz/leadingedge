@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="login-register">
+	<div class="col-md-12 col-lg-12 text-center">
+		<h1 class="section-title">Contact Us</h1>
+	</div>
 	<div class="col-md-6 col-lg-6">
 		{{
 			Form::open(array(
@@ -11,7 +14,7 @@
 		}}
 		<div class="login-form">
 			<div class="col-md-12 col-lg-12">
-				<h3 class="section-title">Contact Form</h3>
+				<h3 class="section-title">By Email</h3>
 			</div>
 			<div class="col-md-12 col-lg-12">
 				@if (Session::has('notification'))
@@ -58,5 +61,24 @@
 		</div>
 		{{ Form::close() }}
 	</div>
+	<div class="col-md-6 col-lg-6">
+		{{
+			Form::open(array(
+				'method'=>'POST',
+				'route'=>'site.contact.send'
+			))
+		}}
+		<div class="login-form">
+			<div class="col-md-12 col-lg-12">
+				<h3 class="section-title">By Phone</h3>
+			</div>
+			<div class="col-md-12 col-lg-12">
+				<i class="fa fa-phone">&nbsp;&nbsp;</i> 512-751-6119<br>
+				<i class="fa fa-phone">&nbsp;&nbsp;</i> 512-289-0112
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
 </div>
 @stop

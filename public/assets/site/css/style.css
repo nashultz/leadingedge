@@ -452,6 +452,13 @@ img.logo {
   height: auto;
 }
 
+.req {
+  color: rgb(164,42,31);
+  font-weight: bold;
+  vertical-align: super;
+  font-size: 0.5em;
+}
+
 /* ==========================================================
 ! Custom Footer
 ========================================================== */
