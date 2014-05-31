@@ -14,6 +14,9 @@
 				<h3 class="section-title">Contact Form</h3>
 			</div>
 			<div class="col-md-12 col-lg-12">
+				@if (Session::has('notification'))
+					{{ Session::get('notification') }}	
+				@endif
 				@if ($errors->has())
 					@foreach($errors->all() as $message) 
 						{{ $message }}
