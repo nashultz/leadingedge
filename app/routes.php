@@ -148,6 +148,7 @@ Route::bind('user', function($value) {
 });
 
 Route::get('/',array('uses'=>'HomeController@index','as'=>'site.index'));
+Route::get('about',array('uses'=>'HomeController@about','as'=>'site.about'));
 
 // Search
 Route::get('search', array('as'=>'get.search.index', 'uses'=>'SearchController@getSearch'));

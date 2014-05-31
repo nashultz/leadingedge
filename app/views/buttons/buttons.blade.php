@@ -117,7 +117,19 @@
 				<div class="spacer-5"></div>
 				<div class="col-md-12">
 					{{ Form::label('address','Mailing Address: ') }}
-					{{ Form::textarea('address') }}
+					{{ Form::text('address','',array('placeholder'=>'Street')) }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::text('city','',array('placeholder'=>'City')) }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::select('state',Dropdowns::states(),'TX') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::text('zip','',array('placeholder'=>'Zip')) }}
 				</div>
 				<div class="spacer-5"></div>
 				<div class="col-md-12">
@@ -174,7 +186,19 @@
 				<div class="spacer-5"></div>
 				<div class="col-md-12">
 					{{ Form::label('address','Address to be evaluated: ') }}
-					{{ Form::textarea('address') }}
+					{{ Form::text('address','',array('placeholder'=>'Street')) }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::text('city','',array('placeholder'=>'City')) }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::select('state',Dropdowns::states(),'TX') }}
+				</div>
+				<div class="spacer-5"></div>
+				<div class="col-md-12">
+					{{ Form::text('zip','',array('placeholder'=>'Zip')) }}
 				</div>
 				<div class="spacer-5"></div>
 				<div class="col-md-12">
