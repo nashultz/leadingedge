@@ -160,6 +160,9 @@ Route::post('new-austin',array('as'=>'post.newaustin.send','uses'=>'ButtonContro
 Route::post('sell-home',array('as'=>'post.sellhome.send','uses'=>'ButtonController@postSellHome'));
 Route::post('afford-home',array('as'=>'post.affordhome.send','uses'=>'ButtonController@postAffordHome'));
 
+Route::get('contact',array('uses'=>'ContactController@index','as'=>'site.contact'));
+Route::post('contact/send',array('uses'=>'ContactController@send','as'=>'site.contact.send'));
+
 // Auth Routes
 //Route::get('auth/register', array('as'=>'get.auth.register', 'uses'=>'AuthController@getRegister'));
 Route::post('auth/register', array('as'=>'post.auth.register', 'uses'=>'AuthController@postRegister'));

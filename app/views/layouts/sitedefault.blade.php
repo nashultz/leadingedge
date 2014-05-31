@@ -132,7 +132,7 @@
                             </ul>
                         </li>
                         <li class="divider-vertical"></li>
-                        <li><a href="#">Contact Us</a>
+                        <li><a href="{{URL::to('contact')}}">Contact Us</a>
                         <!--<li class="divider-vertical"></li>-->
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
