@@ -459,6 +459,30 @@ img.logo {
   font-size: 0.5em;
 }
 
+.about,
+.bio {
+  /*-webkit-column-count:3;  Chrome, Safari, Opera */
+  /*-moz-column-count:3;  Firefox */
+  /*column-count:3;*/
+  font-family: 'Georgia', serif;
+}
+
+.about p {
+  margin: 10px 15px;
+}
+
+.about p:first-child:first-letter {
+  float: left;
+  color: #903;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+  font-family: Georgia;
+}
+
+
 /* ==========================================================
 ! Custom Footer
 ========================================================== */
