@@ -14,7 +14,7 @@
 		}}
 		<div class="login-form">
 			<div class="col-md-12 col-lg-12">
-				<h3 class="section-title">By Email</h3>
+				<h3 class="section-title">Online</h3>
 			</div>
 			<div class="col-md-12 col-lg-12">
 				@if (Session::has('notification'))
@@ -75,6 +75,13 @@
 			<div class="col-md-12 col-lg-12">
 				<i class="fa fa-phone">&nbsp;&nbsp;</i> 512-751-6119<br>
 				<i class="fa fa-phone">&nbsp;&nbsp;</i> 512-289-0112
+			</div>
+			<div class="spacer-30"></div>
+			<div class="col-md-12 col-lg-12">
+				<h3 class="section-title">By Email</h3>
+			</div>
+			<div class="col-md-12 col-lg-12">
+				<i class="fa fa-envelope">&nbsp;&nbsp;</i> LeadingEdgeRealtyAustin[at]gmail.com
 			</div>
 			<div class="clearfix"></div>
 		</div>
