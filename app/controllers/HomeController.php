@@ -35,6 +35,30 @@ class HomeController extends BaseController {
         return View::make('site.about'/*,compact('agents')*/);
     }
 
+    public function schoolratings()
+    {
+        //
+        
+        $file = 'assets/site/files/pdf/school_ratings_2013.pdf';  // <- Replace with the path to your .pdf file
+        // check if the file exists
+        if (file_exists($file)) {
+            // read the file into a string
+            $content = file_get_contents($file);
+            // create a Laravel Response using the content string, an http response code of 200(OK),
+            //  and an array of html headers including the pdf content type
+            return Response::make($content, 200, array('content-type'=>'application/pdf'));
+        }
+
+        /*return Response::download('')*/
+    }
+
+    public function testimonials()
+    {
+        //
+        //$agents = Employee::get();
+        return View::make('site.testimonials'/*,compact('agents')*/);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

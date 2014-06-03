@@ -24,77 +24,14 @@
     <![endif]-->
 
     <script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
-        {{js('site','infobox.js')}}
-        {{js('site', 'bnha_maps.js')}}
-        {{js('site', 'buttonForms.js') }}
-        {{js('site','bootstrap-datepicker.js')}}
-        
-
-        {{js('site', 'search.js') }}
+    {{js('site','infobox.js')}}
+    {{js('site', 'bnha_maps.js')}}
+    {{js('site', 'buttonForms.js') }}
+    {{js('site','bootstrap-datepicker.js')}}
+    {{js('site', 'search.js') }}
+    {{js('site','button-toggle.js')}}
 
     <script>
-        $(document).ready(function() {
-            $('#button1').click(function() {
-              $('.button1-form').slideToggle(800);
-              $('.button2-form').slideUp(800);
-              $('.button3-form').slideUp(800);
-              $('.button4-form').slideUp(800);
-              $('.button5-form').slideUp(800);
-              /*$('.button-space').toggle();
-              $('#button2').toggle();
-              $('#button3').toggle();
-              $('#button4').toggle();
-              $('#button5').toggle();*/
-            });
-            $('#button2').click(function() {
-              $('.button1-form').slideUp(800);
-              $('.button2-form').slideToggle(800);
-              $('.button3-form').slideUp(800);
-              $('.button4-form').slideUp(800);
-              $('.button5-form').slideUp(800);
-              /*$('.button-space').toggle();
-              $('#button1').toggle();
-              $('#button3').toggle();
-              $('#button4').toggle();
-              $('#button5').toggle();*/
-            });
-            $('#button3').click(function() {
-              $('.button1-form').slideUp(800);
-              $('.button2-form').slideUp(800);
-              $('.button3-form').slideToggle(800);
-              $('.button4-form').slideUp(800);
-              $('.button5-form').slideUp(800);
-              /*$('.button-space').toggle();
-              $('#button1').toggle();
-              $('#button2').toggle();
-              $('#button4').toggle();
-              $('#button5').toggle();*/
-            });
-            $('#button4').click(function() {
-              $('.button1-form').slideUp(800);
-              $('.button2-form').slideUp(800);
-              $('.button3-form').slideUp(800);
-              $('.button4-form').slideToggle(800);
-              $('.button5-form').slideUp(800);
-              /*$('.button-space').toggle();
-              $('#button1').toggle();
-              $('#button2').toggle();
-              $('#button3').toggle();
-              $('#button5').toggle();*/
-            });
-            $('#button5').click(function() {
-              $('.button1-form').slideUp(800);
-              $('.button2-form').slideUp(800);
-              $('.button3-form').slideUp(800);
-              $('.button4-form').slideUp(800);
-              $('.button5-form').slideToggle(800);
-              /*$('.button-space').toggle();
-              $('#button1').toggle();
-              $('#button2').toggle();
-              $('#button3').toggle();
-              $('#button4').toggle();*/
-            });
-        });
         $(document).ready(function() {
             $('.input-group.date').datepicker({
                 format: 'yyyy-mm-dd',
@@ -137,9 +74,11 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
+                                <li><a href="{{URL::route('site.schoolratings')}}">2013 School Ratings&nbsp;&nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
                             </ul>
                         </li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="{{URL::to('testimonials')}}">Testimonials</a>
                         <li class="divider-vertical"></li>
                         <li><a href="{{URL::to('contact')}}">Contact Us</a>
                         <!--<li class="divider-vertical"></li>-->
