@@ -55,7 +55,14 @@
 
 			});
 
-			$builders = $builders->get();
+			if (Auth::Guest())
+			{
+				$builders = $builders->limit(3)->get();
+			}
+			else
+			{
+				$builders = $builders->get();
+			}			
 
 			$builders->load('neighborhood');
 

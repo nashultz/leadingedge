@@ -2,6 +2,13 @@
 
 @section('content')
     <div class="col-md-5 col-md-push-7 col-lg-5 col-lg-push-7">
+
+        @if (Auth::guest())
+        <div class="alert alert-info">
+            Search results limited to 3 for Guest Access
+        </div>
+        @endif
+
         <div id="map-content">
             <div id="map-container col-md-12 col-lg-12">
                 <div id="map"></div>

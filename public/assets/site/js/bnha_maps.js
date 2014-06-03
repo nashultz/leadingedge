@@ -75,7 +75,7 @@ function refreshMap() {
   var response = $.ajax({
 
     type: 'GET',
-    url: '/builders/load'
+    url: 'builders/load'
 
   });
 
