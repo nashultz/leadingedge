@@ -110,8 +110,7 @@ Route::bind('user', function($value) {
 });
 Route::bind('neighborhoods',function($value)
 {
-	$neighborhood = Neighborhood::where('name',$value)->first();
-	dd($neighborhood);
+	$neighborhood = Neighborhood::where('slug',$value)->first();
 	if ($neighborhood) return $neighborhood;
 	App::abort(404);
 });
