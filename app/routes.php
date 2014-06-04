@@ -113,6 +113,7 @@ Route::get('/',array('uses'=>'HomeController@index','as'=>'site.index'));
 Route::get('about',array('uses'=>'HomeController@about','as'=>'site.about'));
 Route::get('school-ratings',array('uses'=>'HomeController@schoolratings','as'=>'site.schoolratings'));
 Route::get('testimonials',array('uses'=>'HomeController@testimonials','as'=>'site.testimonials'));
+Route::get('neighborhood/{neighborhood}',array('uses'=>'HomeController@neighborhood','as'=>'site.neighborhood'));
 
 // Search
 Route::get('search', array('as'=>'get.search.index', 'uses'=>'SearchController@getSearch'));

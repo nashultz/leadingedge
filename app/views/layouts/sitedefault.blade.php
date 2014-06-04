@@ -101,9 +101,11 @@
 <div class="main-content container">
 
     <div class="row">
-      @if (Session::has('notification'))
-        {{ Session::get('notification') }}
-      @endif
+      <div class="col-md-12 col-lg-12">
+        @if (Session::has('notification'))
+          {{ Session::get('notification') }}
+        @endif
+      </div>
     </div>
 
     <div class="row">

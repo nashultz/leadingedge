@@ -59,6 +59,12 @@ class HomeController extends BaseController {
         return View::make('site.testimonials'/*,compact('agents')*/);
     }
 
+    public function neighborhood($n)
+    {
+        //
+        return View::make('site.neighborhood',compact('n'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
