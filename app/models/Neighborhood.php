@@ -11,6 +11,11 @@
 			return $this->hasMany('Builder');
 		}
 
+		public function getName()
+		{
+			return $this->name;
+		}
+
 	}
 
 ?>
