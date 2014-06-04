@@ -55,20 +55,23 @@
 
 			});
 
+			$builders = $builders->get();
+			$builders = $builders->load('neighborhood');
+			$totalBuilders = $builders->count();
+
 			if (Auth::Guest())
 			{
-				$builders = $builders->limit(3)->get();
+				$builders = $builders->take(3);
 			}
 			else
 			{
-				$builders = $builders->get();
+				$builders = $builders;
 			}			
-
-			$builders->load('neighborhood');
 
 			if (Request::ajax())
 			{
 				$array = array(
+					'totalBuildersCount'=>$totalBuilders,
 					'count'=>$builders->count(),
 					'builders'=>$builders->toArray()
 				);

@@ -4,9 +4,9 @@
     <div class="col-md-5 col-md-push-7 col-lg-5 col-lg-push-7">
 
         @if (Auth::guest())
-        <div class="alert alert-info">
-            Search results limited to 3 for Guest Access
-        </div>
+            <div class="alert alert-info">
+                Total Results: <span class="totalResults"></span>. Limited to 3 for guests.
+            </div>
         @endif
 
         <div id="map-content">
