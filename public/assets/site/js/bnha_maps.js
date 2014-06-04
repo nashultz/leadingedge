@@ -112,6 +112,8 @@ function doMap(resp)
         var latLng = new google.maps.LatLng(myJson.builders[i].neighborhood.latitude,
           myJson.builders[i].neighborhood.longitude);
 
+        $('.totalResults').html(myJson.totalBuildersCount);
+
         var marker = new google.maps.Marker({
          position: latLng,
          icon: markerImage,

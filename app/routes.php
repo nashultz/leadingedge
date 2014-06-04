@@ -33,17 +33,20 @@ Route::get('neighborhood/getBuilders', function() {
 
 Route::get('builders/load', function() {
 
+	$builders = Builder::with('neighborhood')->get();
+	$totalBuilders = $builders->count();
+
 	if (Auth::Guest())
 	{
-		$builders = Builder::with('neighborhood')->limit(3)->get()->toArray();
+		$builders = $builders->take(3)->toArray();
 	}
 	else
 	{
-		$builders = Builder::with('neighborhood')->get()->toArray();
+		$builders = $builders->toArray();
 	}	
 
 	$array = array(
-
+		'totalBuildersCount' => $totalBuilders,
 		'count' => count($builders),
 		'builders' => $builders
 
