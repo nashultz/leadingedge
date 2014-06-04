@@ -11,7 +11,7 @@
 |
 */
 $models = array(
-	
+	'neighborhoods'=>'Neighborhood',
 );
 
 Route::get('neighborhood/getBuilders', function() {
@@ -108,12 +108,19 @@ Route::bind('user', function($value) {
 	if ($user) return $user;
 	App::abort(404);
 });
+Route::bind('neighborhoods',function($value)
+{
+	$neighborhood = Neighborhood::where('name',$value)->first();
+	dd($neighborhood);
+	if ($neighborhood) return $neighborhood;
+	App::abort(404);
+});
 
 Route::get('/',array('uses'=>'HomeController@index','as'=>'site.index'));
 Route::get('about',array('uses'=>'HomeController@about','as'=>'site.about'));
 Route::get('school-ratings',array('uses'=>'HomeController@schoolratings','as'=>'site.schoolratings'));
 Route::get('testimonials',array('uses'=>'HomeController@testimonials','as'=>'site.testimonials'));
-Route::get('neighborhood/{neighborhood}',array('uses'=>'HomeController@neighborhood','as'=>'site.neighborhood'));
+Route::get('neighborhoods/{neighborhoods}',array('uses'=>'HomeController@neighborhood','as'=>'site.neighborhood'));
 
 // Search
 Route::get('search', array('as'=>'get.search.index', 'uses'=>'SearchController@getSearch'));

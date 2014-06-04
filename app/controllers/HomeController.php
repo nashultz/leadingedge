@@ -59,10 +59,10 @@ class HomeController extends BaseController {
         return View::make('site.testimonials'/*,compact('agents')*/);
     }
 
-    public function neighborhood($n)
+    public function neighborhood($neighborhood)
     {
         //
-        return View::make('site.neighborhood',compact('n'));
+        return View::make('site.neighborhood',compact('neighborhood'));
     }
 
     /**
