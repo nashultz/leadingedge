@@ -5,11 +5,7 @@
 	<div class="col-md-12 col-lg-12">
 		<div>
 			<div class="col-md-12 col-lg-12">
-<<<<<<< HEAD
-				<h2 class="section-title">{{$neighborhood->getName()}}</h2>
-=======
 				<h2 class="section-title">{{ $neighborhood->getName() }}</h2>
->>>>>>> 1fb3df9bab63e8b18d1f464dd1f83a08fe5755b1
 			</div>
 			<div class="col-md-6 col-lg-6">
 				<div class="testimonial">
