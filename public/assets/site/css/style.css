@@ -385,7 +385,8 @@ background: rgb(164,42,31);
 .search-form,
 .login-form,
 .forgot-form,
-.testimonial {
+.testimonial,
+.neighborhood {
   background: #d3d3d3;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
