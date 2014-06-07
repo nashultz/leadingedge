@@ -102,8 +102,8 @@
 
     <div class="row">
       <div class="col-md-12 col-lg-12">
-        @if (Session::has('notification'))
-          {{ Session::get('notification') }}
+        @if(Notifications::has())
+            {{ Notifications::get() }}
         @endif
       </div>
     </div>

@@ -9,7 +9,7 @@ Class Notifications {
 
     public function __construct() {
       $this->bag = new MessageBag();
-      $this->bag->setFormat("<section class='alert alert-:key'><button type='button' class='close' data-dismiss='alert'>&times;</button><div class='alert-:key'><span class=':key'>:message</span></div></section>");
+      $this->bag->setFormat("<div class='alert alert-:key'><button type='button' class='close' data-dismiss='alert'>&times;</button>:message</div>");
     }
 
     public function add($class, $message = '') {

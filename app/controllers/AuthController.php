@@ -28,7 +28,7 @@ use Carbon\Carbon;
 			if (!Auth::attempt($creds,$remember))
 			{
 				// Login Failure
-				Session::flash('notification', 'Invalid Login');
+				Notifications::danger('Invalid Login')->save();
 				return Redirect::route('get.auth.login');
 			}
 

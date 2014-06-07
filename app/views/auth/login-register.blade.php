@@ -3,10 +3,6 @@
 @section('content')
 <div class="login-register">
 	<div class="col-md-6 col-lg-6">
-		@if (Session::has('notification'))
-			{{ Session::get('notification') }}	
-		@endif	
-
 		{{ Form::open(array('method'=>'POST','route'=>'post.auth.login')) }}
 
 		<div class="login-form">
@@ -40,10 +36,6 @@
 		{{ Form::close() }}
 	</div>
 	<div class="col-md-6 col-lg-6">
-		@if (Session::has('notification'))
-			{{ Session::get('notification') }}	
-		@endif	
-
 		{{ Form::open(array('method'=>'POST','route'=>'post.auth.register')) }}
 
 		<div class="login-form">
