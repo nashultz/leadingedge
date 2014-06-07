@@ -36,14 +36,7 @@ Route::get('builders/load', function() {
 	$builders = Builder::with('neighborhood')->get();
 	$totalBuilders = $builders->count();
 
-	if (Auth::Guest())
-	{
-		$builders = $builders->take(3)->toArray();
-	}
-	else
-	{
-		$builders = $builders->toArray();
-	}	
+	$builders = $builders->toArray();
 
 	$array = array(
 		'totalBuildersCount' => $totalBuilders,
