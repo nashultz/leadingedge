@@ -1,4 +1,8 @@
-
+<div class="buttonerror">
+	<div class="col-md-12 col-lg-12">
+		<div class="alert alert-danger">...</div>
+	</div>
+</div>
 
 <div class="buttons">
 	<div class="button1-text col-md-12 col-lg-12">
@@ -253,13 +257,13 @@
 		</div>
 		<div class="button-space spacer-20"></div>
 	</div>
-	<div class="button4-text col-md-12 col-lg-12">
+	<!--<div class="button4-text col-md-12 col-lg-12">
 		<button id="button4">Coupons</button>
 		<div class="button4-form">
 			<div>PDF's</div>
 		</div>
 		<div class="button-space spacer-20"></div>
-	</div>
+	</div>-->
 	<div class="button5-text col-md-12 col-lg-12">
 		<button id="button5">How much can you afford?</button>
 		<div class="button5-form">
