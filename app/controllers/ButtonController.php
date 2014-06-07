@@ -6,7 +6,7 @@
 		{
 			$form = new Forms\PerfectHome();
 
-			if (!$user = $form->process())
+			if (!$form->process())
 			{
 				if (Request::ajax())
 				{
@@ -15,8 +15,6 @@
 					return Response::json($data);
 				}
 
-				Session::flash('notification', $form->getError());
-				return Redirect::to('/')->withInput();
 			}
 
 			if (Request::ajax())
@@ -26,12 +24,28 @@
 				return Response::json($data);
 			}
 
-			Session::flash('notification', 'Success!');
-			return Redirect::to('/');
 		}
 
 		public function postNewAustin()
 		{
+			$form = new Forms\NewAustin();
+
+			if (!$form->process())
+			{
+				if (Request::ajax())
+				{
+					$data['error'] = true;
+					$data['errorMsg'] = $form->getError();
+					return Response::json($data);
+				}
+			}
+
+			if (Request::ajax())
+			{
+				$data['error'] = false;
+				$data['message'] = 'You submission has been received';
+				return Response::json($data);
+			}
 
 		}
 
