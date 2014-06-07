@@ -39,7 +39,7 @@ class HomeController extends BaseController {
     {
         //
         
-        $file = 'assets/site/files/pdf/school_ratings_2013.pdf';  // <- Replace with the path to your .pdf file
+        $file = 'assets/site/files/pdf/school-brochure-austin.pdf';  // <- Replace with the path to your .pdf file
         // check if the file exists
         if (file_exists($file)) {
             // read the file into a string
