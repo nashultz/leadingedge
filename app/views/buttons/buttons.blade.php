@@ -6,7 +6,7 @@
 
 				<div class="buttonerror">
 					<div class="col-md-12 col-lg-12">
-						<div class="alert alert-danger"></div>
+						<div class="alert"></div>
 					</div>
 				</div>
 

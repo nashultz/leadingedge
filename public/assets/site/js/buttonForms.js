@@ -4,7 +4,19 @@ $(document).on('submit', '.ajaxButtonForm1', function(e) {
 
 	var form = $('.ajaxButtonForm1');
 
+	var errorDiv = $('.ajaxButtonForm1 .buttonerror');
+
+	errorDiv.hide();
+
+	var errorDivAlert = $('.ajaxButtonForm1 .buttonerror .alert');
+
+	$('.ajaxButtonForm1 #movedate').removeAttr('disabled');
+
 	var data = $(this).serialize();
+
+	$('.ajaxButtonForm1 #movedate').attr('disabled','disabled');
+
+	console.log(data);
 
 	var response = $.ajax({
 		type: 'POST',
@@ -20,11 +32,13 @@ $(document).on('submit', '.ajaxButtonForm1', function(e) {
 
 		if (response.error)
 		{
-
+			errorDivAlert.removeClass().addClass('alert alert-danger').html(response.errorMsg);
+			errorDiv.show();
 		}
 		else
 		{
-			
+			errorDivAlert.removeClass().addClass('alert alert-success').html(response.message);
+			errorDiv.show();
 		}
 	});
 
