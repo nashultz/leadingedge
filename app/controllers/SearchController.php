@@ -122,7 +122,7 @@
 			if ($v->fails())
 			{
 				$messages = $v->messages();
-				Session::flash('notification', $messages->first());
+				Notifications::danger($messages->first())->save();
 				return Redirect::to($data['url']);
 			}
 
@@ -132,7 +132,7 @@
 
 			Auth::User()->searches()->save($search);
 
-			Session::flash('notification', 'Search Saved.');
+			Notifications::info('Search Saved.')->save();
 			return Redirect::to($data['url']);
 
 		}
@@ -144,11 +144,11 @@
 
 			if ($search) 
 			{
-				Session::flash('notification', 'Search Loaded');
+				Notifications::info('Search Loaded')->save();
 				return Redirect::to($search->url);
 			}
 
-			Session::flash('notification', 'Invalid Search');
+			Notifications::danger('Invalid Search')->save();
 			return Redirect::back();
 
 		}

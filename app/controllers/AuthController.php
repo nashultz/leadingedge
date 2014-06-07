@@ -35,7 +35,7 @@ use Carbon\Carbon;
 			if (Auth::user()->confirmation_code)
 			{
 				Auth::logout();
-				Session::flash('notification', 'You have not confirmed your account');
+				Notifications::warnging('You have not confirmed your account')->save();
 				return Redirect::route('get.auth.login');
 			}
 
@@ -54,11 +54,11 @@ use Carbon\Carbon;
 
 			if (!$user = $form->process())
 			{
-				Session::flash('notification', $form->getError());
+				Notifications::danger($form->getError())->save();
 				return Redirect::route('get.auth.login')->withInput();
 			}
 
-			Session::flash('notification', 'Success!');
+			Notifications::success('Success!')->save();
 			return Redirect::route('get.auth.login');
 		}
 
@@ -73,11 +73,11 @@ use Carbon\Carbon;
 
 			if (!$user = $form->process())
 			{
-				Session::flash('notification', $form->getError());
+				Notifications::danger($form->getError())->save();
 				return Redirect::route('get.auth.forgot.email');
 			}
 
-			Session::flash('notification', 'Your E-Mail is: ' . $user->getEmail());
+			Notifications::info('Your E-Mail is: ' . $user->getEmail())->save();
 			return Redirect::route('get.auth.forgot.email');
 		}
 
@@ -102,11 +102,11 @@ use Carbon\Carbon;
 					$user->confirmation_expire_date = null;
 					$user->save();
 
-					Session::flash('notification', 'Your account has been confirmed');
+					Notifications::success('Your account has been confirmed')->save();
 					return Redirect::route('get.auth.login');
 				}
 				
-				Session::flash('notification', 'Your account has exceeded the Expiration Time. Please check your email for a new Confirmation Code');
+				Notifications::warning('Your account has exceeded the Expiration Time. Please check your email for a new Confirmation Code')->save();
 				$user->confirmation_code = Crypt::encrypt($user->email);
 				$user->confirmation_expire_date = $now->addHours(2);
 				$user->save();
@@ -114,7 +114,7 @@ use Carbon\Carbon;
 				return Redirect::route('get.auth.login');
 			}
 
-			Session::flash('notification', 'Invalid Confirmation Code');
+			Notifications::danger('Invalid Confirmation Code')->save();
 			return Redirect::route('get.auth.login');
 		}
 

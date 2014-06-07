@@ -19,7 +19,7 @@ class ContactController extends BaseController {
     public function send()
     {
         if(Input::get('hvalue')) {
-            Notifications::success('Email has has been sent.')->save();
+            Notifications::success('Email has been sent.')->save();
             return Redirect::back();
         } else {
             if(Input::get('spanswer')==Input::get('sum')) {
