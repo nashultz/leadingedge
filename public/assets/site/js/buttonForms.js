@@ -2,6 +2,8 @@ $(document).on('submit', '.ajaxButtonForm1', function(e) {
 
 	e.preventDefault();
 
+	var form = $('.ajaxButtonForm1');
+
 	var data = $(this).serialize();
 
 	var response = $.ajax({
@@ -11,18 +13,19 @@ $(document).on('submit', '.ajaxButtonForm1', function(e) {
 	});
 
 	response.success(function(response) {
+
+		$('html, body').animate({
+			scrollTop: form.offset().top - 100
+		}, 500);
+
 		if (response.error)
 		{
-			// There was a problem... yo
+
 		}
 		else
 		{
 			
 		}
-	});
-
-	response.fail(function(a,b,c) {
-
 	});
 
 });
