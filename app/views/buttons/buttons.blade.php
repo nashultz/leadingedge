@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-=======
-<div class="buttonerror">
-	<div class="alert alert-danger">...</div>
-</div>
-
->>>>>>> 387497987eb52be83d09ec9918f6997701bc1556
 <div class="buttons">
 	<div class="button1-text col-md-12 col-lg-12">
 		<button id="button1">Let us help you find the perfect home!</button>
