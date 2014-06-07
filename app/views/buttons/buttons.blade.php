@@ -1,12 +1,22 @@
+<<<<<<< HEAD
+=======
 <div class="buttonerror">
 	<div class="alert alert-danger">...</div>
 </div>
 
+>>>>>>> 387497987eb52be83d09ec9918f6997701bc1556
 <div class="buttons">
 	<div class="button1-text col-md-12 col-lg-12">
 		<button id="button1">Let us help you find the perfect home!</button>
 		<div class="button1-form">
 			{{ Form::open(array('method'=>'POST','route'=>'post.perfecthome.send', 'class'=>'ajaxButtonForm1')) }}
+
+				<div class="buttonerror">
+					<div class="col-md-12 col-lg-12">
+						<div class="alert alert-danger"></div>
+					</div>
+				</div>
+
 				<div class="col-md-12">
 					{{ Form::label('maxprice','Maximum Price: ') }}<i class="fa fa-asterisk small req"></i>
 					{{ Form::text('maxprice','',array('class'=>'form-control')) }}
@@ -112,6 +122,13 @@
 		<button id="button2">New to the Austin area?</button>
 		<div class="button2-form">
 			{{ Form::open(array('method'=>'POST','route'=>'post.newaustin.send')) }}
+
+				<div class="buttonerror">
+					<div class="col-md-12 col-lg-12">
+						<div class="alert alert-danger"></div>
+					</div>
+				</div>
+
 				<div class="col-md-12">
 					<h5>Request your FREE relocation guide!</h5>
 				</div>
@@ -187,6 +204,13 @@
 		<button id="button3">Have a house to sell?</button>
 		<div class="button3-form">
 			{{ Form::open(array('method'=>'POST','route'=>'post.sellhome.send')) }}
+
+				<div class="buttonerror">
+					<div class="col-md-12 col-lg-12">
+						<div class="alert alert-danger"></div>
+					</div>
+				</div>
+
 				<div class="col-md-12">
 					{{ Form::label('name','Full Name: ') }}<i class="fa fa-asterisk small req"></i>
 					{{ Form::text('name','',array('class'=>'form-control')) }}
@@ -266,6 +290,13 @@
 		<button id="button5">How much can you afford?</button>
 		<div class="button5-form">
 			{{ Form::open(array('method'=>'POST','route'=>'post.affordhome.send')) }}
+
+				<div class="buttonerror">
+					<div class="col-md-12 col-lg-12">
+						<div class="alert alert-danger"></div>
+					</div>
+				</div>
+
 				<div class="col-md-12">
 					{{ Form::label('pprice','Purchase Price: ') }}<i class="fa fa-asterisk small req"></i>
 					{{ Form::text('pprice','',array('class'=>'form-control')) }}
