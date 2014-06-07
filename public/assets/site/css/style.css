@@ -448,6 +448,10 @@ background: rgb(164,42,31);
   border-bottom-left-radius: 5px;
 }
 
+.buttonerror {
+  display: none;
+}
+
 .login-register input[type='submit'] {
   width: auto;
 }
