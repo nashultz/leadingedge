@@ -51,7 +51,9 @@ use Mail;
 
 			if (!$this->input['realtor'])
 			{
-				$toRealtor = Mail::send(array('emails.text.buttons.perfecthome_info','emails.html.buttons.perfecthome_info'), array(), function($message) {
+				
+
+				$toRealtor = Mail::send(array('emails.text.buttons.perfecthome_info','emails.html.buttons.perfecthome_info'), $this->input, function($message) {
 					$message->to('RomanL@systemsedgeonline.com');
 					$message->subject('Filled out form');
 				});
