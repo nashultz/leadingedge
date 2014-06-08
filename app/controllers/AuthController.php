@@ -109,7 +109,7 @@ use Carbon\Carbon;
 				Notifications::warning('Your account has exceeded the Expiration Time. Please check your email for a new Confirmation Code')->save();
 				$user->confirmation_code = Crypt::encrypt($user->email);
 				$user->confirmation_expire_date = $now->addHours(2);
-				$user->save();
+				$user->update();
 
 				return Redirect::route('get.auth.login');
 			}
