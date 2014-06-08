@@ -12,11 +12,11 @@ $(document).on('change', '#search select', function(e) {
 		url: 'search/results?' + data
 	});
 
-	$('#guestAlertWindow').show();
-
 	response.success(function(resp) {
 
 		doMap(resp);
+
+		$('#guestAlertWindow').show();
 
 	});
 
