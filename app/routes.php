@@ -114,6 +114,7 @@ Route::bind('neighborhoods',function($value)
 Route::get('/',array('uses'=>'HomeController@index','as'=>'site.index'));
 Route::get('about',array('uses'=>'HomeController@about','as'=>'site.about'));
 Route::get('school-ratings',array('uses'=>'HomeController@schoolratings','as'=>'site.schoolratings'));
+Route::get('realtor',array('uses'=>'HomeController@realtor','as'=>'site.realtor'));
 Route::get('testimonials',array('uses'=>'HomeController@testimonials','as'=>'site.testimonials'));
 Route::get('neighborhoods/{neighborhoods}',array('uses'=>'HomeController@neighborhood','as'=>'site.neighborhood'));
 

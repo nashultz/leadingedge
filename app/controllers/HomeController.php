@@ -52,6 +52,12 @@ class HomeController extends BaseController {
         /*return Response::download('')*/
     }
 
+    public function realtor() 
+    {
+        //
+        return View::make('site.realtor');
+    }
+
     public function testimonials()
     {
         //
