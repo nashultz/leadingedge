@@ -104,7 +104,7 @@
 	</div>
 	<div>
 		<h3>Perfect Home Submission Information</h3>
-		<p>Info sent to Tammy</p>
+		<p><strong>Message:</strong><br>{{$inputs['mcontent']}}</p>
 	</div>
 </body>
 </html>
