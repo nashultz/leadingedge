@@ -40,8 +40,7 @@ use Mail;
 			}
 
 			$this->input['maxprice'] = '$' . number_format($this->input['maxprice'], 2);
-			$this->input['maxsqft'] = number_format($this->input);
-
+			$this->input['maxsqft'] = number_format($this->input['maxsqft']);
 			$this->input['study'] = $this->input['study'] ? 'Yes' : 'No';
 			$this->input['formalliving'] = $this->input['formalliving'] ? 'Yes' : 'No';
 			$this->input['formaldining'] = $this->input['formaldining'] ? 'Yes' : 'No';
