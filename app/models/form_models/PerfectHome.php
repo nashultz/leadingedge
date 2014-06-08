@@ -45,7 +45,6 @@ use Mail;
 			$this->input['formalliving'] = $this->input['formalliving'] ? 'Yes' : 'No';
 			$this->input['formaldining'] = $this->input['formaldining'] ? 'Yes' : 'No';
 			$this->input['gameroom'] = $this->input['gameroom'] ? 'Yes' : 'No';
-			$this->input['realtor'] = $this->input['realtor'] ? 'Yes' : 'No';
 
 			if (!$this->input['realtor'])
 			{

@@ -49,9 +49,11 @@ use Mail;
 				return false;
 			}
 
+			$this->input['maxprice'] = '$' . number_format($this->input['maxprice'], 2);
+			$this->input['maxsqft'] = number_format($this->input['maxsqft']);
+
 			if (!$this->input['realtor'])
 			{
-
 
 				$toRealtor = Mail::send(array('emails.text.buttons.newaustin_info','emails.html.buttons.newaustin_info'), $this->input, function($message) {
 					$message->to('RomanL@systemsedgeonline.com');
