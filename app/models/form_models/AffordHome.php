@@ -5,33 +5,22 @@ use Input;
 use Validator;
 use Mail;
 
-	class NewAustin extends Base {
+	class AffordHome extends Base {
 
 		protected $user;
 
 		protected $rules = array(
-			'name'=>'required',
-			'address'=>'required',
-			'city'=>'required',
-			'state'=>'required',
-			'zip'=>'required',
+			'pprice'=>'required',
+			'aincome'=>'required',
+			'mdebt'=>'required',
 			'emailadd'=>'required|email',
-			'maxprice'=>'required',
-			'maxsqft'=>'required',
-			'movedate'=>'required'
 		);
 
 		protected $messages = array(
-			'name.required'=>'You must enter your Name',
-			'address.required'=>'You must enter your Address',
-			'city.required'=>'You must enter your City',
-			'state.required'=>'You must enter your State',
-			'zip.required'=>'You must enter your Zip',
+			'pprice.required'=>'You must enter a Purchase Price',
+			'aincome.required'=>'You must enter your Annual Income',
 			'emailadd.required'=>'You must enter your Email Address',
 			'emailadd.email'=>'You must enter a Valid Email',
-			'maxprice.required'=>'You must enter a Maximum Preferred Price',
-			'maxsqft.required'=>'You must enter a Maximum Preferred Square Footage',
-			'movedate.required'=>'Your must enter a Move Date'
 		);
 
 		public function __construct()
@@ -49,13 +38,13 @@ use Mail;
 				return false;
 			}
 
-			$this->input['maxprice'] = '$' . number_format($this->input['maxprice'], 2);
-			$this->input['maxsqft'] = number_format($this->input['maxsqft']);
+			$this->input['pprice'] = '$' . number_format($this->input['pprice'], 2);
+			$this->input['aincome'] = '$' . number_format($this->input['aincome'], 2);
+			$this->input['mdebt'] = '$' . number_format($this->input['mdebt'], 2);
 
 			if (!$this->input['realtor'])
 			{
-
-				$toRealtor = Mail::send(array('emails.text.buttons.newaustin_info','emails.html.buttons.newaustin_info'), $this->input, function($message) {
+				$toRealtor = Mail::send(array('emails.html.buttons.affordhome_info','emails.text.buttons.affordhome_info'), $this->input, function($message) {
 					$message->to('RomanL@systemsedgeonline.com');
 					$message->cc('nathons@systemsedgeonline.com');
 					$message->subject('Filled out form');

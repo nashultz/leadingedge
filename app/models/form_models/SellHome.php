@@ -5,7 +5,7 @@ use Input;
 use Validator;
 use Mail;
 
-	class NewAustin extends Base {
+	class SellHome extends Base {
 
 		protected $user;
 
@@ -54,8 +54,7 @@ use Mail;
 
 			if (!$this->input['realtor'])
 			{
-
-				$toRealtor = Mail::send(array('emails.text.buttons.newaustin_info','emails.html.buttons.newaustin_info'), $this->input, function($message) {
+				$toRealtor = Mail::send(array('emails.html.buttons.sellhome_info','emails.text.buttons.sellhome_info'), $this->input, function($message) {
 					$message->to('RomanL@systemsedgeonline.com');
 					$message->cc('nathons@systemsedgeonline.com');
 					$message->subject('Filled out form');

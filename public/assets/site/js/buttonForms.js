@@ -1,26 +1,27 @@
-$(document).on('submit', '.ajaxButtonForm1', function(e) {
+
+$(document).on('submit', '.ajaxButtonForm', function(e) {
 
 	e.preventDefault();
 
-	var form = $('.ajaxButtonForm1');
+	var form = $(this);
 
-	var errorDiv = $('.ajaxButtonForm1 .buttonerror');
+	var errorDiv = form.find('.buttonerror');
 
 	errorDiv.hide();
 
-	var errorDivAlert = $('.ajaxButtonForm1 .buttonerror .alert');
+	var errorDivAlert = errorDiv.find('.alert');
 
-	$('.ajaxButtonForm1 #movedate').removeAttr('disabled');
+	form.find('#movedate').removeAttr('disabled');
 
 	var data = $(this).serialize();
 
-	$('.ajaxButtonForm1 #movedate').attr('disabled','disabled');
+	form.find('#movedate').attr('disabled','disabled');
 
 	console.log(data);
 
 	var response = $.ajax({
 		type: 'POST',
-		url: '/perfect-home',
+		url: form.attr('action'),
 		data: data
 	});
 
@@ -44,51 +45,3 @@ $(document).on('submit', '.ajaxButtonForm1', function(e) {
 
 });
 
-
-// Form 2
-
-$(document).on('submit', '.ajaxButtonForm2', function(e) {
-
-	e.preventDefault();
-
-	var form = $('.ajaxButtonForm2');
-
-	var errorDiv = $('.ajaxButtonForm2 .buttonerror');
-
-	errorDiv.hide();
-
-	var errorDivAlert = $('.ajaxButtonForm2 .buttonerror .alert');
-
-	$('.ajaxButtonForm2 #movedate').removeAttr('disabled');
-
-	var data = $(this).serialize();
-
-	$('.ajaxButtonForm2 #movedate').attr('disabled','disabled');
-
-	console.log(data);
-
-	var response = $.ajax({
-		type: 'POST',
-		url: '/perfect-home',
-		data: data
-	});
-
-	response.success(function(response) {
-
-		$('html, body').animate({
-			scrollTop: form.offset().top - 100
-		}, 500);
-
-		if (response.error)
-		{
-			errorDivAlert.removeClass().addClass('alert alert-danger').html(response.errorMsg);
-			errorDiv.show();
-		}
-		else
-		{
-			errorDivAlert.removeClass().addClass('alert alert-success').html(response.message);
-			errorDiv.show();
-		}
-	});
-
-});

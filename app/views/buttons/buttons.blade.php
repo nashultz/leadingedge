@@ -2,7 +2,7 @@
 	<div class="button1-text col-md-12 col-lg-12">
 		<button id="button1">Let us help you find the perfect home!</button>
 		<div class="button1-form">
-			{{ Form::open(array('method'=>'POST','route'=>'post.perfecthome.send', 'class'=>'ajaxButtonForm1')) }}
+			{{ Form::open(array('method'=>'POST','route'=>'post.perfecthome.send', 'class'=>'ajaxButtonForm')) }}
 
 				<div class="buttonerror">
 					<div class="col-md-12 col-lg-12">
@@ -114,7 +114,7 @@
 	<div class="button2-text col-md-12 col-lg-12">
 		<button id="button2">New to the Austin area?</button>
 		<div class="button2-form">
-			{{ Form::open(array('method'=>'POST','route'=>'post.newaustin.send', 'class'=>'ajaxButtonForm2')) }}
+			{{ Form::open(array('method'=>'POST','route'=>'post.newaustin.send', 'class'=>'ajaxButtonForm')) }}
 
 				<div class="buttonerror">
 					<div class="col-md-12 col-lg-12">
@@ -196,7 +196,7 @@
 	<div class="button3-text col-md-12 col-lg-12">
 		<button id="button3">Have a house to sell?</button>
 		<div class="button3-form">
-			{{ Form::open(array('method'=>'POST','route'=>'post.sellhome.send')) }}
+			{{ Form::open(array('method'=>'POST','route'=>'post.sellhome.send', 'class'=>'ajaxButtonForm')) }}
 
 				<div class="buttonerror">
 					<div class="col-md-12 col-lg-12">
@@ -282,7 +282,7 @@
 	<div class="button5-text col-md-12 col-lg-12">
 		<button id="button5">How much can you afford?</button>
 		<div class="button5-form">
-			{{ Form::open(array('method'=>'POST','route'=>'post.affordhome.send')) }}
+			{{ Form::open(array('method'=>'POST','route'=>'post.affordhome.send', 'class'=>'ajaxButtonForm')) }}
 
 				<div class="buttonerror">
 					<div class="col-md-12 col-lg-12">
