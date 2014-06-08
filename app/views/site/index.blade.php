@@ -52,7 +52,7 @@
         </div>
     </div>
     <div class="col-md-4 col-md-pull-2 col-lg-4 col-lg-pull-2">
-        @include('search.form2')
+        @include('search.form')
     </div>
     <div class="col-md-3 col-md-pull-9 col-lg-3 col-lg-pull-9">
         @include('buttons.buttons')

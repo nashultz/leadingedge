@@ -395,6 +395,10 @@ background: rgb(164,42,31);
   padding: 30px 0;
 }
 
+#guestAlertWindow {
+  display: none;
+}
+
 .testimonial {
   margin-bottom: 30px;
 }

@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Account Registration - Leading Edge Realty</title>
+	<title>Perfect Home Form Submission - Leading Edge Realty</title>
 	<style type="text/css">
 
 		#outlook a {padding:0;} 
@@ -103,13 +103,13 @@
 		{{img('site','mainlogo.png',array('class'=>'brand'))}}
 	</div>
 	<div>
-		<h3>Thanks for Registering an Account with Leading Edge Realty</h3>
-
-		Please copy and paste the following link in your browser to confirm your account:
-
-		<a href="{{ $user->getConfirmationUrl() }}">Click here to confirm!</a><br>
+		<h3>Thanks for choosing Leading Edge Realty</h3>
+		<p>Based on the information you have provided, we regret to inform you that while you are already working with 
+		   another realtor we cannot offer you our services.</p>
+		<p>Please do not hesitate to contact us at LeadingEdgeRealtyAustin@gmail.com when you are no longer working with another realtor.</p>
 		<br>
-		{{$user->getConfirmationUrl()}}
+		<p> Thank you,<br>Leading Edge Realty Team</p>
 	</div>
 </body>
 </html>
+
