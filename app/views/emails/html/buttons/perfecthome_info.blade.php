@@ -106,16 +106,16 @@
 		<h3>Perfect Home Submission Information</h3>
 		<p><strong>Maximum Price:</strong><br>{{$maxprice}}</p>
 		<p><strong>Maximum Sq. Foot:</strong><br>{{$maxsqft}}</p>
-		<p><strong>City:</strong><br>$city</p>
-		<p><strong>School District:</strong><br>$schoold</p>
-		<p><strong>Beds:</strong><br>$beds</p>
-		<p><strong>Study:</strong><br>$study</p>
-		<p><strong>Formal Living:</strong><br>$formalliving</p>
-		<p><strong>Formal Dining:</strong><br>$formaldining</p>
-		<p><strong>Game Room:</strong><br>$gameroom</p>
-		<p><strong>Move-in Date:</strong><br>$movedate</p>
-		<p><strong>Email Address:</strong><br>$emailadd</p>
-		<p><strong>Phone:</strong><br>$phone</p>
+		<p><strong>City:</strong><br>{{$city}}</p>
+		<p><strong>School District:</strong><br>{{$schoold}}</p>
+		<p><strong>Beds:</strong><br>{{$beds}}</p>
+		<p><strong>Study:</strong><br>{{$study}}</p>
+		<p><strong>Formal Living:</strong><br>{{$formalliving}}</p>
+		<p><strong>Formal Dining:</strong><br>{{$formaldining}}</p>
+		<p><strong>Game Room:</strong><br>{{$gameroom}}</p>
+		<p><strong>Move-in Date:</strong><br>{{$movedate}}</p>
+		<p><strong>Email Address:</strong><br>{{$emailadd}}</p>
+		<p><strong>Phone:</strong><br>{{$phone}}</p>
 	</div>
 </body>
 </html>
