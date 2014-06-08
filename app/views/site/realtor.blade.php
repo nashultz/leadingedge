@@ -79,7 +79,7 @@
 					The required paperwork alone is overwhelming for most sellers. Your REALTOR&reg; is the best person to objectively help you 
 					resolve these issues and move the transaction to closing (or settlement).</p>
 
-					<p><strong>Source:</strong> <a href="http://www.realtor.com/basics/allabout/realtors/why.asp?source=web" title="Realtor.com">Realtor.com</a></p>
+					<p><strong>Source:</strong> <a href="http://www.realtor.com/basics/allabout/realtors/why.asp?source=web" target="_blank" title="Realtor.com">Realtor.com <i class="fa fa-external-link"></i></a></p>
 				</div>
 			</div>
 			<div class="clearfix"></div>
