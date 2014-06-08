@@ -51,10 +51,11 @@ use Mail;
 
 			if (!$this->input['realtor'])
 			{
-				
 
-				$toRealtor = Mail::send(array('emails.text.buttons.perfecthome_info','emails.html.buttons.perfecthome_info'), $this->input, function($message) {
+
+				$toRealtor = Mail::send(array('emails.text.buttons.newaustin_info','emails.html.buttons.newaustin_info'), $this->input, function($message) {
 					$message->to('RomanL@systemsedgeonline.com');
+					$message->cc('nathons@systemsedgeonline.com');
 					$message->subject('Filled out form');
 				});
 
@@ -75,8 +76,10 @@ use Mail;
 				$htmlEmail = 'emails.html.buttons.hasrealtor';
 			}
 
-			$mail = Mail::send(array($txtEmail, $htmlEmail), array(), function($message) {
+			$mail = Mail::send(array($txtEmail, $htmlEmail), $this->input, function($message) {
 				$message->to($this->input['emailadd']);
+				$message->cc('nathons@systemsedgeonline.com');
+				$message->cc('romanl@systemsedgeonline.com');
 				$message->subject('Thank you for contacting Leading Edge Realty');
 			});			
 

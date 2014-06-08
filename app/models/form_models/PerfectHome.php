@@ -39,6 +39,15 @@ use Mail;
 				return false;
 			}
 
+			$this->input['maxprice'] = '$' . number_format($this->input['maxprice'], 2);
+			$this->input['maxsqft'] = number_format($this->input);
+
+			$this->input['study'] = $this->input['study'] ? 'Yes' : 'No';
+			$this->input['formalliving'] = $this->input['formalliving'] ? 'Yes' : 'No';
+			$this->input['formaldining'] = $this->input['formaldining'] ? 'Yes' : 'No';
+			$this->input['gameroom'] = $this->input['gameroom'] ? 'Yes' : 'No';
+			$this->input['realtor'] = $this->input['realtor'] ? 'Yes' : 'No';
+
 			if (!$this->input['realtor'])
 			{
 				$toRealtor = Mail::send(array('emails.text.buttons.perfecthome_info','emails.html.buttons.perfecthome_info'), $this->input, function($message) {
@@ -63,11 +72,6 @@ use Mail;
 				$txtEmail = 'emails.text.buttons.hasrealtor';
 				$htmlEmail = 'emails.html.buttons.hasrealtor';
 			}
-
-			$this->input['maxprice'] = '$' . number_format($this->input['maxprice'], 2);
-			$this->input['maxsqft'] = number_format($this->input)
-			$this->input['realtor'] = $this->input['realtor'] ? 'Yes' : 'No';
-			$this->input
 
 			$mail = Mail::send(array($txtEmail, $htmlEmail), $this->input, function($message) {
 				$message->to($this->input['emailadd']);
