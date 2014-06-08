@@ -53,14 +53,14 @@ use Mail;
 				}
 
 				// Send Has No Realtor Email
-				$txtEmail = 'emails.text.buttons.perfecthome_norealtor';
-				$htmlEmail = 'emails.html.buttons.perfecthome_norealtor';
+				$txtEmail = 'emails.text.buttons.norealtor';
+				$htmlEmail = 'emails.html.buttons.norealtor';
 			}
 			else
 			{
 				// Send Has Realtor Email
-				$txtEmail = 'emails.text.buttons.perfecthome_hasrealtor';
-				$htmlEmail = 'emails.html.buttons.perfecthome_hasrealtor';
+				$txtEmail = 'emails.text.buttons.hasrealtor';
+				$htmlEmail = 'emails.html.buttons.hasrealtor';
 			}
 
 			$mail = Mail::send(array($txtEmail, $htmlEmail), array(), function($message) {
