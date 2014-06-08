@@ -33,7 +33,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 		});
 
-		User::saving(function($user) {
+		User::creating(function($user) {
 			$user->password = Hash::make($user->password);
 		});
 	}
