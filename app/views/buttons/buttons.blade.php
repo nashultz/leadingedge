@@ -114,7 +114,7 @@
 	<div class="button2-text col-md-12 col-lg-12">
 		<button id="button2">New to the Austin area?</button>
 		<div class="button2-form">
-			{{ Form::open(array('method'=>'POST','route'=>'post.newaustin.send')) }}
+			{{ Form::open(array('method'=>'POST','route'=>'post.newaustin.send', 'class'=>'ajaxButtonForm2')) }}
 
 				<div class="buttonerror">
 					<div class="col-md-12 col-lg-12">
