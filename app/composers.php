@@ -51,7 +51,7 @@ View::composer('*', function($view) {
 		$view->with('cities', $cities);
 		$view->with('isds', $isds);
 		$view->with('builders', $builders);
-		$view->with('neighborhoods', $neighborhoods);
+		$view->with('neighborhoods', $n);
 		$view->with('costOptions', $costOptions);
 		$view->with('sqFootageOptions', $sqFootageOptions);
 		$view->with('numRooms', $numRooms);
