@@ -15,7 +15,7 @@ View::composer('*', function($view) {
 		$cities[0] = 'Any';
 		$isds[0] = 'Any';
 		$builders[0] = 'Any';
-		$neighborhoods[0] = 'Any';
+		$n[0] = 'Any';
 		$costOptions[0] = 'Any';
 		$sqFootageOptions[0] = 'Any';
 		foreach($c as $city)
