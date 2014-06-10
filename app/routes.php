@@ -14,6 +14,10 @@ $models = array(
 	'neighborhoods'=>'Neighborhood',
 );
 
+Route::get('idx',function() {
+	return View::make('idx.idx');
+});
+
 Route::get('neighborhood/getBuilders', function() {
 
 	$id = Input::get('id');
