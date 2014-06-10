@@ -2,7 +2,7 @@
 {{ Form::open(array('method'=>'GET','route'=>'get.search.results', 'id'=>'search')) }}
 <div class="search-form">
 	<div class="col-md-12 col-lg-12">
-		<h3 class="section-title">Search New Communities</h3>
+		<h4 class="section-title">Search New Communities</h4>
 	</div>
 	<div class="col-md-12 col-lg-12">
 		{{ Form::label('city','City: ') }}<br>
@@ -49,9 +49,10 @@
 		{{ Form::submit('View Printable Results',array('class'=>'btn btn-danger')) }}
 	</div>
 	<div class="col-md-2 col-lg-2"></div>
+	<div class="clearfix"></div>
 	<div class="col-md-2 col-lg-2"></div>
 	<div class="col-md-8 col-lg-8">
-		{{ Form::submit('Search IDX',array('class'=>'btn btn-success')) }}
+		{{ Form::submit('Search Resale Homes',array('class'=>'btn btn-success')) }}
 	</div>
 	<div class="col-md-2 col-lg-2"></div>	
 	<div class="clearfix"></div>
