@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="login-register">
-	<div class="col-md-12 col-lg-12 text-center">
+	<div class="col-md-12 col-lg-12">
 		<h1 class="section-title">Contact Us</h1>
 	</div>
 	<div class="col-md-6 col-lg-6">

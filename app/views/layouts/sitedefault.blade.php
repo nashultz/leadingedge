@@ -9,7 +9,7 @@
     {{css('site','vendor/normalize.css')}}
     {{css('site','framework/bootstrap.css')}}
     {{css('site','framework/bootstrap-theme.css')}}
-    {{css('site','style.css')}}
+    {{css('site','style2.css')}}
     {{css('site','datepicker.css')}}
     {{css('site','datepicker3.css')}}
 
@@ -42,62 +42,64 @@
     
 </head>
 <body>
-<div class="container">
-    <div class="row print-show">
-        <div class="col-md-12 col-lg-12">
-            <h1 class="brand">Leading Edge Realty</h1>
-        </div>
-    </div>
-    <div class="row print-hide">
-        <!-- HEADER -->
-        <div class="brand col-md-12 col-lg-12">
-            <a href="{{URL::to('/')}}">{{img('site','mainlogo.png',array('class'=>'logo'))}}</a>
-        </div>
-        <!-- /HEADER -->
-        <!-- NAVIGATION -->
-        <div class="col-md-12 col-lg-12">
-            <div class="navbar navbar-inverse main-nav" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="{{URL::to('/')}}"><i class="fa fa-home"></i></a></li>
-                        <li class="divider-vertical"></li>
-                        <li><a href="{{URL::to('about')}}">About</a></li>
-                        <li class="divider-vertical"></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{{URL::route('site.schoolratings')}}" target="_blank">2013 School Ratings&nbsp;&nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
-                                <li><a href="{{URL::route('site.realtor')}}">Why Use a Realtor&reg;</a></li>
-                            </ul>
-                        </li>
-                        <li class="divider-vertical"></li>
-                        <li><a href="{{URL::to('testimonials')}}">Testimonials</a>
-                        <li class="divider-vertical"></li>
-                        <li><a href="{{URL::to('contact')}}">Contact Us</a>
-                        <!--<li class="divider-vertical"></li>-->
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        @if (!Auth::check())
-                            <li><a href="{{ URL::route('get.auth.login') }}">Login/Register</a></li>
-                            <!--<li class="divider-vertical"></li>
-                            <li><a href="{{-- URL::route('get.auth.register') --}}">Register</a></li>-->
-                        @else 
-                            <li><a href="{{ URL::route('get.auth.logout') }}">Logout</a></li>
-                        @endif
-                    </ul>
-                </div><!--/.nav-collapse -->
+<div class="header">
+    <div class="container">
+        <div class="row print-show">
+            <div class="col-md-12 col-lg-12">
+                <h1 class="brand">Leading Edge Realty</h1>
             </div>
         </div>
+        <div class="row print-hide">
+            <!-- HEADER -->
+            <div class="brand col-md-12 col-lg-12">
+                <a href="{{URL::to('/')}}">{{img('site','mainlogo.png',array('class'=>'logo'))}}</a>
+            </div>
+            <!-- /HEADER -->
+            <!-- NAVIGATION -->
+            <div class="col-md-12 col-lg-12">
+                <div class="navbar navbar-inverse main-nav" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{URL::to('/')}}"><i class="fa fa-home"></i></a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a href="{{URL::to('about')}}">About</a></li>
+                            <li class="divider-vertical"></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{URL::route('site.schoolratings')}}" target="_blank">2013 School Ratings&nbsp;&nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
+                                    <li><a href="{{URL::route('site.realtor')}}">Why Use a Realtor&reg;</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider-vertical"></li>
+                            <li><a href="{{URL::to('testimonials')}}">Testimonials</a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a href="{{URL::to('contact')}}">Contact Us</a></li>
+                            <!--<li class="divider-vertical"></li>-->
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            @if (!Auth::check())
+                                <li><a href="{{ URL::route('get.auth.login') }}">Login/Register</a></li>
+                                <!--<li class="divider-vertical"></li>
+                                <li><a href="{{-- URL::route('get.auth.register') --}}">Register</a></li>-->
+                            @else 
+                                <li><a href="{{ URL::route('get.auth.logout') }}">Logout</a></li>
+                            @endif
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <!-- /NAVIGATION -->
     </div>
-    <!-- /NAVIGATION -->
 </div>
 <div class="main-content container">
 

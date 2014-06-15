@@ -25,7 +25,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-6">
-				<div class="login-form">
+				<div class="agent-profile">
 					<div class="about-photo col-md-4 col-lg-4">
 						{{img('site','tammy-young.jpg',array('class'=>'img-circle img-thumbnail'))}}
 					</div>
@@ -47,7 +47,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-6">
-				<div class="login-form">
+				<div class="agent-profile">
 					<div class="about-photo col-md-4 col-lg-4">
 						{{img('site','david-mccaleb.jpg',array('class'=>'img-circle img-thumbnail'))}}
 					</div>

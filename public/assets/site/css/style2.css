@@ -7,7 +7,7 @@ body {
 }
 
 body {
-  background: rgb(255,255,255);
+  background: rgb(247,247,247);
   font-family: Helvetica, Arial, sans-serif;
   color: rgb(59,59,61);
 }
@@ -211,6 +211,10 @@ blockquote {
 ! Custom Header & Navigation
 ========================================================== */
 
+.header {
+  background: rgb(255,255,255);
+}
+
 .brand {
   min-height: 108px;
   background: top left 100% no-repeat url('../img/skyline.png');
@@ -288,8 +292,8 @@ img.logo {
 }
 .navbar {
   min-height: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .navbar-inverse {
   background-image: none;
@@ -364,26 +368,25 @@ background: rgb(164,42,31);
 ========================================================== */
 .main-content {
   background:transparent;
+  margin-top: 15px;
 }
 
 #map-content {
-  background: rgb(164,42,31);
-  padding: 5px;
-  border-radius: 8px;
+  background: rgb(255,255,255);
+  padding: 2px;
+  border: 2px solid rgb(234,234,234);
 }
 
 #map {
         width: 100%;
         height: 500px;
         padding: 15px;
-        border-radius: 5px;
       }
 
 #inline-actions {
   display: none;
 }
 .search-form {
-  background: #d3d3d3;
   min-height: 510px;
 }
 
@@ -392,11 +395,13 @@ background: rgb(164,42,31);
 .forgot-form,
 .testimonial,
 .neighborhood {
-  background: #d3d3d3;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -o-border-radius: 8px;
-  border-radius: 8px;
+  background: rgb(255,255,255);
+  border: 2px solid rgb(234,234,234);
+  padding: 30px 0;
+}
+
+.agent-profile {
+  background: rgb(236,236,236);
   padding: 30px 0;
 }
 
@@ -423,15 +428,30 @@ background: rgb(164,42,31);
   margin: 0 -15px 0 -15px;
 }
 
+.button-container {
+  background: rgb(255,255,255);
+  border: 2px solid rgb(234,234,234);
+  padding: 2px;
+}
+
+.submit-container input[type="submit"],
+.submit-container input[type="submit"].btn,
+.submit-container input[type="submit"].btn-danger {
+  background-image: none;
+  background: rgb(164,42,31);
+  border: 2px solid rgb(234,234,234);
+  border-radius: 0;
+  box-shadow: none;
+}
+
 #button1,
 #button2,
 #button3,
 #button4,
 #button5 {
   background: rgb(164,42,31);
-  border: 1px solid rgb(59,59,61);
+  border: none;
   color: rgb(255,255,255);
-  border-radius: 5px;
   padding: 15px 10px;
   font-size: 14px;
   font-weight: bold;
@@ -453,8 +473,6 @@ background: rgb(164,42,31);
   display: none;
   background: #d3d3d3;
   padding: 15px 0;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
 }
 
 .buttonerror {

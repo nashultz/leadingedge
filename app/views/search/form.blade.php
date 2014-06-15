@@ -46,13 +46,17 @@
 	<div class="spacer-15"></div>
 	<div class="col-md-2 col-lg-2"></div>
 	<div class="col-md-8 col-lg-8">
-		{{ Form::submit('View Printable Results',array('class'=>'btn btn-danger')) }}
+		<div class="submit-container">
+			{{ Form::submit('View Printable Results',array('class'=>'btn btn-danger')) }}
+		</div>
 	</div>
 	<div class="col-md-2 col-lg-2"></div>
-	<div class="clearfix"></div>
+	<div class="spacer-10"></div>
 	<div class="col-md-2 col-lg-2"></div>
 	<div class="col-md-8 col-lg-8">
-		{{ Form::submit('Search Resale Homes',array('class'=>'btn btn-success')) }}
+		<div class="submit-container">
+			{{ Form::submit('Search Resale Homes',array('class'=>'btn btn-danger')) }}
+		</div>
 	</div>
 	<div class="col-md-2 col-lg-2"></div>	
 	<div class="clearfix"></div>

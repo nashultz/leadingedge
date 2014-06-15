@@ -11,7 +11,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-lg-12">
-				<div class="search-form">
+				<div class="login-form">
 					<div class="col-md-6 col-lg-6">
 
 						{{ Form::open(array('method'=>'POST', 'route'=>'post.search.save')) }}
@@ -50,7 +50,7 @@
 		<div class="row">
 			<div class="col-md-12 col-lg-12">
 				@foreach($builderResults as $builder)
-				<div class="search-form">
+				<div class="login-form">
 					<div class="col-md-12 col-lg-12">
 						<div class="col-md-6 col-lg-6">
 							<b>Name:</b> {{ $builder->getName() }}
