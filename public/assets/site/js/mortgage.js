@@ -56,7 +56,19 @@
 
 	function getAnnualInsuranceAmount()
 	{
-		return parseFloat($('#annual_ins_amount').val()).toFixed(2);
+		var annual_insurance = parseFloat($('#annual_ins_amount').val()).toFixed(2);
+
+		if (isNaN(annual_insurance))
+		{
+			annual_insurance = parseFloat('0').toFixed(2);
+		}
+
+		return annual_insurance;
+	}
+
+	function getMonthlyInsuranceAmount()
+	{
+		return parseFloat(getAnnualInsuranceAmount() / 12).toFixed(2);
 	}
 
 	function getAnnualInsurancePercentage()
@@ -66,7 +78,19 @@
 
 	function getAnnualTaxesAmount()
 	{
-		return parseFloat($('#annual_taxes_amount').val()).toFixed(2);
+		var annual_taxes = parseFloat($('#annual_taxes_amount').val()).toFixed(2);
+
+		if (isNaN(annual_taxes))
+		{
+			annual_taxes = parseFloat('0').toFixed(2);
+		}
+
+		return annual_taxes;
+	}
+
+	function getMonthlyTaxesAmount()
+	{
+		return parseFloat(getAnnualTaxesAmount() / 12).toFixed(2);
 	}
 
 	function getAnnualTaxesPercentage()
@@ -76,7 +100,14 @@
 
 	function getMonthlyFees()
 	{
-		return parseFloat($('#monthly_fees').val()).toFixed(2);
+		var monthly_fees = parseFloat($('#monthly_fees').val()).toFixed(2);
+
+		if (isNaN(monthly_fees))
+		{
+			monthly_fees = parseFloat('0').toFixed(2);
+		}
+
+		return monthly_fees;
 	}
 
 // Setters
@@ -87,12 +118,20 @@
 		var i = getAnnualInterestRate();
 		var n = getTermLength();
 
+		console.log('--------- START TRANSACTION -----------');
 		console.log('Financed Amount: ' + P);
 		console.log('Annual Interest Rate: ' + i);
 		console.log('Term Length in Months: ' + n);
-		console.log('Monthly Fees: ' + getMonthlyFees());
 
-		var monthly_payment = parseFloat(P * ( i * Math.pow((i+1),n)) / ( Math.pow((i+1),n) - 1) + getMonthlyFees()).toFixed(2);
+		console.log('Annual Taxes: ' + getAnnualTaxesAmount());
+		console.log('Annual Insurance: ' + getAnnualInsuranceAmount());
+
+		console.log('Monthly Fees: ' + getMonthlyFees());
+		console.log('Monthly Taxes: ' + getMonthlyTaxesAmount());
+		console.log('Monthly Insurance: ' + getMonthlyInsuranceAmount());
+		console.log('-------------- END TRANSACTION -------------')
+
+		var monthly_payment = parseFloat(P * ( i * Math.pow((i+1),n)) / ( Math.pow((i+1),n) - 1) + getMonthlyTaxesAmount() + getMonthlyInsuranceAmount() + getMonthlyFees()).toFixed(2);
 
 		$('#monthly_payment').val(monthly_payment);
 	}
