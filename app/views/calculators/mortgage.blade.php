@@ -59,25 +59,25 @@
 					<div class="col-md-6 col-lg-6">
 						{{ Form::label('annual_ins', 'Annual Insurance:') }}
 						<div class="input-group">
-							{{ Form::text('annual_ins_percentage', '0', array('id'=>'annual_ins_percentage','class'=>'form-control','tabindex'=>'7')) }}
+							{{ Form::text('annual_ins_percentage', '', array('id'=>'annual_ins_percentage','class'=>'form-control','tabindex'=>'7')) }}
 							<span class="input-group-addon">%</span>
 						</div>
 						<div class='spacer-5'></div>
 						<div class="input-group">
 							<span class="input-group-addon">$</span>
-							{{ Form::text('annual_ins_amount', '0.00', array('id'=>'annual_ins_amount','class'=>'form-control','tabindex'=>'8')) }}
+							{{ Form::text('annual_ins_amount', '', array('id'=>'annual_ins_amount','class'=>'form-control','tabindex'=>'8')) }}
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-6">
 						{{ Form::label('annual_taxes', 'Annual Taxes:') }}
 						<div class="input-group">
-							{{ Form::text('annual_taxes_percentage', '0', array('id'=>'annual_taxes_percentage','class'=>'form-control','tabindex'=>'9')) }}
+							{{ Form::text('annual_taxes_percentage', '', array('id'=>'annual_taxes_percentage','class'=>'form-control','tabindex'=>'9')) }}
 							<span class="input-group-addon">%</span>
 						</div>
 						<div class='spacer-5'></div>
 						<div class="input-group">
 							<span class="input-group-addon">$</span>
-							{{ Form::text('annual_taxes_amount', '0.00', array('id'=>'annual_taxes_amount','class'=>'form-control','tabindex'=>'10')) }}
+							{{ Form::text('annual_taxes_amount', '', array('id'=>'annual_taxes_amount','class'=>'form-control','tabindex'=>'10')) }}
 						</div>
 					</div>
 					<div class="spacer-5"></div>
@@ -85,7 +85,7 @@
 						{{ Form::label('monthly_fees', 'Monthly Fees:') }}
 						<div class="input-group">
 							<span class="input-group-addon">$</span>
-							{{ Form::text('monthly_fees', '0.00', array('id'=>'monthly_fees','class'=>'form-control','tabindex'=>'11')) }}
+							{{ Form::text('monthly_fees', '', array('id'=>'monthly_fees','class'=>'form-control','tabindex'=>'11')) }}
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-6">
