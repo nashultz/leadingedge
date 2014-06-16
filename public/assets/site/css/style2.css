@@ -551,6 +551,10 @@ background: rgb(164,42,31);
   text-transform: uppercase;
 }
 
+.form-control {
+  text-align: right;
+}
+
 
 /* ==========================================================
 ! Custom Footer
