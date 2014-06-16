@@ -138,6 +138,8 @@ Route::post('afford-home',array('as'=>'post.affordhome.send','uses'=>'ButtonCont
 Route::get('contact',array('uses'=>'ContactController@index','as'=>'site.contact'));
 Route::post('contact/send',array('uses'=>'ContactController@send','as'=>'site.contact.send'));
 
+Route::get('mortgage', array('uses'=>'MortgageController@index', 'as'=>'site.mortgage'));
+
 // Auth Routes
 //Route::get('auth/register', array('as'=>'get.auth.register', 'uses'=>'AuthController@getRegister'));
 Route::post('auth/register', array('as'=>'post.auth.register', 'uses'=>'AuthController@postRegister'));
