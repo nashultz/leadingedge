@@ -1,3 +1,4 @@
+// Change to ButtonForms.js
 
 $(document).on('submit', '.ajaxButtonForm', function(e) {
 
