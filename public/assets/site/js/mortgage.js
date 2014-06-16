@@ -2,37 +2,76 @@
 
 	function getPropertyCost()
 	{
-		return parseFloat($('#property_cost').val());
+		var property_cost = parseFloat($('#property_cost').val()).toFixed(2);
+
+		if (isNaN(property_cost))
+		{
+			alert('You must enter a Property Cost');
+		}
+
+		return property_cost;
 	}	
 
 	function getTermLength()
 	{
-		return ( parseInt($('#length_years')).val() * 12 ) + parseInt($('#length_months').val());
+		var years = parseInt($('#length_years').val());
+		var months = parseInt($('#length_months').val());
+
+		if (isNaN(years) && isNaN(months))
+		{
+			alert('You must enter a valid Term Length');
+		}
+
+		var term_length = ( years * 12 ) + months;
+
+		return term_length;
 	}
 
 	function getInterestRate()
 	{
-		return parseFloat($('#interest_rate')).val() / 100;
+		return parseFloat($('#interest_rate').val() / 100);
+	}
+
+	function getAnnualInterestRate()
+	{
+		return getInterestRate() / 12;
 	}
 
 	function getDownPaymentAmount()
 	{
-		return parseFloat($('#down_payment_amount')).toFixed(2);
+		var down_payment = parseFloat($('#down_payment_amount').val()).toFixed(2);
+
+		if (isNaN(down_payment))
+		{
+			down_payment = parseFloat('0').toFixed(2);
+		}
+
+		return down_payment;
 	}
 
 	function getDownPaymentPercentage()
 	{
-		return parseFloat($('#down_payment_percentage')).toFixed(2);
+		return parseFloat($('#down_payment_percentage').val()).toFixed(2);
 	}
 
-	function getAnnualInsurance()
+	function getAnnualInsuranceAmount()
 	{
-		return parseFloat($('#annual_ins').val()).toFixed(2);
+		return parseFloat($('#annual_ins_amount').val()).toFixed(2);
 	}
 
-	function getAnnualTaxes()
+	function getAnnualInsurancePercentage()
 	{
-		return parseFloat($('#annual_taxes').val()).toFixed(2);
+		return parseFloat($('#annual_ins_percentage').val()).toFixed(2);
+	}
+
+	function getAnnualTaxesAmount()
+	{
+		return parseFloat($('#annual_taxes_amount').val()).toFixed(2);
+	}
+
+	function getAnnualTaxesPercentage()
+	{
+		return parseFloat($('#annual_taxes_percentage').val()).toFixed(2);
 	}
 
 	function getMonthlyFees()
@@ -42,14 +81,28 @@
 
 // Setters
 
-	function setMonthlyPayment()
+	function setMonthlyPaymentAmount()
 	{
+		var P = getFinancedAmount();
+		var i = getAnnualInterestRate();
+		var n = getTermLength();
 
+		console.log('Financed Amount: ' + P);
+		console.log('Annual Interest Rate: ' + i);
+		console.log('Term Length in Months: ' + n);
+		console.log('Monthly Fees: ' + getMonthlyFees());
+
+		var monthly_payment = parseFloat(P * ( i * Math.pow((i+1),n)) / ( Math.pow((i+1),n) - 1) + getMonthlyFees()).toFixed(2);
+
+		$('#monthly_payment').val(monthly_payment);
 	}
 
 	function setDownPaymentPercentage()
 	{
+		var propertyCost = getPropertyCost();
+		var amount = getDownPaymentAmount();
 
+		$('#down_payment_percentage').val( (amount * 100) / propertyCost );
 	}
 
 	function setDownPaymentAmount()
@@ -62,93 +115,76 @@
 
 	function setAnnualInsurancePercentage()
 	{
+		var propertyCost = getPropertyCost();
+		var amount = getAnnualInsuranceAmount();
 
+		$('#annual_ins_percentage').val( (amount * 100) / propertyCost );
 	}
 
 	function setAnnualInsuranceAmount()
 	{
+		var propertyCost = getPropertyCost();
+		var percentage = getAnnualInsurancePercentage();
 
+		$('#annual_ins_amount').val( propertyCost * ( percentage / 100) );
 	}
 
 	function setAnnualTaxesPercentage()
 	{
+		var propertyCost = getPropertyCost();
+		var amount = getAnnualTaxesAmount();
 
+		$('#annual_taxes_percentage').val( (amount * 100) / propertyCost );
 	}
 
 	function setAnnualTaxesAmount()
 	{
+		var propertyCost = getPropertyCost();
+		var percentage = getAnnualTaxesPercentage();
 
+		$('#annual_taxes_amount').val( propertyCost * ( percentage / 100) );
 	}
 
 // Functions
+
+	function getFinancedAmount()
+	{
+		return getPropertyCost() - getDownPaymentAmount();
+	}
 
 // Events
 
 	// Down Payment Percentage Change
 		$(document).on('change', '#down_payment_percentage', function() {
-			alert('triggered');
 			setDownPaymentAmount();
 		});
 
-$(document).on('change', '#mortgage', function(e) {
+	// Down Payment Amount Change
+		$(document).on('change', '#down_payment_amount', function() {
+			setDownPaymentPercentage();
+		});
 
-	var propertyCost = getPropertyCost();
-	var lengthYears = parseInt($('#length_years').val());
-	var lengthMonths = parseInt($('#length_months').val());
-	var ratePercentage = parseFloat($('#interest_rate_percentage').val());
-	var rateFt2 = $('#interest_rate_ft2').text();
-	var downPayment = parseFloat($('#down_payment').val());
-	var annualIns = $('#annual_ins').text();
-	var annualTaxes = $('#annual_taxes').text();
-	var monthlyFees = parseFloat($('#monthly_fees').val());
-	
-	// Display Fields
-	var monthlyPayment = $('#monthly_payment');
-	var downPaymentDisplay = $('#down_payment_display');
+	// Annual Insurance Percentage Change
+		$(document).on('change', '#annual_ins_percentage', function() {
+			setAnnualInsuranceAmount();
+		});
 
-	// Property Cost
-	var pc = propertyCost;
+	// Annual Insurance Amount Change
+		$(document).on('change', '#annual_ins_amount', function() {
+			setAnnualInsurancePercentage();
+		});
 
-	var d = downPayment;
+	// Annual Taxes Percentage Change
+		$(document).on('change', '#annual_taxes_percentage', function() {
+			setAnnualTaxesAmount();
+		});
 
-	downPaymentDisplay.val(getCalculatedDownPayment(pc, d));
+	// Annual Taxes Amount Change
+		$(document).on('change', '#annual_taxes_amount', function() {
+			setAnnualTaxesPercentage();
+		});
 
-	// Get Actual Amount Financed
-	var p = getAmountFinanced(pc, d);
-
-	// Annual Interest
-	var i = ratePercentage / 100 / 12;
-
-	// Term (Months)
-	var n = (lengthYears * 12) + lengthMonths;
-
-	//var m2 = p [i(1 + i)^n] / [(1 + i)^n - 1];
-
-	var mFees = monthlyFees;
-
-	var m = getMonthlyPayment(p, i, n, mFees);
-
-	monthlyPayment.val(m);
-
-	console.log(m);
-
-	// Store Monthly Payment
-	
-	//console.log(m2);
-
-});
-
-function getCalculatedDownPayment(pc, d)
-{
-	return parseFloat(pc * (d / 100)).toFixed(2);
-}
-
-function getAmountFinanced(pc, d)
-{
-	return pc - getCalculatedDownPayment(pc,d);
-}
-
-function getMonthlyPayment(p, i, n, mFees)
-{
-	return parseFloat(p * ( i * Math.pow((i+1),n)) / ( Math.pow((i+1),n) - 1) + mFees).toFixed(2);
-}
+	// Calculate Everything Else
+		$(document).on('change', '#mortgage', function() {
+			setMonthlyPaymentAmount();
+		});

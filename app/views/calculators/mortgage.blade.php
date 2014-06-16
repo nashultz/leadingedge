@@ -33,14 +33,14 @@
 		<div class="spacer-5"></div>
 		<div class="col-md-12 col-lg-12">
 			{{ Form::label('annual_ins', 'Annual Insurance:') }}
-			% {{ Form::text('annual_ins_percentage', '0', array('id'=>'annual_ins_percentage')) }}
-			$ {{ Form::text('annual_ins_amount', '0.00', array('id'=>'annual_ins_amount')) }}
+			% {{ Form::text('annual_ins_percentage', '', array('id'=>'annual_ins_percentage')) }}
+			$ {{ Form::text('annual_ins_amount', '', array('id'=>'annual_ins_amount')) }}
 		</div>
 		<div class="spacer-5"></div>
 		<div class="col-md-12 col-lg-12">
 			{{ Form::label('annual_taxes', 'Annual Taxes:') }}
-			% {{ Form::text('annual_taxes_percentage', '0', array('id'=>'annual_taxes_percentage')) }}
-			$ {{ Form::text('annual_taxes_amount', '0.00', array('id'=>'annual_taxes_amount')) }}
+			% {{ Form::text('annual_taxes_percentage', '', array('id'=>'annual_taxes_percentage')) }}
+			$ {{ Form::text('annual_taxes_amount', '', array('id'=>'annual_taxes_amount')) }}
 		</div>
 		<div class="spacer-5"></div>
 		<div class="col-md-12 col-lg-12">
