@@ -52,7 +52,10 @@
 							{{ Form::text('down_payment_amount', '', array('id'=>'down_payment_amount','class'=>'form-control')) }}
 						</div>
 					</div>
-					<div class="spacer-5"></div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-6">
+				<div class="about">
 					<div class="col-md-6 col-lg-6">
 						{{ Form::label('annual_ins', 'Annual Insurance:') }}
 						<div class="input-group">
