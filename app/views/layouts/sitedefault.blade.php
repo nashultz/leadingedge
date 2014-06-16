@@ -30,6 +30,7 @@
     {{js('site','bootstrap-datepicker.js')}}
     {{js('site', 'search.js') }}
     {{js('site','button-toggle.js')}}
+    {{js('site','mortgage.js')}}
 
     <script>
         $(document).ready(function() {
