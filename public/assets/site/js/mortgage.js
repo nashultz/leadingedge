@@ -15,30 +15,80 @@
 		return parseFloat($('#interest_rate')).val() / 100;
 	}
 
-	function getDownPayment()
+	function getDownPaymentAmount()
 	{
 		return parseFloat($('#down_payment_amount')).toFixed(2);
 	}
 
+	function getDownPaymentPercentage()
+	{
+		return parseFloat($('#down_payment_percentage')).toFixed(2);
+	}
+
 	function getAnnualInsurance()
 	{
-		return parseFloat()
+		return parseFloat($('#annual_ins').val()).toFixed(2);
+	}
+
+	function getAnnualTaxes()
+	{
+		return parseFloat($('#annual_taxes').val()).toFixed(2);
+	}
+
+	function getMonthlyFees()
+	{
+		return parseFloat($('#monthly_fees').val()).toFixed(2);
 	}
 
 // Setters
 
+	function setMonthlyPayment()
+	{
+
+	}
+
+	function setDownPaymentPercentage()
+	{
+
+	}
+
+	function setDownPaymentAmount()
+	{
+		var propertyCost = getPropertyCost();
+		var percentage = getDownPaymentPercentage();
+
+		$('#down_payment_amount').val( propertyCost * ( percentage / 100 ) );
+	}
+
+	function setAnnualInsurancePercentage()
+	{
+
+	}
+
+	function setAnnualInsuranceAmount()
+	{
+
+	}
+
+	function setAnnualTaxesPercentage()
+	{
+
+	}
+
+	function setAnnualTaxesAmount()
+	{
+
+	}
+
 // Functions
 
+// Events
 
-$(document).on('change', '#down_payment_percentage', function() {
-
-	var pc = getPropertyCost();
-	var p = $(this).val();
-
-
-
-
-});
+	// Down Payment Percentage Change
+		$(document).on('change', '#down_payment_percentage', function() {
+			alert('triggered');
+			setDownPaymentAmount();
+		});
 
 $(document).on('change', '#mortgage', function(e) {
 
