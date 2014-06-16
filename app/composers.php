@@ -38,7 +38,7 @@ View::composer('*', function($view) {
 			$costOptions[$a] = '$' . number_format($a,2);
 		}
 
-		for ($a = 500; $a <= 5000; $a += 100)
+		for ($a = 1000; $a <= 5000; $a += 100)
 		{
 			$sqFootageOptions[$a] = number_format($a, 0);
 		}

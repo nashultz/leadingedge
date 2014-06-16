@@ -214,7 +214,7 @@
 					</div>
 
 					<div class="col-md-12">
-						<h4 class="button-title">Request your FREE market report!</h4>
+						<h4 class="button-title">Request your FREE market analysis!</h4>
 					</div>
 					<div class="col-md-12">
 						{{ Form::label('name','Full Name: ') }}<i class="fa fa-asterisk small req"></i>
@@ -307,7 +307,7 @@
 					</div>
 
 					<div class="col-md-12">
-						<h4 class="button-title">Get prequalified!</h4>
+						<h4 class="button-title">Request a pre-qualification analysis!</h4>
 					</div>
 					<div class="col-md-12">
 						{{ Form::label('pprice','Purchase Price: ') }}<i class="fa fa-asterisk small req"></i>

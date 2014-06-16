@@ -13,6 +13,8 @@
 			$builderName = Input::get('builder');
 			$minSqFootage = Input::get('min_sqft');
 			$maxSqFootage = Input::get('max_sqft');
+			$minCost = Input::get('min_price');
+			$maxCost = Input::get('max_price');
 
 			// Flipping the JOIN
 			$builders = new Builder;
@@ -32,6 +34,16 @@
 			{
 				$builders->where('builders.max_size', '<=', (int)$maxSqFootage);
 			} 
+
+			if ($minCost != '0')
+			{
+				$builders->where('builders.min_price', '>=', (int)$minCost);
+			}
+
+			if ($maxCost != '0')
+			{
+				$builders->Where('builders.max_price', '<=', (int)$maxCost);
+			}
 
 			if ($city != '0')
 			{
