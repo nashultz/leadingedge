@@ -76,6 +76,7 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    <li><a href="{{URL::to('mortgage')}}">Mortgage Calculator</a></li>
                                     <li><a href="{{URL::route('site.schoolratings')}}" target="_blank">2013 School Ratings&nbsp;&nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
                                     <li><a href="{{URL::route('site.realtor')}}">Why Use a Realtor&reg;</a></li>
                                 </ul>

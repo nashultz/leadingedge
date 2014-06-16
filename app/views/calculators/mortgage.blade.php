@@ -3,11 +3,11 @@
 @section('content')
 {{ Form::open(array('id'=>'mortgage')) }}
 	
-	<div class="mortgage_calculator_form">
+	<div class="col-md-12 col-lg-12">
+		<h2 class="section-title">Mortgage Calculator</h2>
+	</div>
 
-		<div class="col-md-12 col-lg-12">
-			<h4 class="section-title">Mortgage Calculator</h4>
-		</div>
+		<div class="login-form mortgage_calculator_form">
 
 		<div class="col-md-12 col-lg-12">
 			{{ Form::label('property_cost', 'Property Cost:') }}
