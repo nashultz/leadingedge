@@ -23,8 +23,8 @@
 					<div class="col-md-6 col-lg-6">
 						{{ Form::label('interest_rate', 'Interest Rate:') }}
 						<div class="input-group">
-							<span class="input-group-addon">%</span>
 							{{ Form::text('interest_rate', '', array('id'=>'interest_rate','class'=>'form-control')) }}
+							<span class="input-group-addon">%</span>
 						</div>
 					</div>
 					<div class="spacer-5"></div>
@@ -43,8 +43,8 @@
 					<div class="col-md-6 col-lg-6">
 						{{ Form::label('down_payment', 'Down Payment: ') }}
 						<div class="input-group">
-							<span class="input-group-addon">%</span>
 							{{ Form::text('down_payment_percentage', '', array('id'=>'down_payment_percentage','class'=>'form-control')) }}
+							<span class="input-group-addon">%</span>
 						</div>
 						<div class='spacer-5'></div>
 						<div class="input-group">
@@ -56,8 +56,8 @@
 					<div class="col-md-6 col-lg-6">
 						{{ Form::label('annual_ins', 'Annual Insurance:') }}
 						<div class="input-group">
-							<span class="input-group-addon">%</span>
 							{{ Form::text('annual_ins_percentage', '0', array('id'=>'annual_ins_percentage','class'=>'form-control')) }}
+							<span class="input-group-addon">%</span>
 						</div>
 						<div class='spacer-5'></div>
 						<div class="input-group">
@@ -68,8 +68,8 @@
 					<div class="col-md-6 col-lg-6">
 						{{ Form::label('annual_taxes', 'Annual Taxes:') }}
 						<div class="input-group">
-							<span class="input-group-addon">%</span>
 							{{ Form::text('annual_taxes_percentage', '0', array('id'=>'annual_taxes_percentage','class'=>'form-control')) }}
+							<span class="input-group-addon">%</span>
 						</div>
 						<div class='spacer-5'></div>
 						<div class="input-group">
