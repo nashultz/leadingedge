@@ -26,11 +26,11 @@
 	<div class="spacer-5"></div>
 	<div class="col-md-6 col-lg-6">
 		{{ Form::label('min_price', 'Minimum Cost: ') }}<br>
-		{{ Form::select('min_price', $costOptions, 0) }}
+		{{ Form::select('min_price', $costOptions, 0,array('class'=>'form-control')) }}
 	</div>
 	<div class="col-md-6 col-lg-6">
 		{{ Form::label('max_price', 'Maximum Cost: ') }}<br>
-		{{ Form::select('max_price', $costOptions, 0) }}
+		{{ Form::select('max_price', $costOptions, 0,array('class'=>'form-control')) }}
 	</div>
 	<div class="spacer-5"></div>
 	<div class="col-md-6 col-lg-6">

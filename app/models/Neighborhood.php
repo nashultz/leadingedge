@@ -11,6 +11,11 @@
 			return $this->hasMany('Builder');
 		}
 
+		public function videos()
+		{
+			return $this->hasMany('Video');
+		}
+
 		public function getName()
 		{
 			return $this->name;

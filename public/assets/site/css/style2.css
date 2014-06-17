@@ -555,6 +555,15 @@ background: rgb(164,42,31);
   text-align: right;
 }
 
+.builders {
+  border-top: 1px solid rgb(126,127,131);
+  padding: 20px 0;
+}
+
+.builders:last-child {
+  border-bottom: 1px solid rgb(126,127,131);
+}
+
 
 /* ==========================================================
 ! Custom Footer
