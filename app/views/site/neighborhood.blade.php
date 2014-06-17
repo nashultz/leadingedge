@@ -9,7 +9,11 @@
 		<div class="neighborhood"><div class="col-md-12 col-lg-12">
 			<h3 class="section-title">Videos</h3>
 			<div>
-				<iframe src="//www.youtube.com/embed/videoseries?list={{$neighborhood->playlist}}" frameborder="0" allowfullscreen></iframe><br>
+				@if ($neighborhood->playlist)
+					<iframe src="//www.youtube.com/embed/videoseries?list={{$neighborhood->playlist}}" frameborder="0" allowfullscreen></iframe><br>
+				@else
+					<p>There are currently no videos for this neighborhood</p>
+				@endif
 			</div>
 		</div><div class="clearfix"></div></div>
 	</div>
