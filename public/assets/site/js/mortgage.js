@@ -56,7 +56,11 @@
 
 	function getAnnualInsuranceAmount()
 	{
+		console.log('Pre Float: ' + $('#annual_ins_amount').val());
+
 		var annual_insurance = parseFloat($('#annual_ins_amount').val()).toFixed(2);
+
+		console.log('Pulled Annual Insurance Amount: ' + annual_insurance);
 
 		if (isNaN(annual_insurance))
 		{

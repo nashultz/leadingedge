@@ -7,7 +7,11 @@
 
 View::composer('*', function($view) { 
 		$c = Neighborhood::select('city')->distinct()->get();
-		$i = Neighborhood::select('isd')->distinct()->get();
+		$i = Neighborhood::select('isd','district')->groupBy('isd')->get(); 
+
+		dd($i);
+
+		//Neighborhood::select('isd')->distinct()->get();
 		$b = Builder::select('name')->distinct()->get();
 		$n = Neighborhood::lists('name', 'id');
 
@@ -25,7 +29,7 @@ View::composer('*', function($view) {
 
 		foreach($i as $isd)
 		{
-			$isds[$isd->isd] = $isd->isd;
+			$isds[$isd->isd] = $isd->district;
 		}
 
 		foreach($b as $builder)
