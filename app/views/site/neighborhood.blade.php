@@ -32,7 +32,7 @@
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<strong>Website</strong>: <a href="http://www.{{$builder->website}}" target="_blank">{{$builder->website}}</a><br>
-						<strong>Agent</strong>: {{$builder->agent}}
+						
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<strong>Price</strong>: ${{$builder->min_price}} - ${{$builder->max_price}}<br>
