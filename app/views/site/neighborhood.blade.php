@@ -10,11 +10,7 @@
 			<h3 class="section-title">Videos</h3>
 			<div>
 			@foreach($neighborhood->videos as $video)
-				<embed
-					width="100%" height="422"
-					src="http://www.youtube.com/embed/videoseries?list={{$video->url}}"
-					type="application/x-shockwave-flash">
-				</embed><br>
+				<iframe src="//www.youtube.com/embed/videoseries?list={{$video->url}}" frameborder="0" allowfullscreen></iframe><br>
 			@endforeach
 			</div>
 		</div><div class="clearfix"></div></div>
