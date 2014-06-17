@@ -12,6 +12,39 @@
 */
 // Change to Routes...
 
+$excel_dir = "/Users/romanlopez/Documents/";
+
+Route::get('convert', function() use ($excel_dir) {
+
+	$table = PHPExcel_IOFactory::load($excel_dir . 'NewConstruction603.ods');
+
+	$worksheet = $table->setActiveSheetIndexByName('Sheet1');
+
+	foreach($worksheet->getRowIterator() as $rowIndex->$row)
+	{
+		if ($rowIndex > 1)
+		{
+			$nName = $worksheet->getCellByColumnAndRow(0, $rowIndex);
+			$nName = str_replace('@', 'at', $nName);
+
+			$nCity = $worksheet->getCellByColumnAndRow(1, $rowIndex);
+			$nISD = $worksheet->getCellByColumnAndRow(5, $rowIndex);
+			$nDistrict = $worksheet->getCellByColumnAndRow(6, $rowIndex);
+
+			$bName = $worksheet->getCellByColumnAndRow(2, $rowIndex);
+			$bPrice = $worksheet->getCellByColumnAndRow(3, $rowIndex);
+			$bSizes = $worksheet->getCellByColumnAndRow(4, $rowIndex);
+			$bWebsite = $worksheet->getCellByColumnAndRow(7, $rowIndex);
+			$bAgent = $worksheet->getCellByColumnAndRow(8, $rowIndex);
+			$bPhone = $worksheet->getCellByColumnAndRow(9, $rowIndex);
+
+			
+		}
+	}
+
+});
+
+
 $models = array(
 	'neighborhoods'=>'Neighborhood',
 );
