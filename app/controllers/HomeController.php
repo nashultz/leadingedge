@@ -68,7 +68,7 @@ class HomeController extends BaseController {
     public function neighborhood($neighborhood)
     {
         //
-        $neighborhood->load("builders",'videos');
+        $neighborhood->load("builders");
 
         return View::make('site.neighborhood',compact('neighborhood'));
     }
