@@ -126,7 +126,7 @@
 
 		monthly_payment = parseFloat(monthly_payment) + parseFloat(mT) + parseFloat(mI) + parseFloat(mF);
 
-		$('#monthly_payment').val(monthly_payment);
+		$('#monthly_payment').val(parseFloat(monthly_payment).toFixed(2));
 	}
 
 	function setDownPaymentPercentage()
@@ -218,6 +218,5 @@
 
 	// Calculate Everything Else
 		$(document).on('change', '#mortgage', function() {
-			alert('triggered');
 			setMonthlyPaymentAmount();
 		});
