@@ -56,11 +56,7 @@
 
 	function getAnnualInsuranceAmount()
 	{
-		console.log('Pre Float: ' + $('#annual_ins_amount').val());
-
 		var annual_insurance = parseFloat($('#annual_ins_amount').val()).toFixed(2);
-
-		console.log('Pulled Annual Insurance Amount: ' + annual_insurance);
 
 		if (isNaN(annual_insurance))
 		{
@@ -133,9 +129,12 @@
 		console.log('Monthly Fees: ' + getMonthlyFees());
 		console.log('Monthly Taxes: ' + getMonthlyTaxesAmount());
 		console.log('Monthly Insurance: ' + getMonthlyInsuranceAmount());
-		console.log('-------------- END TRANSACTION -------------')
 
-		var monthly_payment = parseFloat(P * ( i * Math.pow((i+1),n)) / ( Math.pow((i+1),n) - 1) + getMonthlyTaxesAmount() + getMonthlyInsuranceAmount() + getMonthlyFees()).toFixed(2);
+		var monthly_payment = parseFloat( ( P * ( i * Math.pow((i+1),n)) / ( Math.pow((i+1),n) - 1) + getMonthlyTaxesAmount() + getMonthlyInsuranceAmount() + getMonthlyFees() ) ).toFixed(2);
+
+		console.log('Monthly Payment: ' + monthly_payment);
+
+		console.log('-------------- END TRANSACTION -------------')
 
 		$('#monthly_payment').val(monthly_payment);
 	}
@@ -229,6 +228,6 @@
 
 	// Calculate Everything Else
 		$(document).on('change', '#mortgage', function() {
-			alert('a');
+			alert('triggered');
 			setMonthlyPaymentAmount();
 		});
