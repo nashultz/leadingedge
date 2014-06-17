@@ -31,10 +31,6 @@
 						<h4 class="section-title">{{$builder->getName()}}</h4>
 					</div>
 					<div class="col-md-6 col-lg-6">
-						<strong>Website</strong>: <a href="http://www.{{$builder->website}}" target="_blank">{{$builder->website}}</a><br>
-						
-					</div>
-					<div class="col-md-6 col-lg-6">
 						<strong>Price</strong>: ${{$builder->min_price}} - ${{$builder->max_price}}<br>
 						<strong>Square Foot</strong>: {{$builder->min_size}} - {{$builder->max_size}}
 					</div>
