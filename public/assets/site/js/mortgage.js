@@ -118,23 +118,13 @@
 		var i = getAnnualInterestRate();
 		var n = getTermLength();
 
-		console.log('--------- START TRANSACTION -----------');
-		console.log('Financed Amount: ' + P);
-		console.log('Annual Interest Rate: ' + i);
-		console.log('Term Length in Months: ' + n);
+		var mT = getMonthlyTaxesAmount();
+		var mI = getMonthlyInsuranceAmount();
+		var mF = getMonthlyFees();
 
-		console.log('Annual Taxes: ' + getAnnualTaxesAmount());
-		console.log('Annual Insurance: ' + getAnnualInsuranceAmount());
+		var monthly_payment = parseFloat( P * ( i * Math.pow((i+1),n)) / ( Math.pow((i+1),n) - 1) ).toFixed(2);
 
-		console.log('Monthly Fees: ' + getMonthlyFees());
-		console.log('Monthly Taxes: ' + getMonthlyTaxesAmount());
-		console.log('Monthly Insurance: ' + getMonthlyInsuranceAmount());
-
-		var monthly_payment = parseFloat( ( P * ( i * Math.pow((i+1),n)) / ( Math.pow((i+1),n) - 1) + getMonthlyTaxesAmount() + getMonthlyInsuranceAmount() + getMonthlyFees() ) ).toFixed(2);
-
-		console.log('Monthly Payment: ' + monthly_payment);
-
-		console.log('-------------- END TRANSACTION -------------')
+		monthly_payment = parseFloat(monthly_payment) + parseFloat(mT) + parseFloat(mI) + parseFloat(mF);
 
 		$('#monthly_payment').val(monthly_payment);
 	}
