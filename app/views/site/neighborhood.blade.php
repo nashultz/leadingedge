@@ -12,7 +12,7 @@
 			@foreach($neighborhood->videos as $video)
 				<embed
 					width="100%" height="422"
-					src="http://www.youtube.com/v/{{$video->url}}"
+					src="http://www.youtube.com/embed/videoseries?list={{$video->url}}"
 					type="application/x-shockwave-flash">
 				</embed><br>
 			@endforeach
