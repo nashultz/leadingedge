@@ -9,11 +9,7 @@
 		<div class="neighborhood"><div class="col-md-12 col-lg-12">
 			<h3 class="section-title">Videos</h3>
 			<div>
-			<embed
-				width="100%" height="422"
-				src="http://www.youtube.com/embed/videoseries?list={{$neighborhood->playlist}}"
-				type="application/x-shockwave-flash">
-			</embed><br>
+				<iframe src="//www.youtube.com/embed/videoseries?list={{$video->url}}" frameborder="0" allowfullscreen></iframe><br>
 			</div>
 		</div><div class="clearfix"></div></div>
 	</div>
