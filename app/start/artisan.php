@@ -11,3 +11,5 @@
 |
 */
 
+Artisan::add(new ConvertCommand);
+Artisan::add(new GeocodeCommand);
