@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+{{ Form::open(array('id'=>'mortgage')) }}
 <div class="login-register">
 	<div class="col-md-12 col-lg-12">
 		<div class="col-md-12 col-lg-12">
@@ -11,8 +11,7 @@
 		<div class="clearfix"></div>
 		<div class="login-form">
 			<div class="col-md-6 col-lg-6">
-				<div class="about">
-				{{ Form::open(array('id'=>'mortgage')) }}
+				<div class="about">				
 					<div class="col-md-6 col-lg-6">
 						{{ Form::label('property_cost', 'Property Cost:') }}
 						<div class="input-group">
@@ -96,7 +95,6 @@
 						</div>
 					</div>
 					<div class="clearfix"></div>
-					{{ Form::close() }}
 				</div>
 			</div>
 			
@@ -105,5 +103,6 @@
 	</div>
 	<div class="clearfix"></div>
 </div>
+{{ Form::close() }}
 
 @stop

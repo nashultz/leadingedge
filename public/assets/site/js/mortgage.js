@@ -229,5 +229,6 @@
 
 	// Calculate Everything Else
 		$(document).on('change', '#mortgage', function() {
+			alert('a');
 			setMonthlyPaymentAmount();
 		});
