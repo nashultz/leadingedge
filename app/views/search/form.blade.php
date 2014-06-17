@@ -53,7 +53,7 @@
 	<div class="col-md-2 col-lg-2"></div>
 	<div class="col-md-8 col-lg-8">
 		<div class="submit-container">
-			{{ Form::submit('Search Resale Homes',array('class'=>'btn btn-danger')) }}
+			<a href="{{URL::to('idx')}}" class="resale btn btn-danger">Search Resale Homes</a>
 		</div>
 	</div>
 	<div class="col-md-2 col-lg-2"></div>	

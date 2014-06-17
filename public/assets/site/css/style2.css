@@ -436,7 +436,9 @@ background: rgb(164,42,31);
 
 .submit-container input[type="submit"],
 .submit-container input[type="submit"].btn,
-.submit-container input[type="submit"].btn-danger {
+.submit-container input[type="submit"].btn-danger,
+.submit-container .btn,
+.submit-container .btn-danger {
   background-image: none;
   background: rgb(164,42,31);
   border: 2px solid rgb(234,234,234);
