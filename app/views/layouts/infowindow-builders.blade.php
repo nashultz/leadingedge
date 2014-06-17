@@ -8,6 +8,11 @@
 			@if ($neighborhood)
 				<h4 class="section-title"><a href="neighborhoods/{{$neighborhood->slug}}">{{ $neighborhood->name }}</a> ({{ $ajaxBuilders->count() }})</h4>
 
+				@if ($neighborhood->playlist)
+					<p>Videos Available!</p>
+				@endif
+				<p>Click <a href="neighborhoods/{{$neighborhood->slug}}">Here</a> for more details!<p>
+
 				{{ $neighborhood->city }}<br>
 				{{ $neighborhood->district }}<br>
 

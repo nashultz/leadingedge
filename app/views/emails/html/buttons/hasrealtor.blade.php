@@ -104,9 +104,9 @@
 	</div>
 	<div>
 		<h3>Thanks for choosing Leading Edge Realty</h3>
-		<p>Based on the information you have provided, we regret to inform you that while you are already working with 
-		   another realtor we cannot offer you our services.</p>
-		<p>Please do not hesitate to contact us at LeadingEdgeRealtyAustin@gmail.com when you are no longer working with another realtor.</p>
+		<p>Out of respect for the relationship you have with your Realtor, we welcome you to our site and encourage you to visit us as often as you'd like. 
+		<p>However, we cannot provide additional assistance while you have an existing relationship.</p>
+		<p>Please do not hesitate to contact us at LeadingEdgeRealtyAustin@gmail.com should there come a time when you are no longer working with another Realtor.</p>
 		<br>
 		<p> Thank you,<br>Leading Edge Realty Team</p>
 	</div>

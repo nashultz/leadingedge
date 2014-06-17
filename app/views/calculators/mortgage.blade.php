@@ -28,15 +28,10 @@
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-6 col-lg-6">
-						{{ Form::label('length_years', 'Length:') }}
+						{{ Form::label('length_years', 'Length:') }} - (Recommended: 30)
 						<div class="input-group">
 							{{ Form::text('length_years', '', array('id'=>'length_years','placeholder'=>'Years','class'=>'form-control','tabindex'=>'2')) }}
 							<span class="input-group-addon">Years</span>
-						</div>
-						<div class='spacer-5'></div>
-						<div class="input-group">
-							{{ Form::text('length_months', '', array('id'=>'length_months','placeholder'=>'Months','class'=>'form-control','tabindex'=>'3')) }}
-							<span class="input-group-addon">Months</span>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-6">
@@ -56,7 +51,7 @@
 			<div class="col-md-6 col-lg-6">
 				<div class="about">
 					<div class="col-md-6 col-lg-6">
-						{{ Form::label('annual_ins', 'Annual Insurance:') }}
+						{{ Form::label('annual_ins', 'Annual Insurance:') }} (Recommended: 0.2)
 						<div class="input-group">
 							{{ Form::text('annual_ins_percentage', '', array('id'=>'annual_ins_percentage','class'=>'form-control','tabindex'=>'7')) }}
 							<span class="input-group-addon">%</span>
@@ -81,7 +76,7 @@
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-6 col-lg-6">
-						{{ Form::label('monthly_fees', 'Monthly Fees:') }}
+						{{ Form::label('monthly_fees', 'Monthly Mortgage Insurance:') }}
 						<div class="input-group">
 							<span class="input-group-addon">$</span>
 							{{ Form::text('monthly_fees', '', array('id'=>'monthly_fees','class'=>'form-control','tabindex'=>'11')) }}

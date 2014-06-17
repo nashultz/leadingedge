@@ -105,7 +105,7 @@
 	<div>
 		<h3>Thanks for choosing Leading Edge Realty</h3>
 		<p>Your information has been sent.</p>
-		<p>We will review your information and an agent will get back to you within 48 hours.</p>
+		<p>We will review your information and an agent will get back to you within 24 hours.</p>
 		<br>
 		<p>Thank you,<br>Leading Edge Realty Team</p>
 	</div>

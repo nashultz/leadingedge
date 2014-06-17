@@ -353,6 +353,11 @@
 							{{ Form::radio('realtor', 0, true) }} No
 						</div><div class="clearfix"></div>
 					</div>
+					<div class="spacer-5"></div>
+					<div class="col-md-12">
+						<p>Your request will be sent to a mortgage loan officer.</p>
+						<div class="clearfix"></div>
+					</div>
 					<div class="spacer-20"></div>
 					<div class="col-md-12">
 						<div class="submit-container">

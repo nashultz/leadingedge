@@ -15,14 +15,13 @@
 	function getTermLength()
 	{
 		var years = parseInt($('#length_years').val());
-		var months = parseInt($('#length_months').val());
 
-		if (isNaN(years) && isNaN(months))
+		if (isNaN(years))
 		{
 			alert('You must enter a valid Term Length');
 		}
 
-		var term_length = ( years * 12 ) + months;
+		var term_length = ( years * 12 );
 
 		return term_length;
 	}

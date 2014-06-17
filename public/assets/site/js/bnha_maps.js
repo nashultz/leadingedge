@@ -124,6 +124,9 @@ function doMap(resp)
           var lat = this.position.lat();
           var lng = this.position.lng();
 
+          var test = new google.maps.LatLng(this.position.lat(), this.position.lng());
+          map.panTo(test);
+
           infowindow.setPosition(this.position);
           infowindow.close();
 
