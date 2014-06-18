@@ -32,7 +32,7 @@
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-12">
-						{{ Form::label('beds','Bedrooms: ') }}<i class="fa fa-asterisk small req"></i>
+						{{ Form::label('beds','Minimum # of Bedrooms: ') }}<i class="fa fa-asterisk small req"></i>
 						{{ Form::select('beds', $numRooms, 0,array('class'=>'form-control')) }}
 					</div>
 					<div class="spacer-5"></div>
@@ -102,6 +102,11 @@
 						<div class="col-md-6">
 							{{ Form::radio('realtor', 0, true) }} No
 						</div><div class="clearfix"></div>
+					</div>
+					<div class="spacer-5"></div>
+					<div class="col-md-12">
+						{{ Form::label('comments','Questions or Comments?: ') }}
+						{{ Form::textarea('comments','',array('class'=>'form-control')) }}
 					</div>
 					<div class="spacer-20"></div>
 					<div class="col-md-12">
@@ -189,6 +194,11 @@
 							{{ Form::radio('realtor', 0, true) }} No
 						</div><div class="clearfix"></div>
 					</div>
+					<div class="spacer-5"></div>
+					<div class="col-md-12">
+						{{ Form::label('comments','Questions or Comments?: ') }}
+						{{ Form::textarea('comments','',array('class'=>'form-control')) }}
+					</div>
 					<div class="spacer-20"></div>
 					<div class="col-md-12">
 						<div class="submit-container">
@@ -275,6 +285,11 @@
 							{{ Form::radio('realtor', 0, true) }} No
 						</div><div class="clearfix"></div>
 					</div>
+					<div class="spacer-5"></div>
+					<div class="col-md-12">
+						{{ Form::label('comments','Questions or Comments?: ') }}
+						{{ Form::textarea('comments','',array('class'=>'form-control')) }}
+					</div>					
 					<div class="spacer-20"></div>
 					<div class="col-md-12">
 						<div class="submit-container">
@@ -316,12 +331,12 @@
 					<div class="spacer-5"></div>
 					<div class="col-md-12">
 						{{ Form::label('dpayment','% of Down Payment: ') }}<i class="fa fa-asterisk small req"></i>
-						{{ Form::select('dpayment',array('0'=>'Any'),0,array('class'=>'form-control')) }}
+						{{ Form::select('dpayment',array('0'=>'Any', '3.5'=>'3.5%', '5'=>'5%', '10'=>'10%', '20'=>'20%', '20+'=>'More than 20%'),0,array('class'=>'form-control')) }}
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-12">
 						{{ Form::label('credit','Credit: ') }}<i class="fa fa-asterisk small req"></i>
-						{{ Form::select('credit',array('0'=>'Any'),0,array('class'=>'form-control')) }}
+						{{ Form::select('credit',array('0'=>'Fair', '1'=>'Good', '2'=>'Excellent', '3'=>'Other'),0,array('class'=>'form-control')) }}
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-12">
@@ -358,6 +373,11 @@
 						<p>Your request will be sent to a mortgage loan officer.</p>
 						<div class="clearfix"></div>
 					</div>
+					<div class="spacer-5"></div>
+					<div class="col-md-12">
+						{{ Form::label('comments','Questions or Comments?: ') }}
+						{{ Form::textarea('comments','',array('class'=>'form-control')) }}
+					</div>					
 					<div class="spacer-20"></div>
 					<div class="col-md-12">
 						<div class="submit-container">
