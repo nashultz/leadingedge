@@ -37,12 +37,26 @@
 
 			if ($minCost != '0')
 			{
-				$builders->where('builders.min_price', '>=', (int)$minCost);
+				if ($minCost == '99999999')
+				{
+					$builders->where('builders.min_price', '>', 1000000);
+				}
+				else
+				{
+					$builders->where('builders.min_price', '>=', (int)$minCost);	
+				}
 			}
 
 			if ($maxCost != '0')
 			{
-				$builders->Where('builders.max_price', '<=', (int)$maxCost);
+				if ($maxCost == '99999999')
+				{
+					$builders->where('builders.max_price', '>', 1000000);
+				}
+				else 
+				{
+					$builders->Where('builders.max_price', '<=', (int)$maxCost);
+				}
 			}
 
 			if ($city != '0')

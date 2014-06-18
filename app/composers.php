@@ -35,10 +35,13 @@ View::composer('*', function($view) {
 			$builders[$builder->name] = $builder->name;
 		}
 
-		for ($a = 10000; $a <= 500000; $a += 10000)
+		for ($a = 10000; $a <= 1000000; $a += 10000)
 		{
 			$costOptions[$a] = '$' . number_format($a,2);
 		}
+
+		// Add Last Option
+		$costOptions['99999999'] = "$1,000,000+";
 
 		for ($a = 1000; $a <= 5000; $a += 100)
 		{
