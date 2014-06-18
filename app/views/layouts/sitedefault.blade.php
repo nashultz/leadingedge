@@ -88,7 +88,7 @@
                             <!--<li class="divider-vertical"></li>-->
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#" target="_blank" title="Facebook"><i class='fa fa-facebook'></i></a></li>
+                            <li><a href="https://www.facebook.com/AustinAreaRealEstateDeals" target="_blank" title="Facebook"><i class='fa fa-facebook'></i></a></li>
                             <li class="hidden-xs hidden-sm divider-vertical"></li>
                             <li><a href="https://www.youtube.com/channel/UCfW9OSJ9FolOoqiN4tapg2w" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a></li>
                             <li class="hidden-xs hidden-sm divider-vertical"></li>
