@@ -53,7 +53,7 @@
         <div class="row print-hide">
             <!-- HEADER -->
             <div class="brand col-md-12 col-lg-12">
-                <a href="{{URL::to('/')}}">{{img('site','mainlogo.png',array('class'=>'logo'))}}</a>
+                <a href="{{URL::to('/')}}" title="Leading Edge Realty - Home">{{img('site','mainlogo.png',array('class'=>'logo'))}}</a>
             </div>
             <!-- /HEADER -->
             <!-- NAVIGATION -->
@@ -69,27 +69,31 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="{{URL::to('/')}}"><i class="fa fa-home"></i></a></li>
+                            <li><a href="{{URL::to('/')}}" title="Home"><i class="fa fa-home"></i></a></li>
                             <li class="hidden-xs hidden-sm divider-vertical"></li>
-                            <li><a href="{{URL::to('about')}}">About</a></li>
+                            <li><a href="{{URL::to('about')}}" title="About">About</a></li>
                             <li class="hidden-xs hidden-sm divider-vertical"></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Resources">Resources <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{URL::to('mortgage')}}">Mortgage Calculator</a></li>
-                                    <li><a href="{{URL::route('site.schoolratings')}}" target="_blank">2013 School Ratings&nbsp;&nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
-                                    <li><a href="{{URL::route('site.realtor')}}">Why Use a Realtor&reg;</a></li>
+                                    <li><a href="{{URL::to('mortgage')}}" title="Mortgage Calculator">Mortgage Calculator</a></li>
+                                    <li><a href="{{URL::route('site.schoolratings')}}" target="_blank" title="2013 School Ratings">2013 School Ratings&nbsp;&nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
+                                    <li><a href="{{URL::route('site.realtor')}}" title="Why Use a Realtor">Why Use a Realtor&reg;</a></li>
                                 </ul>
                             </li>
                             <li class="hidden-xs hidden-sm divider-vertical"></li>
-                            <li><a href="{{URL::to('testimonials')}}">Testimonials</a></li>
+                            <li><a href="{{URL::to('testimonials')}}" title="Testimonials">Testimonials</a></li>
                             <li class="hidden-xs hidden-sm divider-vertical"></li>
-                            <li><a href="{{URL::to('contact')}}">Contact Us</a></li>
+                            <li><a href="{{URL::to('contact')}}" title="Contact Us">Contact Us</a></li>
                             <!--<li class="divider-vertical"></li>-->
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#" target="_blank" title="Facebook"><i class='fa fa-facebook'></i></a></li>
+                            <li class="hidden-xs hidden-sm divider-vertical"></li>
+                            <li><a href="https://www.youtube.com/channel/UCfW9OSJ9FolOoqiN4tapg2w" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a></li>
+                            <li class="hidden-xs hidden-sm divider-vertical"></li>
                             @if (!Auth::check())
-                                <li><a href="{{ URL::route('get.auth.login') }}">Login/Register</a></li>
+                                <li><a href="{{ URL::route('get.auth.login') }}" title="Login/Register">Login/Register</a></li>
                                 <!--<li class="divider-vertical"></li>
                                 <li><a href="{{-- URL::route('get.auth.register') --}}">Register</a></li>-->
                             @else 
