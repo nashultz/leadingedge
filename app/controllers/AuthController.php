@@ -58,7 +58,7 @@ use Carbon\Carbon;
 				return Redirect::route('get.auth.login')->withInput();
 			}
 
-			Notifications::success('Success!')->save();
+			Notifications::success('Success! Please check your email for your verification code!')->save();
 			return Redirect::route('get.auth.login');
 		}
 
