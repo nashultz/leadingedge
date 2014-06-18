@@ -24,7 +24,9 @@
 			</div>
 			<div class="spacer-20"></div>
 			<div class="col-md-12 col-lg-12">
-				{{ Form::submit('Login',array('class'=>'btn btn-success')) }}
+				<div class="submit-container">
+				{{ Form::submit('Login',array('class'=>'btn btn-danger')) }}
+				</div>
 			</div>
 			<div class="spacer-20"></div>
 			<div class="forgot-links col-md-12 col-lg-12">
@@ -35,6 +37,7 @@
 
 		{{ Form::close() }}
 	</div>
+	<div class="space-30"></div>
 	<div class="col-md-6 col-lg-6">
 		{{ Form::open(array('method'=>'POST','route'=>'post.auth.register')) }}
 
@@ -70,7 +73,9 @@
 			</div>
 			<div class="spacer-20"></div>
 			<div class="col-md-12 col-lg-12">
-				{{ Form::submit('Register',array('class'=>'btn btn-success')) }}
+				<div class="submit-container">
+				{{ Form::submit('Register',array('class'=>'btn btn-danger')) }}
+				</div>
 			</div>
 			<div class="clearfix"></div>
 		</div>

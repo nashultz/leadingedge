@@ -1,7 +1,7 @@
 @extends('layouts.sitedefault')
 
 @section('content')
-    <div class="col-md-5 col-md-push-7 col-lg-5 col-lg-push-7">
+    <div class="col-sm-12 col-md-5 col-md-push-7 col-lg-5 col-lg-push-7">
 
         @if (Auth::guest())
             <div id="guestAlertWindow">
@@ -51,10 +51,13 @@
             </div><div class="clearfix"></div>
         </div>
     </div>
-    <div class="col-md-4 col-md-pull-2 col-lg-4 col-lg-pull-2">
+    <div class="hidden-md hidden-lg clearfix"></div>
+    <div class="hidden-md hidden-lg space-30"><div class="visible-sm spacer-30"></div></div>
+    <div class="col-sm-6 col-md-4 col-md-pull-2 col-lg-4 col-lg-pull-2">
         @include('search.form')
     </div>
-    <div class="col-md-3 col-md-pull-9 col-lg-3 col-lg-pull-9">
+    <div class="hidden-sm hidden-md hidden-lg space-30"></div>
+    <div class="col-sm-6 col-md-3 col-md-pull-9 col-lg-3 col-lg-pull-9">
         @include('buttons.buttons')
     </div>
     <div class="clearfix"></div>   

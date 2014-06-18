@@ -70,9 +70,9 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li><a href="{{URL::to('/')}}"><i class="fa fa-home"></i></a></li>
-                            <li class="divider-vertical"></li>
+                            <li class="hidden-xs hidden-sm divider-vertical"></li>
                             <li><a href="{{URL::to('about')}}">About</a></li>
-                            <li class="divider-vertical"></li>
+                            <li class="hidden-xs hidden-sm divider-vertical"></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -81,9 +81,9 @@
                                     <li><a href="{{URL::route('site.realtor')}}">Why Use a Realtor&reg;</a></li>
                                 </ul>
                             </li>
-                            <li class="divider-vertical"></li>
+                            <li class="hidden-xs hidden-sm divider-vertical"></li>
                             <li><a href="{{URL::to('testimonials')}}">Testimonials</a></li>
-                            <li class="divider-vertical"></li>
+                            <li class="hidden-xs hidden-sm divider-vertical"></li>
                             <li><a href="{{URL::to('contact')}}">Contact Us</a></li>
                             <!--<li class="divider-vertical"></li>-->
                         </ul>

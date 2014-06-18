@@ -10,7 +10,7 @@
 		</div>
 		<div class="clearfix"></div>
 		<div class="login-form">
-			<div class="col-md-6 col-lg-6">
+			<div class="col-sm-6 col-md-6 col-lg-6">
 				<div class="about">				
 					<div class="col-md-6 col-lg-6">
 						{{ Form::label('property_cost', 'Property Cost:') }}
@@ -28,11 +28,12 @@
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-6 col-lg-6">
-						{{ Form::label('length_years', 'Length:') }} - (Recommended: 30)
+						{{ Form::label('length_years', 'Length:') }}
 						<div class="input-group">
 							{{ Form::text('length_years', '', array('id'=>'length_years','placeholder'=>'Years','class'=>'form-control','tabindex'=>'2')) }}
 							<span class="input-group-addon">Years</span>
 						</div>
+						<span class="help-block">Recommended: 30 years</span>
 					</div>
 					<div class="col-md-6 col-lg-6">
 						{{ Form::label('down_payment', 'Down Payment: ') }}
@@ -48,14 +49,15 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6 col-lg-6">
+			<div class="col-sm-6 col-md-6 col-lg-6">
 				<div class="about">
 					<div class="col-md-6 col-lg-6">
-						{{ Form::label('annual_ins', 'Annual Insurance:') }} (Recommended: 0.2)
+						{{ Form::label('annual_ins', 'Annual Insurance:') }}
 						<div class="input-group">
 							{{ Form::text('annual_ins_percentage', '', array('id'=>'annual_ins_percentage','class'=>'form-control','tabindex'=>'7')) }}
 							<span class="input-group-addon">%</span>
 						</div>
+						<span class="help-block">Recommended: 0.2%</span>
 						<div class='spacer-5'></div>
 						<div class="input-group">
 							<span class="input-group-addon">$</span>
@@ -76,10 +78,10 @@
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-6 col-lg-6">
-						{{ Form::label('monthly_fees', 'Monthly Mortgage Insurance:') }}
+						{{ Form::label('monthly_fees', 'Mortgage Insurance:') }}
 						<div class="input-group">
 							<span class="input-group-addon">$</span>
-							{{ Form::text('monthly_fees', '', array('id'=>'monthly_fees','class'=>'form-control','tabindex'=>'11')) }}
+							{{ Form::text('monthly_fees', '', array('id'=>'monthly_fees','class'=>'form-control','tabindex'=>'11','placeholder'=>'Enter Monthly Amount')) }}
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-6">

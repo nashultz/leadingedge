@@ -61,13 +61,8 @@
 		</div>
 		{{ Form::close() }}
 	</div>
+	<div class="space-30"></div>
 	<div class="col-md-6 col-lg-6">
-		{{
-			Form::open(array(
-				'method'=>'POST',
-				'route'=>'site.contact.send'
-			))
-		}}
 		<div class="login-form">
 			<div class="col-md-12 col-lg-12">
 				<h3 class="section-title">By Phone</h3>

@@ -26,10 +26,10 @@
 			</div>
 			<div class="col-md-6 col-lg-6">
 				<div class="agent-profile">
-					<div class="about-photo col-md-4 col-lg-4">
+					<div class="about-photo col-sm-6 col-md-4 col-lg-4">
 						{{img('site','tammy-young.jpg',array('class'=>'img-circle img-thumbnail'))}}
 					</div>
-					<div class="col-md-8 col-lg-8">
+					<div class="col-sm-6 col-md-8 col-lg-8">
 						<h3 class="info-head">Tammy Young </h3>
 						<h5><span class="label label-default">Broker/Owner</span></h5>
 						<div class="spacer-15"></div>
@@ -46,12 +46,13 @@
 					<div class="clearfix"></div>
 				</div>
 			</div>
+			<div class="hidden-md hidden-lg space-30"></div>
 			<div class="col-md-6 col-lg-6">
 				<div class="agent-profile">
-					<div class="about-photo col-md-4 col-lg-4">
+					<div class="about-photo col-sm-6 col-md-4 col-lg-4">
 						{{img('site','david-mccaleb.jpg',array('class'=>'img-circle img-thumbnail'))}}
 					</div>
-					<div class="col-md-8 col-lg-8">
+					<div class="col-sm-6 col-md-8 col-lg-8">
 						<h3 class="info-head">David McCaleb</h3>
 						<h5><span class="label label-default">Realtor/Owner</span></h5>
 						<div class="spacer-15"></div>

@@ -128,6 +128,8 @@ function doMap(resp)
           map.panTo(test);
 
           infowindow.setPosition(this.position);
+          infowindow.marginTop = "-100px";
+          infowindow.marginLeft = "-100px";
           infowindow.close();
 
           var response = $.ajax({

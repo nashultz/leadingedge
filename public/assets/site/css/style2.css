@@ -85,6 +85,10 @@ body {
   .spacer-60{
     height : 60px;
   }
+  .space-30 {
+    width:100%;
+    height: 30px;
+  }
 
 .padding10,
 .padding20,
@@ -174,6 +178,7 @@ select {
   width: auto;
 }
 
+textarea,
 .buttons textarea {
   width: 100%;
 }
@@ -489,8 +494,15 @@ background: rgb(164,42,31);
   font-size: 10px;
 }
 
+.infoBox {
+  width: 250px;
+  max-height: 300px;
+  margin: -200px 130px 0 -40px;
+}
+
 .infowindow {
   padding: 15px;
+  margin: 0 0 0 -50px;
   border-radius: 5px;
   max-height: 300px;
   overflow: auto;
@@ -502,6 +514,10 @@ background: rgb(164,42,31);
 .infowindow .info-head {
   color: rgb(255,255,255);
   background: rgb(164,42,31);
+}
+
+.infoBox img {
+  margin: 0px 0 0 -50px !important;
 }
 
 .about-photo img {
