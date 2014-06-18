@@ -6,12 +6,12 @@
 });*/
 
 View::composer('*', function($view) { 
-		$c = Neighborhood::select('city')->distinct()->get();
+		$c = Neighborhood::select('city')->distinct()->orderBy('city','ASC')->get();
 		$i = Neighborhood::select('isd','district')->groupBy('isd')->get(); 
 
 		//Neighborhood::select('isd')->distinct()->get();
 		$b = Builder::select('name')->distinct()->get();
-		$n = Neighborhood::lists('name', 'id');
+		$n = Neighborhood::orderBy('name','ASC')->lists('name', 'id');
 
 
 		$cities[0] = 'Any';
