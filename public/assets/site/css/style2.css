@@ -187,6 +187,21 @@ blockquote {
   border-left: 5px solid rgb(164,42,31);
 }
 
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+background-color: rgb(164,42,31);
+}
+
+.navbar-inverse .navbar-toggle {
+border-color: rgb(164,42,31);
+}
+
+.navbar-toggle {
+background-color: rgb(164,42,31);
+background-image: none;
+border: 1px solid rgb(164,42,31);
+border-radius: 4px;
+}
+
 /* ==========================================================
 ! Typography
 ========================================================== */
