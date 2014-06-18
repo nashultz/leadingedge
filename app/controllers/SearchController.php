@@ -27,12 +27,25 @@
 
 			if ($minSqFootage != '0')
 			{
-				$builders->where('builders.min_size', '>=', (int)$minSqFootage);
+				if ($minSqFootage == '99999999')
+				{
+					$builders->where('builders.min_size', '>', 5000);
+				}
+				else {
+					$builders->where('builders.min_size', '>=', (int)$minSqFootage);
+				}
 			}
 
 			if ($maxSqFootage != '0')
 			{
-				$builders->where('builders.max_size', '<=', (int)$maxSqFootage);
+				if ($maxSqFootage == '99999999')
+				{
+					$builders->where('builders.max_size', '>', 5000);
+				}
+				else 
+				{
+					$builders->where('builders.max_size', '<=', (int)$maxSqFootage);
+				}
 			} 
 
 			if ($minCost != '0')

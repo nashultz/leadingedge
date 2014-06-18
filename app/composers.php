@@ -48,6 +48,8 @@ View::composer('*', function($view) {
 			$sqFootageOptions[$a] = number_format($a, 0);
 		}
 
+		$sqFootageOptions['99999999'] = "5,0000+";
+
 		for ($a = 0; $a <= 10; $a += 1)
 		{
 			$numRooms[$a] = $a;
