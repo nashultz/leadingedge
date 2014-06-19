@@ -49,17 +49,21 @@
                     css: { 
                         padding:        0, 
                         margin:         0, 
-                        width:          'auto', 
+                        width:          '870px', 
                         top:            '15%', 
                         left:           '20%', 
                         textAlign:      'center', 
-                        color:          '#000', 
+                        color:          '#fff', 
                         border:         'none', 
                         backgroundColor:'#000', 
                         cursor:         'wait' 
                     }, 
                     onOverlayClick: $.unblockUI 
                 }); 
+            });
+            $('.close').click(function() {
+                $.unblockUI();
+                return false;
             });    
         });
     </script>
@@ -83,8 +87,11 @@
                     <a href="#" id="ytvid"><img src="http://img.youtube.com/vi/OKfAhI2ZuTw/hqdefault.jpg" title="Welcome Video" /></a>
                 </div>
 
-                <div id="youtubevid2" class="col-md-8">
-                    <iframe width="800" height="450" src="//www.youtube.com/embed/OKfAhI2ZuTw?feature=player_embedded&autoplay=0&rel=0&showinfo=0&autohide=1&color=white" frameborder="0" allowfullscreen></iframe>
+                <div id="youtubevid2" class="col-md-12">
+                    <div class="vid col-md-11">
+                        <iframe width="800" height="450" src="//www.youtube.com/embed/OKfAhI2ZuTw?feature=player_embedded&autoplay=0&rel=0&showinfo=0&autohide=1&color=white" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="close col-md-1"><i class="fa fa-times-circle"></i></div>
                 </div>
             </div>
             <!-- /HEADER -->

@@ -609,6 +609,26 @@ background: rgb(164,42,31);
 
 #youtubevid2 {
   display: none;
+  width: 870px;
+}
+
+#youtubevid2 .vid,
+#youtubevid2 .close {
+  float: left;
+}
+
+#youtubevid2 .vid {
+  width: 810px;
+}
+
+#youtubevid2 .close {
+  color: #fff;
+  width: 30px;
+  opacity: 1.0;
+}
+
+#youtubevid2 .close:hover {
+  opacity: .7;
 }
 
 
