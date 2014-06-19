@@ -37,7 +37,7 @@
 
 		{{ Form::close() }}
 	</div>
-	<div class="space-30"></div>
+	<div class="hidden-md hidden-lg space-30"></div>
 	<div class="col-md-6 col-lg-6">
 		{{ Form::open(array('method'=>'POST','route'=>'post.auth.register')) }}
 

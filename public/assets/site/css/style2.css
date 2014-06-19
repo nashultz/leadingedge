@@ -633,3 +633,24 @@ background: rgb(164,42,31);
 .nav-footer li:last-child {
   border-right: none;
 }
+
+.footer .member,
+.footer .member2 {
+  width: auto;
+  float: left;
+  margin-right: 5px;
+}
+
+.footer .member2 {
+  margin-right: 0px;
+}
+
+.footer .member img {
+  width: 70px;
+  height: auto;
+}
+
+.footer .member2 img {
+  width: 180px;
+  height: auto;
+}

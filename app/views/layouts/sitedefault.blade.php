@@ -53,7 +53,16 @@
         <div class="row print-hide">
             <!-- HEADER -->
             <div class="brand col-md-12 col-lg-12">
-                <a href="{{URL::to('/')}}" title="Leading Edge Realty - Home">{{img('site','mainlogo.png',array('class'=>'logo'))}}</a>
+                <div class="col-md-4">
+                    <a href="{{URL::to('/')}}" title="Leading Edge Realty - Home">{{img('site','mainlogo.png',array('class'=>'logo'))}}</a>
+                </div>
+                <div id="youtubevid" class="col-md-8">
+                    <embed
+                        width="154px" height="108px"
+                        src="http://www.youtube.com/v/OKfAhI2ZuTw"
+                        type="application/x-shockwave-flash">
+                    </embed>
+                </div>
             </div>
             <!-- /HEADER -->
             <!-- NAVIGATION -->
@@ -125,21 +134,25 @@
 <!-- FOOTER -->
 <div class="container">
     <div class="row footer">
-        <div class="col-md-12 col-lg-12">
+        <div class="col-md-4 col-lg-4">
             <div class="pull-left">
-                Copyright &copy; <?php echo date('Y'); ?> &ndash; Leading Edge Realty &ndash; Austin, TX. All Rights Reserved.
+                <h5 class="section-title">Leading Edge Realty</h5>
+                Copyright &copy; <?php echo date('Y'); ?> <br> Leading Edge Realty &ndash; Austin, TX. <br> All Rights Reserved.
             </div>
-            <div class="pull-right">
-                <ul class="nav-footer">
-                    <!--<li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Privacy Policy</a></li>-->
-                </ul>
-            </div>
-            <div class='spacer-30'></div>
         </div>
+        <div class="col-md-4 col-lg-4">
+            <h5 class="section-title">Member of</h5>
+            <div class="member"><img src="assets/site/img/web_R_blue.jpg" title="REALTOR&reg;" /></div>&nbsp;&nbsp;
+            <div class="member"><img src="assets/site/img/equal-house-opp.gif" title="Equal Housing Opportunity" /></div>
+            <div class="member2"><img src="assets/site/img/MLS-clear.png" title="REALTOR&reg; Multiple Listing Service" /></div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+            <h5 class="section-title">Disclaimer</h5>
+            <p>Information found on this site is derived from third party sources and is deemed reliable. The developers and owners of this site cannot guarantee the accuracy of the information found here.</p>
+        </div>
+        <div class="clearfix"></div>
     </div>
-</div>
+</div><div class='spacer-30'></div>
 <!-- /FOOTER -->
 
 <!-- Javascript/Jquery -->
