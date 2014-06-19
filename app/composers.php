@@ -6,29 +6,18 @@
 });*/
 
 View::composer('*', function($view) { 
-		$c = Neighborhood::select('city')->distinct()->orderBy('city','ASC')->get();
-		$i = Neighborhood::select('isd','district')->groupBy('isd')->get(); 
+		$cities = Neighborhood::select('city','isd')->groupBy('city')->orderBy('city','ASC')->get();
+		$isds = Neighborhood::select('isd','district','city')->groupBy('isd')->get(); 
 
 		//Neighborhood::select('isd')->distinct()->get();
 		$b = Builder::select('name')->distinct()->get();
 		$n = Neighborhood::orderBy('name','ASC')->lists('name', 'id');
 
 
-		$cities[0] = 'Any';
-		$isds[0] = 'Any';
 		$builders[0] = 'Any';
 		$n[0] = 'Any';
 		$costOptions[0] = 'Any';
 		$sqFootageOptions[0] = 'Any';
-		foreach($c as $city)
-		{
-			$cities[$city->city] = $city->city;
-		}
-
-		foreach($i as $isd)
-		{
-			$isds[$isd->isd] = $isd->district;
-		}
 
 		foreach($b as $builder)
 		{
