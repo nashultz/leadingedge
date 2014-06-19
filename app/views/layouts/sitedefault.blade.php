@@ -31,6 +31,7 @@
     {{js('site', 'search.js') }}
     {{js('site','button-toggle.js')}}
     {{js('site','mortgage.js')}}
+    {{js('site','blockUI.js')}}
 
     <script>
         $(document).ready(function() {
@@ -38,6 +39,28 @@
                 format: 'yyyy-mm-dd',
                 startDate: '-0d'
             });
+        });
+    </script>
+    <script>
+        $(document).ready(function() { 
+            $('#ytvid').click(function() { 
+                $.blockUI({ 
+                    message: $('#youtubevid2'),
+                    css: { 
+                        padding:        0, 
+                        margin:         0, 
+                        width:          'auto', 
+                        top:            '15%', 
+                        left:           '20%', 
+                        textAlign:      'center', 
+                        color:          '#000', 
+                        border:         'none', 
+                        backgroundColor:'#000', 
+                        cursor:         'wait' 
+                    }, 
+                    onOverlayClick: $.unblockUI 
+                }); 
+            });    
         });
     </script>
     
@@ -57,11 +80,11 @@
                     <a href="{{URL::to('/')}}" title="Leading Edge Realty - Home">{{img('site','mainlogo.png',array('class'=>'logo'))}}</a>
                 </div>
                 <div id="youtubevid" class="col-md-8">
-                    <embed
-                        width="154px" height="108px"
-                        src="http://www.youtube.com/v/OKfAhI2ZuTw"
-                        type="application/x-shockwave-flash">
-                    </embed>
+                    <a href="#" id="ytvid"><img src="http://img.youtube.com/vi/OKfAhI2ZuTw/hqdefault.jpg" title="Welcome Video" /></a>
+                </div>
+
+                <div id="youtubevid2" class="col-md-8">
+                    <iframe width="800" height="450" src="//www.youtube.com/embed/OKfAhI2ZuTw?feature=player_embedded&autoplay=0&rel=0&showinfo=0&autohide=1&color=white" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
             <!-- /HEADER -->

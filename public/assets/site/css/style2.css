@@ -602,6 +602,15 @@ background: rgb(164,42,31);
   height: 300px;
 }
 
+#youtubevid img {
+  width: 150px;
+  height: auto;
+}
+
+#youtubevid2 {
+  display: none;
+}
+
 
 /* ==========================================================
 ! Custom Footer
