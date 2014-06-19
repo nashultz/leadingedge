@@ -32,6 +32,7 @@
     {{js('site','button-toggle.js')}}
     {{js('site','mortgage.js')}}
     {{js('site','blockUI.js')}}
+    {{js('site', 'visitors.js')}}
 
     <script>
         $(document).ready(function() {
@@ -58,10 +59,16 @@
                         backgroundColor:'#000', 
                         cursor:         'wait' 
                     }, 
-                    onOverlayClick: $.unblockUI 
+                    onOverlayClick: function()
+                    {
+                        $('#youtubePlayer').attr('src', "//www.youtube.com/embed/OKfAhI2ZuTw?feature=player_embedded&autoplay=0&rel=0&showinfo=0&autohide=1&color=white");        
+                        $.unblockUI();
+
+                    }
                 }); 
             });
-            $('.close').click(function() {
+            $(document).on('click','.close', function() {
+                $('#youtubePlayer').attr('src', "//www.youtube.com/embed/OKfAhI2ZuTw?feature=player_embedded&autoplay=0&rel=0&showinfo=0&autohide=1&color=white");
                 $.unblockUI();
                 return false;
             });    
@@ -89,7 +96,7 @@
 
                 <div id="youtubevid2" class="col-md-12">
                     <div class="vid col-md-11">
-                        <iframe width="800" height="450" src="//www.youtube.com/embed/OKfAhI2ZuTw?feature=player_embedded&autoplay=0&rel=0&showinfo=0&autohide=1&color=white" frameborder="0" allowfullscreen></iframe>
+                        <iframe id="youtubePlayer" width="800" height="450" src="//www.youtube.com/embed/OKfAhI2ZuTw?feature=player_embedded&autoplay=0&rel=0&showinfo=0&autohide=1&color=white" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="close col-md-1"><i class="fa fa-times-circle"></i></div>
                 </div>
