@@ -6,6 +6,12 @@
 });*/
 
 View::composer('*', function($view) { 
+
+		if (Auth::User())
+		{
+			$view->with('savedSearches', Auth::User()->searches);
+		}
+
 		$cities = Neighborhood::select('city')->distinct()->orderBy('city','ASC');
 		$isds = Neighborhood::select('isd','district')->groupBy('isd');
 
