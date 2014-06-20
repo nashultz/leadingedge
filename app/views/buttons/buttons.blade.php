@@ -24,9 +24,7 @@
 					<div class="col-md-12">
 						{{ Form::label('city','City: ') }}<i class="fa fa-asterisk small req"></i>
 							
-						@foreach($cities as $city)
-							{{ Form::checkbox('cities[]', $city->city, false, array('class'=>'form-control')) }} {{ $city->city }}
-						@endforeach
+						{{ Form::select('cities[]', $searchCities, 'Austin', array('multiple','class'=>'form-control')) }}
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-12">

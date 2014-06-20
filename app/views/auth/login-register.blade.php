@@ -11,12 +11,12 @@
 			</div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('user', 'Username / Email') }}<br>
-				{{ Form::text('user','', array('form-control')) }}
+				{{ Form::text('user','', array('class'=>'form-control')) }}
 			</div>
 			<div class="spacer-20"></div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('password','Password') }}<br>
-				{{ Form::password('password') }}
+				{{ Form::password('password', array('class'=>'form-control')) }}
 			</div>
 			<div class="spacer-20"></div>
 			<div class="col-md-12">
@@ -47,29 +47,29 @@
 			</div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('fname', 'First Name') }}<br>
-				{{ Form::text('fname') }}
+				{{ Form::text('fname','', array('class'=>'form-control')) }}
 			</div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('lname', 'Last Name') }}<br>
-				{{ Form::text('lname') }}
+				{{ Form::text('lname','', array('class'=>'form-control')) }}
 			</div>
 			<div class="spacer-20"></div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('username', 'Username') }}<br>
-				{{ Form::text('username') }}
+				{{ Form::text('username','', array('class'=>'form-control')) }}
 			</div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('email', 'Email') }}<br>
-				{{ Form::text('email') }}
+				{{ Form::text('email','', array('class'=>'form-control')) }}
 			</div>
 			<div class="spacer-20"></div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('password', 'Password') }}<br>
-				{{ Form::password('password') }}
+				{{ Form::password('password', array('class'=>'form-control')) }}
 			</div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('password_confirmation', 'Confirm Password') }}<br>
-				{{ Form::password('password_confirmation') }}
+				{{ Form::password('password_confirmation', array('class'=>'form-control')) }}
 			</div>
 			<div class="spacer-20"></div>
 			<div class="col-md-12 col-lg-12">
