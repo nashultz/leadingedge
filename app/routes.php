@@ -120,6 +120,7 @@ Route::get('search', array('as'=>'get.search.index', 'uses'=>'SearchController@g
 Route::get('search/results', array('as'=>'get.search.results', 'uses'=>'SearchController@getResults'));
 Route::post('search/save', array('as'=>'post.search.save', 'uses'=>'SearchController@postSearchSave'));
 Route::post('search/load', array('as'=>'post.search.load', 'uses'=>'SearchController@postSearchLoad'));
+Route::delete('search/delete', array('as'=>'post.search.delete', 'uses'=>'SearchController@deleteSearch'));
 
 Route::post('perfect-home',array('as'=>'post.perfecthome.send','uses'=>'ButtonController@postPerfectHome'));
 Route::post('new-austin',array('as'=>'post.newaustin.send','uses'=>'ButtonController@postNewAustin'));

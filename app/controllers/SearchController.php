@@ -192,6 +192,22 @@
 
 		}
 
+		public function deleteSearch()
+		{
+			$id = Input::get('search');
+
+			$search = Search::where('user_id', Auth::User()->id)->where('id', $id)->first();
+
+			if ($search)
+			{
+				Notification::info('Search Deleted')->save();
+				return Redirect::back();
+			}
+
+			Notification::danger('Search Reference Not Found')->save();
+			return Redirect::back();
+		}
+
 
 	}
 

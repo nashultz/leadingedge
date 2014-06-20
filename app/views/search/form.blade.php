@@ -6,10 +6,10 @@
 	</div>
 	<div class="col-md-12 col-lg-12">
 		@if (Auth::guest())
-			<a href="{{ URL::route('auth.get.login') }}">Login or Register</a> to Save Your Searches!
+			<a href="{{ URL::route('get.auth.login') }}">Login or Register</a> to Save Your Searches!
 		@else
 			{{ Form::label('saved_search', 'Saved Searches: ') }}
-			{{ Form::select('saved_search', $savedSearches, 0, array('class'=>'form-control')) }}
+			{{ Form::select('saved_search', $savedSearches, 0, array('class'=>'form-control', 'id'=>'saved_search')) }}
 
 			<div class="submit-container">
 				<a href="#" class="delete_search btn btn-danger">Delete Saved Search</a>
@@ -20,7 +20,7 @@
 			</div>
 
 			{{ Form::label('search_name', 'Name: ') }}
-			{{ Form::text('search_name', '', array('class'=>'form-control')) }}
+			{{ Form::text('search_name', '', array('class'=>'form-control', 'id'=>'search_name')) }}
 
 			<div class="submit-container">
 				<a href="#" class="save_search btn btn-success">Save Search</a>
