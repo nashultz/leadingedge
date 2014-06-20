@@ -42,21 +42,20 @@
 		{{ Form::select('max_sqft', $sqFootageOptions, 0,array('class'=>'form-control')) }}
 	</div>
 	<div class="spacer-15"></div>
-	<div class="col-md-2 col-lg-2"></div>
-	<div class="col-md-8 col-lg-8">
+	<div class="col-md-12 col-lg-12">
 		<div class="submit-container">
-			{{ Form::submit('View Printable Results',array('class'=>'btn btn-danger')) }}
+			{{ Form::submit('View Printable Results*',array('class'=>'btn btn-danger')) }}
 		</div>
 	</div>
-	<div class="col-md-2 col-lg-2"></div>
 	<div class="spacer-10"></div>
-	<div class="col-md-2 col-lg-2"></div>
-	<div class="col-md-8 col-lg-8">
+	<div class="col-md-12 col-lg-12">
 		<div class="submit-container">
 			<a href="{{URL::to('idx')}}" class="resale btn btn-danger">Search Resale Homes</a>
 		</div>
 	</div>
-	<div class="col-md-2 col-lg-2"></div>	
+	<div class="col-md-12 col-lg-12">
+		<span class="help-block"><small>*Login/Register to save searches</small></span>
+	</div>
 	<div class="clearfix"></div>
 </div>
 

@@ -84,22 +84,17 @@
 <body>
 <div class="header">
     <div class="container">
-        <div class="row print-show">
-            <div class="col-md-12 col-lg-12">
-                <h1 class="brand">Leading Edge Realty</h1>
-            </div>
-        </div>
-        <div class="row print-hide">
+        <div class="row">
             <!-- HEADER -->
-            <div class="brand col-md-12 col-lg-12">
+            <div class="brand col-md-12 col-lg-12  print-show">
                 <div class="col-md-4">
                     <a href="{{URL::to('/')}}" title="Leading Edge Realty - Home">{{img('site','mainlogo.png',array('class'=>'logo'))}}</a>
                 </div>
-                <div id="youtubevid" class="col-md-8">
+                <div id="youtubevid" class="col-md-8 print-hide">
                     <a href="#" id="ytvid"><img src="http://img.youtube.com/vi/OKfAhI2ZuTw/hqdefault.jpg" title="Welcome Video" /></a>
                 </div>
 
-                <div id="youtubevid2" class="col-md-12">
+                <div id="youtubevid2" class="col-md-12 print-hide">
                     <div class="vid col-md-11">
                         <iframe id="youtubePlayer" width="800" height="450" src="//www.youtube.com/embed/OKfAhI2ZuTw?feature=player_embedded&autoplay=0&rel=0&showinfo=0&autohide=1&color=white" frameborder="0" allowfullscreen></iframe>
                     </div>
@@ -108,7 +103,7 @@
             </div>
             <!-- /HEADER -->
             <!-- NAVIGATION -->
-            <div class="col-md-12 col-lg-12">
+            <div class="col-md-12 col-lg-12 print-hide">
                 <div class="navbar navbar-inverse main-nav" role="navigation">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -175,24 +170,26 @@
 <div class="spacer-20"></div>
 <!-- FOOTER -->
 <div class="container">
-    <div class="row footer">
-        <div class="col-md-4 col-lg-4">
-            <div class="pull-left">
-                <h5 class="section-title">Leading Edge Realty</h5>
-                Copyright &copy; <?php echo date('Y'); ?> <br> Leading Edge Realty &ndash; Austin, TX. <br> All Rights Reserved.
-            </div>
-        </div>
-        <div class="col-md-4 col-lg-4">
+    <div class="row">
+    <div class="footer">
+        <div class="col-md-4 col-lg-4 print-show">
+            <h5 class="section-title">Leading Edge Realty</h5>
+            <div>Copyright &copy; <?php echo date('Y'); ?> <br> Leading Edge Realty &ndash; Austin, TX. <br> All Rights Reserved.</div>
+        </div><div class="hidden-md hidden-lg space-30"></div>
+        <div class="col-md-4 col-lg-4 print-hide">
             <h5 class="section-title">Member of</h5>
-            <div class="member"><img src="assets/site/img/web_R_blue.jpg" title="REALTOR&reg;" /></div>&nbsp;&nbsp;
-            <div class="member"><img src="assets/site/img/equal-house-opp.gif" title="Equal Housing Opportunity" /></div>
-            <div class="member2"><img src="assets/site/img/MLS-clear.png" title="REALTOR&reg; Multiple Listing Service" /></div>
+            <div class="member">{{img('site','web_R_blue.jpg',array('title'=>'REALTOR&reg;'))}}</div>&nbsp;&nbsp;
+            <div class="member">{{img('site','equal-house-opp.gif',array('title'=>'Equal Housing Opportunity'))}}</div>
+            <div class="member2">{{img('site','MLS-clear.png',array('title'=>'REALTOR&reg; Multiple Listing Service'))}}</div>
+            <div class="clearfix"></div>
         </div>
-        <div class="col-md-4 col-lg-4">
+        <div class="hidden-md hidden-lg space-30"></div>
+        <div class="col-md-4 col-lg-4 print-show">
             <h5 class="section-title">Disclaimer</h5>
             <p>Information found on this site is derived from third party sources and is deemed reliable. The developers and owners of this site cannot guarantee the accuracy of the information found here.</p>
         </div>
         <div class="clearfix"></div>
+    </div>
     </div>
 </div><div class='spacer-30'></div>
 <!-- /FOOTER -->

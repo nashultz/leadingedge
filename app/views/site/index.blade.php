@@ -53,11 +53,11 @@
     </div>
     <div class="hidden-md hidden-lg clearfix"></div>
     <div class="hidden-md hidden-lg space-30"><div class="visible-sm spacer-30"></div></div>
-    <div class="col-sm-6 col-md-4 col-md-pull-2 col-lg-4 col-lg-pull-2">
+    <div class="col-sm-6 col-md-4 col-md-pull-2 col-lg-4 col-lg-pull-2 print-hide">
         @include('search.form')
     </div>
     <div class="hidden-sm hidden-md hidden-lg space-30"></div>
-    <div class="col-sm-6 col-md-3 col-md-pull-9 col-lg-3 col-lg-pull-9">
+    <div class="col-sm-6 col-md-3 col-md-pull-9 col-lg-3 col-lg-pull-9 print-hide">
         @include('buttons.buttons')
     </div>
     <div class="clearfix"></div>   

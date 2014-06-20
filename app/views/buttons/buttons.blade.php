@@ -23,20 +23,16 @@
 					<div class="spacer-5"></div>
 					<div class="col-md-12">
 						{{ Form::label('city','City: ') }}<i class="fa fa-asterisk small req"></i>
-							
-						{{ Form::select('cities[]', $searchCities, 'Austin', array('multiple','class'=>'form-control')) }}
+						{{ Form::select('cities[]', $searchCities, 'Any', array('multiple','class'=>'form-control')) }}
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-12">
 						{{ Form::label('schoold','School District: ') }}<i class="fa fa-asterisk small req"></i>
-						
-						@foreach($isds as $isd)
-							{{ Form::checkbox('isds[]', $isd->isd, false, array('class'=>'form-control')) }} {{ $isd->district }}
-						@endforeach
+						{{ Form::select('isds[]', $searchIsds, 'Any', array('multiple','class'=>'form-control')) }}
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-12">
-						{{ Form::label('beds','Minimum # of Bedrooms: ') }}<i class="fa fa-asterisk small req"></i>
+						{{ Form::label('beds','Minimum Bedrooms: ') }}<i class="fa fa-asterisk small req"></i>
 						{{ Form::select('beds', $numRooms, 0,array('class'=>'form-control')) }}
 					</div>
 					<div class="spacer-5"></div>
@@ -374,13 +370,13 @@
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-12">
-						<p>Your request will be sent to a mortgage loan officer.</p>
-						<div class="clearfix"></div>
+						{{ Form::label('comments','Questions or Comments?: ') }}
+						{{ Form::textarea('comments','',array('class'=>'form-control')) }}
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-12">
-						{{ Form::label('comments','Questions or Comments?: ') }}
-						{{ Form::textarea('comments','',array('class'=>'form-control')) }}
+						<p>Your request will be sent to a mortgage loan officer.</p>
+						<div class="clearfix"></div>
 					</div>					
 					<div class="spacer-20"></div>
 					<div class="col-md-12">

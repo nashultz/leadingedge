@@ -5,73 +5,44 @@
 {{ Session::get('notification') }}
 @endif
 
-@if (Auth::check())
+
 
 <div id="content">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 col-lg-12">
-				@if (Auth::guest())
-					<a href="{{ URL::route('get.auth.login') }}">Login or Register</a> to Save Your Searches!
-				@else
-					{{ Form::label('saved_search', 'Saved Searches: ') }}
-					{{ Form::select('saved_search', $savedSearches, 0, array('class'=>'form-control', 'id'=>'saved_search')) }}
-
-					<div class="submit-container">
-						<a href="#" class="delete_search btn btn-danger">Delete Saved Search</a>
-					</div>
-
-					<div class="submit-container">
-						<a href="#" class="load_search btn btn-success">Load Saved Search</a>
-					</div>
-
-					{{ Form::label('search_name', 'Name: ') }}
-					{{ Form::text('search_name', '', array('class'=>'form-control', 'id'=>'search_name')) }}
-
-					<div class="submit-container">
-						<a href="#" class="save_search btn btn-success">Save Search</a>
-					</div>
-				@endif
-			</div>
-			<div class="col-md-12 col-lg-12">
+			@if (Auth::check())
+			<div class="col-md-4 col-lg-4 print-hide">
 				<div class="login-form">
-					<div class="col-md-6 col-lg-6">
-
-						{{ Form::open(array('method'=>'POST', 'route'=>'post.search.save')) }}
-
-						{{ Form::label('name', 'Saved Search Name: ') }}
-						{{ Form::text('name') }}
-
-						{{ Form::submit('Save Search') }}
-
-						{{ Form::close() }}
-
+					<div class="col-md-12 col-lg-12">
+						@if (Auth::guest())
+							<a href="{{ URL::route('get.auth.login') }}">Login or Register</a> to Save Your Searches!
+						@else
+							{{ Form::label('saved_search', 'Saved Searches: ') }}
+							{{ Form::select('saved_search', $savedSearches, 0, array('class'=>'form-control', 'id'=>'saved_search')) }}
+							<div class="spacer-5"></div>
+							<div class="submit-container">
+								<a href="#" class="delete_search btn btn-danger">Delete Saved Search</a>
+							&nbsp;&nbsp;
+								<a href="#" class="load_search btn btn-success">Load Saved Search</a>
+							</div>
 					</div>
-					<div class="col-md-6 col-lg-6 pull-right">
+					<div class="spacer-5"></div>
+					<div class="col-md-12 col-lg-12">
 
-						{{ Form::open(array('method'=>'POST', 'route'=>'post.search.load', 'class'=>'pull-right')) }}
-
-						{{ Form::select('search', Auth::User()->getSearches()) }}
-
-						{{ Form::submit('Load Saved Search') }}
-
-						{{ Form::close() }}
-
+							{{ Form::label('search_name', 'Name: ') }}
+							{{ Form::text('search_name', '', array('class'=>'form-control', 'id'=>'search_name')) }}
+							<div class="spacer-5"></div>
+							<div class="submit-container">
+								<a href="#" class="save_search btn btn-success">Save Search</a>
+							</div>
+						@endif
 					</div>
 					<div class="clearfix"></div>
 				</div>
-
 			</div>
-		</div>
-	</div>
-</div><div class="spacer-30"></div>
-
-@endif
-
-<div id="content">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-lg-12">
+			@endif
+			<div class="hidden-md hidden-lg space-30 print-show"></div>
+			<div class="col-md-8 col-lg-8">
 				@foreach($builderResults as $builder)
 				<div class="login-form">
 					<div class="col-md-12 col-lg-12">
@@ -105,6 +76,7 @@
 				<div class="spacer-10"></div>
 				@endforeach
 			</div>
+			<div class="clearfix"></div>
 		</div>
 	</div>
 </div>

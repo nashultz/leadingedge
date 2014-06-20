@@ -30,27 +30,27 @@
 			</div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('fullname','Full Name:',array('class'=>'ralign')) }}<br>
-				{{ Form::text('fullname') }}
+				{{ Form::text('fullname','',array('class'=>'form-control')) }}
 			</div>
 			<div class="spacer-20"></div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('email','Email:',array('class'=>'ralign')) }}<br>
-				{{ Form::text('email') }}
+				{{ Form::text('email','',array('class'=>'form-control')) }}
 			</div>
 			<div class="spacer-20"></div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('msubject','Subject:',array('class'=>'ralign')) }}<br>
-				{{ Form::text('msubject') }}
+				{{ Form::text('msubject','',array('class'=>'form-control')) }}
 			</div>
 			<div class="spacer-20"></div>
-			<div class="col-md-6 col-lg-6">
+			<div class="col-md-12 col-lg-12">
 				{{ Form::label('mcontent','Message:',array('class'=>'ralign')) }}<br>
-				{{ Form::textarea('mcontent') }}
+				{{ Form::textarea('mcontent','',array('class'=>'form-control')) }}
 			</div>
 			<div class="spacer-20"></div>
 			<div class="col-md-6 col-lg-6">
 				<label for="spanswer" class="ralign">What is {{$spranone}} + {{$sprantwo}}</label><br>
-				{{ Form::text('spanswer') }}
+				{{ Form::text('spanswer','',array('class'=>'form-control')) }}
 			</div>
 			<div class="spacer-20"></div>
 			<div class="col-md-12 col-lg-12">

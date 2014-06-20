@@ -16,17 +16,19 @@ body {
 ! Print Adjustments
 ========================================================== */
 
-@media screen {
-  .print-show {
-    display:none !important;
-  }
-}
 @media print {
   * {
     font-family:Arial !important;
   }
   .print-hide {
     display:none !important;
+  }
+  .about-photo img,
+  .about-photo img.img-circle,
+  .about-photo img.img-thumbnail {
+    width: 150px !important;
+    float: left !important;
+    margin-right: 10px !important;
   }
 }
 

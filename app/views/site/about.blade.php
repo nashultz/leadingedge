@@ -27,7 +27,8 @@
 			<div class="col-md-6 col-lg-6">
 				<div class="agent-profile">
 					<div class="about-photo col-sm-6 col-md-4 col-lg-4">
-						{{img('site','tammy-young.jpg',array('class'=>'img-circle img-thumbnail'))}}
+						{{img('site','tammy-young.jpg',array('class'=>'img-circle img-thumbnail print-hide'))}}
+						{{img('site','tammy-young.jpg',array('class'=>'print-show'))}}
 					</div>
 					<div class="col-sm-6 col-md-8 col-lg-8">
 						<h3 class="info-head">Tammy Young </h3>
@@ -50,7 +51,8 @@
 			<div class="col-md-6 col-lg-6">
 				<div class="agent-profile">
 					<div class="about-photo col-sm-6 col-md-4 col-lg-4">
-						{{img('site','david-mccaleb.jpg',array('class'=>'img-circle img-thumbnail'))}}
+						{{img('site','david-mccaleb.jpg',array('class'=>'img-circle img-thumbnail print-hide'))}}
+						{{img('site','david-mccaleb.jpg',array('class'=>'print-show'))}}
 					</div>
 					<div class="col-sm-6 col-md-8 col-lg-8">
 						<h3 class="info-head">David McCaleb</h3>
