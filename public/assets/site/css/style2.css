@@ -604,6 +604,18 @@ background: rgb(164,42,31);
   height: 300px;
 }
 
+.logoimg, #youtubevid {
+  float: left;
+}
+
+.logoimg {
+  margin-right: 15px;
+}
+
+#youtubevid {
+  margin-top: 10px;
+}
+
 #youtubevid img {
   width: 150px;
   height: auto;

@@ -87,11 +87,11 @@
         <div class="row">
             <!-- HEADER -->
             <div class="brand col-md-12 col-lg-12  print-show">
-                <div class="col-md-4">
+                <div class="logoimg">
                     <a href="{{URL::to('/')}}" title="Leading Edge Realty - Home">{{img('site','mainlogo.png',array('class'=>'logo'))}}</a>
                 </div>
-                <div id="youtubevid" class="col-md-8 print-hide">
-                    <a href="#" id="ytvid"><img src="http://img.youtube.com/vi/OKfAhI2ZuTw/hqdefault.jpg" title="Welcome Video" /></a>
+                <div id="youtubevid" class="print-hide">
+                    <a href="#" id="ytvid">{{img('site','hqdefault.jpg',array('title'=>'Welcome Video'))}}</a>
                 </div>
 
                 <div id="youtubevid2" class="col-md-12 print-hide">
