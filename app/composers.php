@@ -19,6 +19,12 @@ View::composer('*', function($view) {
 		$costOptions[0] = 'Any';
 		$sqFootageOptions[0] = 'Any';
 
+		$searchCities = $cities->toArray();
+		$searchIsds = $isds->toArray();
+
+		$searchCities[0] = 'Any';
+		$searchIsds[0] = 'Any';
+
 		foreach($b as $builder)
 		{
 			$builders[$builder->name] = $builder->name;
@@ -43,6 +49,9 @@ View::composer('*', function($view) {
 		{
 			$numRooms[$a] = $a;
 		}
+
+		$view->with('searchCities', $searchCities);
+		$view->with('searchIsds', $searchIsds);
 
 		$view->with('cities', $cities);
 		$view->with('isds', $isds);

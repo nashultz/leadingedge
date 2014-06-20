@@ -25,7 +25,7 @@
 						{{ Form::label('city','City: ') }}<i class="fa fa-asterisk small req"></i>
 							
 						@foreach($cities as $city)
-							{{ Form::checkbox('cities[]', $city->city, false, array(class'=>'form-control')) }} {{ $city->city }}
+							{{ Form::checkbox('cities[]', $city->city, false, array('class'=>'form-control')) }} {{ $city->city }}
 						@endforeach
 					</div>
 					<div class="spacer-5"></div>

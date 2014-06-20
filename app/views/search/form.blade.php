@@ -6,12 +6,12 @@
 	</div>
 	<div class="col-md-12 col-lg-12">
 		{{ Form::label('city','City: ') }}<br>
-		{{ Form::select('city', $cities, 0,array('class'=>'form-control')) }}
+		{{ Form::select('city', $searchCities, 0,array('class'=>'form-control')) }}
 	</div>
 	<div class="spacer-5"></div>
 	<div class="col-md-12 col-lg-12">
 		{{ Form::label('isd', 'School District: ') }}<br>
-		{{ Form::select('isd', $isds, 0,array('class'=>'form-control')) }}
+		{{ Form::select('isd', $searchIsds, 0,array('class'=>'form-control')) }}
 	</div>
 	<div class="spacer-5"></div>
 	<div class="col-md-12 col-lg-12">
