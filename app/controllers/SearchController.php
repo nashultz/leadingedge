@@ -183,8 +183,8 @@
 
 			if ($search) 
 			{
-				Notifications::info('Search Loaded')->save();
-				return Redirect::to($search->url);
+				$data['url'] = $search->url;
+				return Response::json($data);
 			}
 
 			Notifications::danger('Invalid Search')->save();
