@@ -16,6 +16,33 @@ $models = array(
 	'neighborhoods'=>'Neighborhood',
 );
 
+Route::post('visitor/check', function() {
+
+	$ip = Request::getClientIp();
+
+	$visitor = Visitor::where('ip', $ip)->first();
+
+	if ($visitor)
+	{
+		$data['first'] = false;
+		$visitor->logins += 1;
+		$visitor->save();
+	}
+	else
+	{
+		$visitor = new Visitor();
+		$visitor->ip = $ip;
+		$visitor->logins = 1;
+		$visitor->save();
+
+		$data['first'] = true;
+		$data['video'] = View::make('videos.intro_autoplay')->render();
+	}
+
+	return Response::json($data);
+
+});
+
 Route::get('idx',function() {
 	return View::make('idx.idx');
 });

@@ -6,29 +6,30 @@
 });*/
 
 View::composer('*', function($view) { 
-		$c = Neighborhood::select('city')->distinct()->orderBy('city','ASC')->get();
-		$i = Neighborhood::select('isd','district')->groupBy('isd')->get(); 
+
+		if (Auth::User())
+		{
+			$view->with('savedSearches', Auth::User()->searches);
+		}
+
+		$cities = Neighborhood::select('city')->distinct()->orderBy('city','ASC');
+		$isds = Neighborhood::select('isd','district')->groupBy('isd');
 
 		//Neighborhood::select('isd')->distinct()->get();
 		$b = Builder::select('name')->distinct()->get();
 		$n = Neighborhood::orderBy('name','ASC')->lists('name', 'id');
 
 
-		$cities[0] = 'Any';
-		$isds[0] = 'Any';
 		$builders[0] = 'Any';
 		$n[0] = 'Any';
 		$costOptions[0] = 'Any';
 		$sqFootageOptions[0] = 'Any';
-		foreach($c as $city)
-		{
-			$cities[$city->city] = $city->city;
-		}
 
-		foreach($i as $isd)
-		{
-			$isds[$isd->isd] = $isd->district;
-		}
+		$searchCities = $cities->lists('city','city');
+		$searchIsds = $isds->lists('district','isd');
+
+		$searchCities[0] = 'Any';
+		$searchIsds[0] = 'Any';
 
 		foreach($b as $builder)
 		{
@@ -55,8 +56,11 @@ View::composer('*', function($view) {
 			$numRooms[$a] = $a;
 		}
 
-		$view->with('cities', $cities);
-		$view->with('isds', $isds);
+		$view->with('searchCities', $searchCities);
+		$view->with('searchIsds', $searchIsds);
+
+		$view->with('cities', $cities->get());
+		$view->with('isds', $isds->get());
 		$view->with('builders', $builders);
 		$view->with('neighborhoods', $n);
 		$view->with('costOptions', $costOptions);
