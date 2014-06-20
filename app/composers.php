@@ -6,8 +6,8 @@
 });*/
 
 View::composer('*', function($view) { 
-		$cities = Neighborhood::select('city')->distinct()->orderBy('city','ASC')->get();
-		$isds = Neighborhood::select('isd','district')->groupBy('isd')->get(); 
+		$cities = Neighborhood::select('city')->distinct()->orderBy('city','ASC');
+		$isds = Neighborhood::select('isd','district')->groupBy('isd');
 
 		//Neighborhood::select('isd')->distinct()->get();
 		$b = Builder::select('name')->distinct()->get();
@@ -19,8 +19,8 @@ View::composer('*', function($view) {
 		$costOptions[0] = 'Any';
 		$sqFootageOptions[0] = 'Any';
 
-		$searchCities = $cities->toArray();
-		$searchIsds = $isds->toArray();
+		$searchCities = $cities->lists('city','city');
+		$searchIsds = $isds->lists('district','isd');
 
 		$searchCities[0] = 'Any';
 		$searchIsds[0] = 'Any';
@@ -53,8 +53,8 @@ View::composer('*', function($view) {
 		$view->with('searchCities', $searchCities);
 		$view->with('searchIsds', $searchIsds);
 
-		$view->with('cities', $cities);
-		$view->with('isds', $isds);
+		$view->with('cities', $cities->get());
+		$view->with('isds', $isds->get());
 		$view->with('builders', $builders);
 		$view->with('neighborhoods', $n);
 		$view->with('costOptions', $costOptions);
