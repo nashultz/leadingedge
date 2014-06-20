@@ -6,8 +6,8 @@
 });*/
 
 View::composer('*', function($view) { 
-		$cities = Neighborhood::select('city','isd')->groupBy('city')->orderBy('city','ASC')->get();
-		$isds = Neighborhood::select('isd','district','city')->groupBy('isd')->get(); 
+		$cities = Neighborhood::select('city')->distinct()->orderBy('city','ASC')->get();
+		$isds = Neighborhood::select('isd','district')->groupBy('isd')->get(); 
 
 		//Neighborhood::select('isd')->distinct()->get();
 		$b = Builder::select('name')->distinct()->get();

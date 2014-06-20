@@ -25,20 +25,16 @@
 						{{ Form::label('city','City: ') }}<i class="fa fa-asterisk small req"></i>
 							
 						@foreach($cities as $city)
-							{{ Form::checkbox('cities[]', 'a', false, array('data-isd'=>$city->isd, 'class'=>'form-control')) }} {{ $city->city }}
+							{{ Form::checkbox('cities[]', $city->city, false, array(class'=>'form-control')) }} {{ $city->city }}
 						@endforeach
-
-						{{-- Form::select('city', $cities, 0,array('class'=>'form-control')) --}}
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-12">
 						{{ Form::label('schoold','School District: ') }}<i class="fa fa-asterisk small req"></i>
 						
 						@foreach($isds as $isd)
-							{{ Form::checkbox('isds[]', $isd->isd, false, array('data-city'=>$isd->city, 'class'=>'form-control')) }} {{ $isd->district }}
+							{{ Form::checkbox('isds[]', $isd->isd, false, array('class'=>'form-control')) }} {{ $isd->district }}
 						@endforeach
-
-						{{-- Form::select('schoold', $isds, 0,array('class'=>'form-control')) --}}
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-12">
