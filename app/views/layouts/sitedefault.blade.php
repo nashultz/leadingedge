@@ -57,7 +57,12 @@
                         border:         'none', 
                         backgroundColor:'#000', 
                         cursor:         'wait' 
-                    }, 
+                    },
+                    overlayCSS:  { 
+                        backgroundColor: '#000', 
+                        opacity:         0.9, 
+                        cursor:          'wait' 
+                    },
                     onOverlayClick: $.unblockUI 
                 }); 
             });
