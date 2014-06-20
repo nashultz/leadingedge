@@ -162,7 +162,7 @@
 			{
 				$messages = $v->messages();
 				Notifications::danger($messages->first())->save();
-				return Redirect::to($data['url']);
+				return Response::json($data);
 			}
 
 			$search = new Search;
@@ -172,13 +172,13 @@
 			Auth::User()->searches()->save($search);
 
 			Notifications::info('Search Saved.')->save();
-			return Redirect::to($data['url']);
+			return Response::json($data);
 
 		}
 
 		public function postSearchLoad()
 		{
-			$id = Input::get('search');
+			$id = Input::get('id');
 			$search = Search::where('user_id', Auth::User()->id)->where('id', $id)->first();
 
 			if ($search) 
@@ -194,18 +194,21 @@
 
 		public function deleteSearch()
 		{
-			$id = Input::get('search');
+			$id = Input::get('id');
 
 			$search = Search::where('user_id', Auth::User()->id)->where('id', $id)->first();
 
 			if ($search)
 			{
-				Notification::info('Search Deleted')->save();
-				return Redirect::back();
+				$search->delete();
+				Notifications::info('Search Deleted')->save();
+				$data['url'] = URL::to('/');
+				return Response::json($data);
 			}
 
-			Notification::danger('Search Reference Not Found')->save();
-			return Redirect::back();
+			Notifications::danger('Search Reference Not Found')->save();
+			$data['url'] = URL::to('/');
+			return Response::json($data);
 		}
 
 

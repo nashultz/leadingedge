@@ -8,7 +8,7 @@ $(document).on('click', '.save_search', function(e) {
 	});
 
 	response.success(function(resp) {
-		location.reload();
+		window.location = resp.url;
 	});
 });
 
@@ -19,7 +19,23 @@ $(document).on('click', '.load_search', function(e) {
 	var response = $.ajax({
 		type: 'POST',
 		url: '/search/load',
-		data: { id: $('#saved_searches').val() }
+		data: { id: $('#saved_search').val() }
+	});
+
+	response.success(function(resp) {
+		window.location = resp.url;
+	});
+
+});
+
+$(document).on('click', '.delete_search', function(e) {
+
+	e.preventDefault();
+
+	var response = $.ajax({
+		type: 'DELETE',
+		url: '/search/delete',
+		data: { id: $('#saved_search').val() }
 	});
 
 	response.success(function(resp) {

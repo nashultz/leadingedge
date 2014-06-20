@@ -9,7 +9,7 @@ View::composer('*', function($view) {
 
 		if (Auth::User())
 		{
-			$view->with('savedSearches', Auth::User()->searches);
+			$view->with('savedSearches', Auth::User()->searches()->lists('name', 'id'));
 		}
 
 		$cities = Neighborhood::select('city')->distinct()->orderBy('city','ASC');

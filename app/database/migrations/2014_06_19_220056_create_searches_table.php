@@ -19,7 +19,9 @@ class CreateSearchesTable extends Migration {
 
 			$table->integer('user_id');
 
-			$table->string('query');
+			$table->string('name');
+
+			$table->string('url');
 
 			$table->timestamps();
 
@@ -34,6 +36,7 @@ class CreateSearchesTable extends Migration {
 	public function down()
 	{
 		//
+		Schema::drop('searches');
 	}
 
 }
