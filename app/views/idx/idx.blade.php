@@ -1,5 +1,5 @@
 @extends('layouts.sitedefault')
 
 @section('content')
-	<iframe src="http://matrix.abor.com/Matrix/public/IDX.aspx?idx=1cf1225" width="1024px" height="720px" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+	<iframe src="http://david-mccaleb.idx.rewidx.com/" width="100%" height="2000" scrolling="yes" frameborder="0"></iframe>
 @stop
