@@ -28,8 +28,8 @@ View::composer('*', function($view) {
 		$searchCities = $cities->lists('city','city');
 		$searchIsds = $isds->lists('district','isd');
 
-		$searchCities[0] = 'Any';
-		$searchIsds[0] = 'Any';
+		$searchCities['Any'] = 'Any';
+		$searchIsds['Any'] = 'Any';
 
 		foreach($b as $builder)
 		{
