@@ -674,7 +674,7 @@ div.growlUI .title {
 div.growlUI .message {
   font-size: 18px;
   line-height: 20px;
-  width:auto;
+  width:250px;
   margin:0;
   float: left;
   padding: 5px 30px 30px 5px;

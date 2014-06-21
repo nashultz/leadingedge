@@ -165,7 +165,7 @@
 				opacity:	0.8,
 				cursor:		'default',
 				color:		'#fff',
-				backgroundColor: 'rgb(164,42,31)',
+				backgroundColor: '#000',
 				'-webkit-border-radius':'10px',
 				'-moz-border-radius':	'10px',
 				'border-radius':		'10px'

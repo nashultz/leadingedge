@@ -28,6 +28,7 @@ use Carbon\Carbon;
 			if (!Auth::attempt($creds,$remember))
 			{
 				// Login Failure
+				$data['field'] = array('user', 'password');
 				$data['message'] = "Invalid Login";
 				return Response::json($data, 400);
 			}
@@ -41,7 +42,7 @@ use Carbon\Carbon;
 			}
 
 			// Login Success
-			$data['message'] = 'You have logged in!';
+			$data['message'] = 'You have logged in! You will be redirected.';
 			$data['redirectUrl'] = URL::to('/');
 			return Response::json($data, 200);
 		}

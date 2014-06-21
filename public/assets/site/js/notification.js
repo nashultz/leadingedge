@@ -12,13 +12,13 @@ $(document).on('submit', '.ajaxForm', function(e) {
  
     ajaxStatus.success(function(response) {
         
-        $.growlUI('Success!', response.message);
+        $.growlUI('check','Success!', response.message);
  
         if (typeof response.redirectUrl !== 'undefined')
         {
             setTimeout(function() {
                 window.location = response.redirectUrl;
-            }, 5000);
+            }, 2500);
         }
     });
  
@@ -33,7 +33,7 @@ $(document).on('submit', '.ajaxForm', function(e) {
                 $('#' + response.field[index]).parent().addClass('has-error');
             });
  
-            $.growlUI('Error!', 'Please correct errors.');
+            $.growlUI('times','Error!', 'Please correct errors.');
         }
         else
         {
