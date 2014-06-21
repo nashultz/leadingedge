@@ -36,7 +36,7 @@ View::composer('*', function($view) {
 			$builders[$builder->name] = $builder->name;
 		}
 
-		for ($a = 10000; $a <= 1000000; $a += 10000)
+		for ($a = 100000; $a <= 1000000; $a += 10000)
 		{
 			$costOptions[$a] = '$' . number_format($a,2);
 		}
