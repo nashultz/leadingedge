@@ -28,19 +28,22 @@ use Carbon\Carbon;
 			if (!Auth::attempt($creds,$remember))
 			{
 				// Login Failure
-				Notifications::danger('Invalid Login')->save();
-				return Redirect::route('get.auth.login');
+				$data['message'] = "Invalid Login";
+				return Response::json($data, 400);
 			}
 
 			if (Auth::user()->confirmation_code)
 			{
 				Auth::logout();
-				Notifications::warnging('You have not confirmed your account')->save();
-				return Redirect::route('get.auth.login');
+				$data['message'] = 'You have not confirmed your account';
+				$data['redirectUrl'] = URL::route('get.auth.login');
+				return Response::json($data, 400);
 			}
 
 			// Login Success
-			return Redirect::to('/');
+			$data['message'] = 'You have logged in!';
+			$data['redirectUrl'] = URL::to('/');
+			return Response::json($data, 200);
 		}
 
 		public function getRegister()

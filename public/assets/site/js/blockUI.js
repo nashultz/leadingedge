@@ -33,10 +33,11 @@
 		$.unblockUI = function(opts) { remove(window, opts); };
 
 		// convenience method for quick growl-like notifications  (http://www.google.com/search?q=growl)
-		$.growlUI = function(title, message, timeout, onClose) {
+		$.growlUI = function(type,title, message, timeout, onClose) {
 			var $m = $('<div class="growlUI"></div>');
-			if (title) $m.append('<h1>'+title+'</h1>');
-			if (message) $m.append('<h2>'+message+'</h2>');
+			if(type) $m.append('<i class="fa fa-'+type+'"></i>');
+			if (title) $m.append('<span class="title">'+title+':</span>');
+			if (message) $m.append('<span class="message">'+message+'</span>');
 			if (timeout === undefined) timeout = 3000;
 
 			// Added by konapun: Set timeout to 30 seconds if this growl is moused over, like normal toast notifications
@@ -155,16 +156,16 @@
 
 			// styles applied when using $.growlUI
 			growlCSS: {
-				width:		'350px',
+				width:		'400px',
 				top:		'10px',
 				left:		'',
 				right:		'10px',
 				border:		'none',
 				padding:	'5px',
-				opacity:	0.6,
+				opacity:	0.8,
 				cursor:		'default',
 				color:		'#fff',
-				backgroundColor: '#000',
+				backgroundColor: 'rgb(164,42,31)',
 				'-webkit-border-radius':'10px',
 				'-moz-border-radius':	'10px',
 				'border-radius':		'10px'

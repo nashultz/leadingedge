@@ -32,7 +32,8 @@
     {{js('site','button-toggle.js')}}
     {{js('site','mortgage.js')}}
     {{js('site','blockUI.js')}}
-    {{js('site', 'visitors.js')}}
+    {{js('site','visitors.js')}}
+    {{js('site','notification.js')}}
 
     <script>
         $(document).ready(function() {
@@ -79,7 +80,6 @@
             });    
         });
     </script>
-    
 </head>
 <body>
 <div class="header">

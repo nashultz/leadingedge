@@ -645,6 +645,41 @@ background: rgb(164,42,31);
   opacity: .7;
 }
 
+#rew-idx-iframe {
+  border: 2px solid rgb(234,234,234);
+  background: rgb(255,255,255);
+}
+
+div.growlUI {  }
+div.growlUI .title, div.growlUI .message {
+    color: white; text-align: left;
+}
+div.growlUI i {
+  color: #fff;
+  width: 100px;
+  font-size: 40px;
+  line-height: 40px;
+  float: left;
+  padding: 30px 20px 30px 30px;
+}
+div.growlUI .title {
+  font-size: 22px;
+  width: 250px;
+  line-height: 24px;
+  margin:0;
+  float: left;
+  padding: 30px 15px 5px 5px;
+  font-weight: bold;
+}
+div.growlUI .message {
+  font-size: 18px;
+  line-height: 20px;
+  width:auto;
+  margin:0;
+  float: left;
+  padding: 5px 30px 30px 5px;
+}
+
 
 /* ==========================================================
 ! Custom Footer
