@@ -47,7 +47,7 @@ class ContactController extends BaseController {
                     unset($inputs['sum']);
                     Mail::send('emails.contact', compact('inputs'), function($message)
                     {
-                        $message->to('nashultz07@gmail.com', 'Leading Edge Realty')->subject('Contact Us Form Submission');
+                        $message->to('nathons@systemsedgeonline.com', 'Leading Edge Realty')->subject('Contact Us Form Submission');
                         //$message->bcc('nathons@systemsedgeonline.com', 'Leading Edge Realty')->subject('Contact Us Form Submission');
                     });
                     $data['message'] = 'Email has been sent.';
