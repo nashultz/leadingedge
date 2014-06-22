@@ -1,3 +1,49 @@
+  var buttonForm;
+  var buttonFormTimeout;
+  var buttonFormTimeoutSeconds = 5000;
+
+  function startButtonFormTimer()
+  {
+    // Start the Timeout
+      buttonFormTimeout = setTimeout(function() {
+        buttonForm.slideToggle(800);
+        $.growlUI('exclamation-triangle','Attention!', 'Side Form Minimized due to Inactivity');
+      }, buttonFormTimeoutSeconds);
+  }
+
+  function stopButtonFormTimer()
+  {
+    clearTimeout(buttonFormTimeout);
+  }
+
+  $(document).on('click', '.buttonToggle', function(e) {
+      e.preventDefault();
+
+      startButtonFormTimer();
+
+      var button = $(this);
+      var buttons = $('.buttonToggle');
+      buttonForm = $(this).next('div');
+
+      buttons.removeClass('active');
+      button.addClass('active');
+
+      $.each(buttons.not('.active'), function(index, button) {
+        $(button).next('div').slideUp(800);
+      });
+
+      buttonForm.slideToggle(800);
+
+  }); 
+
+$(document).on('focusin', '.buttonForm', function(e) {
+    clearTimeout(buttonFormTimeout);
+});
+
+$(document).on('focusout', '.buttonForm', function(e) {
+    startButtonFormTimer();
+});
+
 $(document).on('submit', '.ajaxForm', function(e) {
  
     e.preventDefault();
@@ -34,7 +80,7 @@ $(document).on('submit', '.ajaxForm', function(e) {
             ajaxForm.find('div').removeClass('has-error');
  
             $.each(response.field, function(index, el) {
-                $('#' + response.field[index]).parent().addClass('has-error');
+                ajaxForm.find('#' + response.field[index]).parent().addClass('has-error');
             });
             $("#spanswer").val('');
             $.growlUI('times','Error!', 'Please correct errors.');

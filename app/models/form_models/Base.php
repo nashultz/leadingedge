@@ -10,7 +10,7 @@ use Response;
 		protected $rules = array();
 		protected $messages = array();
 		protected $validationErrors = array();
-		protected $validator = array();
+		protected $validator;
 
 		public function __construct()
 		{
@@ -22,7 +22,6 @@ use Response;
 		public function validate()
 		{
 			$this->validator = Validator::make($this->input, $this->rules, $this->messages);
-
 			return !$this->validator->fails();
 		}
 

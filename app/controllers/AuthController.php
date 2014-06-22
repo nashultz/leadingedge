@@ -58,8 +58,7 @@ use Carbon\Carbon;
 
 			if (!$user = $form->process())
 			{
-				$data['message'] = $form->getErrors();
-				return Response::json($data, 400);
+				return Response::json($form->getErrors(), 400);
 			}
 
 			$data['message']= 'Please check your email for your verification code!';

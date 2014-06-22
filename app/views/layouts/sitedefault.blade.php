@@ -26,10 +26,8 @@
     <script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
     {{js('site','infobox.js')}}
     {{js('site', 'bnha_maps.js')}}
-    {{js('site', 'buttonForms.js') }}
     {{js('site','bootstrap-datepicker.js')}}
     {{js('site', 'search.js') }}
-    {{js('site','button-toggle.js')}}
     {{js('site','mortgage.js')}}
     {{js('site','blockUI.js')}}
     {{js('site','visitors.js')}}
