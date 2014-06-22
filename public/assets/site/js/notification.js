@@ -17,22 +17,35 @@
   }
 
   $(document).on('click', '.buttonToggle', function(e) {
-      e.preventDefault();
-
-      startButtonFormTimer();
+      e.preventDefault(); 
 
       var button = $(this);
       var buttons = $('.buttonToggle');
       buttonForm = $(this).next('div');
 
-      buttons.removeClass('active');
-      button.addClass('active');
+      var formDisplayStatus = buttonForm.css('display'); // 'none' or 'Block'
 
-      $.each(buttons.not('.active'), function(index, button) {
-        $(button).next('div').slideUp(800);
+      buttons.removeClass('active');    // Remove all 'active' class from ALL buttons   
+
+      if (formDisplayStatus == 'none')
+      {
+        // Form is going to open
+        button.addClass('active'); // Add ACTIVE class to newly opened form (it's going to toggle "down")
+        startButtonFormTimer(); // Start the Form Timer
+      }
+      else {
+        // Form is going to close
+        stopButtonFormTimer(); // Form is going to close... stop the timer...
+      }
+
+        buttonForm.slideToggle(800);
+
+      // SElect all buttons that ARE NOT active...
+      $.each(buttons.not('.active'), function(index, siblingButton) {
+        $(siblingButton).next('div').slideUp(800);
       });
 
-      buttonForm.slideToggle(800);
+      // Toggle (UP or DOWN) the buttonFor
 
   }); 
 
