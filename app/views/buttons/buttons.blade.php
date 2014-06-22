@@ -3,7 +3,7 @@
 		<div class="button-container">
 			<button id="button1">Let us help you find the perfect home!</button>
 			<div class="button1-form">
-				{{ Form::open(array('method'=>'POST','route'=>'post.perfecthome.send', 'class'=>'ajaxButtonForm')) }}
+				{{ Form::open(array('method'=>'POST','route'=>'post.perfecthome.send', 'class'=>'ajaxForm scrollTop')) }}
 
 					<div class="buttonerror">
 						<div class="col-md-12 col-lg-12">
@@ -81,7 +81,7 @@
 					<div class="col-md-12">
 						{{ Form::label('movedate','Preferred Move Date: ') }}<i class="fa fa-asterisk small req"></i>
 						<div class="input-group date">
-							{{ Form::text('movedate','',array('class'=>'form-control','disabled'=>'disabled')) }}
+							{{ Form::text('movedate','',array('class'=>'form-control')) }}
 							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 						</div>
 					</div>
@@ -126,7 +126,7 @@
 		<div class="button-container">
 			<button id="button2">New to the Austin area?</button>
 			<div class="button2-form">
-				{{ Form::open(array('method'=>'POST','route'=>'post.newaustin.send', 'class'=>'ajaxButtonForm')) }}
+				{{ Form::open(array('method'=>'POST','route'=>'post.newaustin.send', 'class'=>'ajaxForm scrollTop')) }}
 
 					<div class="buttonerror">
 						<div class="col-md-12 col-lg-12">
@@ -182,7 +182,7 @@
 					<div class="col-md-12">
 						{{ Form::label('movedate','Preferred Move Date: ') }}<i class="fa fa-asterisk small req"></i>
 						<div class="input-group date">
-							{{ Form::text('movedate','',array('class'=>'form-control','disabled'=>'disabled')) }}
+							{{ Form::text('movedate','',array('class'=>'form-control')) }}
 							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 						</div>
 					</div>
@@ -217,7 +217,7 @@
 		<div class="button-container">
 			<button id="button3">Have a house to sell?</button>
 			<div class="button3-form">
-				{{ Form::open(array('method'=>'POST','route'=>'post.sellhome.send', 'class'=>'ajaxButtonForm')) }}
+				{{ Form::open(array('method'=>'POST','route'=>'post.sellhome.send', 'class'=>'ajaxForm scrollTop')) }}
 
 					<div class="buttonerror">
 						<div class="col-md-12 col-lg-12">
@@ -273,7 +273,7 @@
 					<div class="col-md-12">
 						{{ Form::label('movedate','Preferred Move Date: ') }}<i class="fa fa-asterisk small req"></i>
 						<div class="input-group date">
-							{{ Form::text('movedate','',array('class'=>'form-control','disabled'=>'disabled')) }}
+							{{ Form::text('movedate','',array('class'=>'form-control')) }}
 							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 						</div>
 					</div>
@@ -315,7 +315,7 @@
 		<div class="button-container">
 			<button id="button5">How much can you afford?</button>
 			<div class="button5-form">
-				{{ Form::open(array('method'=>'POST','route'=>'post.affordhome.send', 'class'=>'ajaxButtonForm')) }}
+				{{ Form::open(array('method'=>'POST','route'=>'post.affordhome.send', 'class'=>'ajaxForm scrollTop')) }}
 
 					<div class="buttonerror">
 						<div class="col-md-12 col-lg-12">

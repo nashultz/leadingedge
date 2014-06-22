@@ -10,8 +10,8 @@ class ContactController extends BaseController {
     public function index()
     {
         //
-        $spranone = rand(0,100);
-        $sprantwo = rand(0,100);
+        $spranone = rand(0,30);
+        $sprantwo = rand(0,30);
         $sum = $spranone + $sprantwo;
         return View::make('site.contact', compact('spranone', 'sprantwo','sum'));
     }
@@ -23,6 +23,7 @@ class ContactController extends BaseController {
             return Response::json($data, 200);
         } else {
             if(Input::get('spanswer')==Input::get('sum')) {
+                
                 $inputs = Input::all();
                 $rules = array(
                     'fullname' => 'required',
@@ -39,7 +40,6 @@ class ContactController extends BaseController {
                         $data['message'][] = $value;
                         $data['field'][] = $key;
                     }
-                    $data['redirectUrl'] = URL::route('site.contact');
                     return Response::json($data, 400);
                 } else {
                     unset($inputs['_token']);
@@ -54,8 +54,7 @@ class ContactController extends BaseController {
                     return Response::json($data, 200);
                 }
             } else {
-                $data['message'] = 'Incorrect Answer. Refreshing the page.';
-                $data['redirectUrl'] = URL::route('site.contact');
+                $data['message'] = 'Incorrect Answer.';
                 return Response::json($data, 400);
             }
         }

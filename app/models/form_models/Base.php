@@ -2,6 +2,7 @@
 
 use \Illuminate\Support\MessageBag;
 use Validator;
+use Response;
 
 	class Base {
 
@@ -9,6 +10,7 @@ use Validator;
 		protected $rules = array();
 		protected $messages = array();
 		protected $validationErrors = array();
+		protected $validator = array();
 
 		public function __construct()
 		{
@@ -19,18 +21,25 @@ use Validator;
 
 		public function validate()
 		{
-			$validator = Validator::make($this->input, $this->rules, $this->messages);
-			if ($validator->fails())
-			{
-				$this->validationErrors = $validator->messages();
-			}
+			$this->validator = Validator::make($this->input, $this->rules, $this->messages);
 
-			return !$validator->fails();
+			return !$this->validator->fails();
 		}
 
 		public function getError()
 		{
 			return $this->validationErrors->first();
+		}
+
+		public function getErrors()
+		{
+			$messages = $this->validator->messages();
+            foreach($messages->toArray() as $key=>$value)
+            {
+                $data['message'][] = $value;
+                $data['field'][] = $key;
+            }
+            return $data;
 		}
 
 	}

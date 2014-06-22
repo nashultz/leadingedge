@@ -26,20 +26,11 @@
 		{
 			if (!$form->process())
 			{
-				if (Request::ajax())
-				{
-					$data['error'] = true;
-					$data['errorMsg'] = $form->getError();
-					return Response::json($data);
-				}
+				return Response::json($form->getErrors(), 400);
 			}
 
-			if (Request::ajax())
-			{
-				$data['error'] = false;
-				$data['message'] = 'You submission has been received';
-				return Response::json($data);
-			}			
+			$data['message'] = 'You submission has been received';
+			return Response::json($data, 200);		
 		}
 
 	}

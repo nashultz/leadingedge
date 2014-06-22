@@ -10,7 +10,8 @@
 			Form::open(array(
 				'method'=>'POST',
 				'route'=>'site.contact.send',
-				'class'=>'ajaxForm'
+				'class'=>'ajaxForm',
+				'id'=>'contactUsForm'
 			))
 		}}
 		<div class="login-form">
@@ -41,12 +42,12 @@
 			</div>
 			<div class="spacer-20"></div>
 			<div class="col-md-6 col-lg-6">
-				<label for="spanswer" class="ralign">What is {{$spranone}} + {{$sprantwo}}</label><br>
-				{{ Form::text('spanswer','',array('class'=>'form-control')) }}
+				<label id="splabel" for="spanswer" class="ralign">What is {{$spranone}} + {{$sprantwo}}</label><br>
+				{{ Form::text('spanswer','',array('class'=>'form-control','id'=>'spanswer')) }}
 			</div>
 			<div class="spacer-20"></div>
 			<div class="col-md-12 col-lg-12">
-				<input name="sum" type="hidden" id="sum" class="hvalue" value="{{$sum}}">
+				<input name="sum" type='hidden' id="sum" class="hvalue" value="{{$sum}}">
 				{{ Form::submit('Send Message',array('class'=>'btn btn-danger')) }}
 			</div>
 			<div class="clearfix"></div>

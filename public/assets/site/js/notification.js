@@ -20,10 +20,14 @@ $(document).on('submit', '.ajaxForm', function(e) {
                 window.location = response.redirectUrl;
             }, 2500);
         }
+
+        ajaxForm.reset();
     });
  
     ajaxStatus.fail(function(response) {
         response = response.responseJSON;
+
+        console.log(response);
  
         if (typeof response.field !== 'undefined')
         {
@@ -32,7 +36,7 @@ $(document).on('submit', '.ajaxForm', function(e) {
             $.each(response.field, function(index, el) {
                 $('#' + response.field[index]).parent().addClass('has-error');
             });
- 
+            $("#spanswer").val('');
             $.growlUI('times','Error!', 'Please correct errors.');
         }
         else
@@ -50,4 +54,22 @@ $(document).on('submit', '.ajaxForm', function(e) {
  
     });
  
+});
+
+$(document).on('submit','.scrollTop', function(e) {
+    e.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $(this).offset().top - 100
+    }, 500);
+});
+
+$(document).on('submit', '#contactUsForm', function(e) {
+    e.preventDefault();
+
+    var one = Math.ceil(Math.random() * 30);
+    var two = Math.ceil(Math.random() * 30);
+
+    $('#splabel').html('What is ' + one + ' + ' + two);
+    $('#sum').attr('value', one+two);
 });

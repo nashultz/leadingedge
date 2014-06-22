@@ -38,7 +38,6 @@ use Carbon\Carbon;
 			{
 				Auth::logout();
 				$data['message'] = 'You have not confirmed your account';
-				$data['redirectUrl'] = URL::route('get.auth.login');
 				return Response::json($data, 400);
 			}
 
@@ -59,13 +58,11 @@ use Carbon\Carbon;
 
 			if (!$user = $form->process())
 			{
-				$data['message'] = $form->getError();
-				$data['redirectUrl'] = URL::route('get.auth.login');
+				$data['message'] = $form->getErrors();
 				return Response::json($data, 400);
 			}
 
 			$data['message']= 'Please check your email for your verification code!';
-			$data['redirectUrl'] = URL::route('get.auth.login');
 			return Response::json($data, 200);
 		}
 

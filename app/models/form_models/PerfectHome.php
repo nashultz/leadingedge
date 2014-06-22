@@ -36,7 +36,7 @@ use Mail;
 			if (!$this->validate())
 			{
 				// Failure
-				return false;
+				return $this->getErrors();
 			}
 
 			$this->input['maxprice'] = '$' . number_format($this->input['maxprice'], 2);
