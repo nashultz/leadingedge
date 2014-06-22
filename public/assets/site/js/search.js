@@ -52,6 +52,8 @@ $(document).on('change', '#search select', function(e) {
 
 	var data = form.serialize();
 
+	console.log(data);
+
 	var response = $.ajax({
 		type: 'GET',
 		url: 'search/results?' + data

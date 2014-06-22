@@ -105,14 +105,14 @@ function doMap(resp)
     var markerImage = new google.maps.MarkerImage(imageUrl,
       new google.maps.Size(24, 32));
 
+    $('.totalResults').html(myJson.totalBuildersCount);
+
     for (var i = 0; i < myJson.count; ++i) {
 
       if (typeof myJson.builders[i] !== 'undefined') 
       {
         var latLng = new google.maps.LatLng(myJson.builders[i].neighborhood.latitude,
           myJson.builders[i].neighborhood.longitude);
-
-        $('.totalResults').html(myJson.totalBuildersCount);
 
         var marker = new google.maps.Marker({
          position: latLng,

@@ -72,7 +72,7 @@
 				}
 			}
 
-			if ($city != '0')
+			if ($city != 'Any')
 			{
 				$builders->where('neighborhoods.city', '=', $city);
 			}
@@ -82,7 +82,7 @@
 				$builders->where('neighborhoods.id', '=', $neighborhoodId);
 			}				
 
-			if ($isd != '0')
+			if ($isd != 'Any')
 			{
 				$builders->where('neighborhoods.isd', '=', $isd);
 			}
