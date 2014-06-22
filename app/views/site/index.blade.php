@@ -12,7 +12,7 @@
         @endif
 
         <div id="map-content">
-            <div id="map-container col-md-12 col-lg-12">
+            <div id="map-container col-xs-8 col-sm-12 col-md-12 col-lg-12">
                 <div id="map"></div>
             </div>
             <div id="inline-actions">
