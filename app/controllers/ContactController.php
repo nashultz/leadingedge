@@ -19,8 +19,8 @@ class ContactController extends BaseController {
     public function send()
     {
         if(Input::get('hvalue')) {
-            Notifications::success('Email has been sent.')->save();
-            return Redirect::back();
+            $data['message'] = 'Email has been sent.';
+            return Response::json($data, 200);
         } else {
             if(Input::get('spanswer')==Input::get('sum')) {
                 $inputs = Input::all();
@@ -33,7 +33,14 @@ class ContactController extends BaseController {
                 );
                 $validator = Validator::make($inputs, $rules);
                 if ($validator->fails()) {
-                    return Redirect::route('site.contact')->withErrors($validator);
+                    $messages = $validator->messages();
+                    foreach($messages->toArray() as $key=>$value)
+                    {
+                        $data['message'][] = $value;
+                        $data['field'][] = $key;
+                    }
+                    $data['redirectUrl'] = URL::route('site.contact');
+                    return Response::json($data, 400);
                 } else {
                     unset($inputs['_token']);
                     unset($inputs['spanswer']);
@@ -43,12 +50,13 @@ class ContactController extends BaseController {
                         $message->to('nashultz07@gmail.com', 'Leading Edge Realty')->subject('Contact Us Form Submission');
                         //$message->bcc('nathons@systemsedgeonline.com', 'Leading Edge Realty')->subject('Contact Us Form Submission');
                     });
-                    Notifications::success('Email has been sent.')->save();
-                    return Redirect::back();
+                    $data['message'] = 'Email has been sent.';
+                    return Response::json($data, 200);
                 }
             } else {
-                Notifications::danger('Incorrect Answer.')->save();
-                return Redirect::back();
+                $data['message'] = 'Incorrect Answer. Refreshing the page.';
+                $data['redirectUrl'] = URL::route('site.contact');
+                return Response::json($data, 400);
             }
         }
 

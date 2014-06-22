@@ -9,7 +9,8 @@
 		{{
 			Form::open(array(
 				'method'=>'POST',
-				'route'=>'site.contact.send'
+				'route'=>'site.contact.send',
+				'class'=>'ajaxForm'
 			))
 		}}
 		<div class="login-form">
@@ -17,15 +18,6 @@
 				<h3 class="section-title">Online</h3>
 			</div>
 			<div class="col-md-12 col-lg-12">
-				@if (Session::has('notification'))
-					{{ Session::get('notification') }}	
-				@endif
-				@if ($errors->has())
-					@foreach($errors->all() as $message) 
-						{{ $message }}
-					@endforeach
-				@endif
-
 				{{ Form::token() }}
 			</div>
 			<div class="col-md-6 col-lg-6">

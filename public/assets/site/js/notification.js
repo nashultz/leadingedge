@@ -40,6 +40,13 @@ $(document).on('submit', '.ajaxForm', function(e) {
             ajaxForm.find('div').removeClass('has-error');
             $.growlUI('times','Error', response.message);
         }
+
+        if (typeof response.redirectUrl !== 'undefined')
+        {
+            setTimeout(function() {
+                window.location = response.redirectUrl;
+            }, 2500);
+        }
  
     });
  

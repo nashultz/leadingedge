@@ -58,12 +58,14 @@ use Carbon\Carbon;
 
 			if (!$user = $form->process())
 			{
-				Notifications::danger($form->getError())->save();
-				return Redirect::route('get.auth.login')->withInput();
+				$data['message'] = $form->getError();
+				$data['redirectUrl'] = URL::route('get.auth.login');
+				return Response::json($data, 400);
 			}
 
-			Notifications::success('Success! Please check your email for your verification code!')->save();
-			return Redirect::route('get.auth.login');
+			$data['message']= 'Please check your email for your verification code!';
+			$data['redirectUrl'] = URL::route('get.auth.login');
+			return Response::json($data, 200);
 		}
 
 		public function getForgotEmail()

@@ -39,11 +39,14 @@
 	</div>
 	<div class="hidden-md hidden-lg space-30"></div>
 	<div class="col-md-6 col-lg-6">
-		{{ Form::open(array('method'=>'POST','route'=>'post.auth.register')) }}
+		{{ Form::open(array('method'=>'POST','route'=>'post.auth.register','class'=>'ajaxForm')) }}
 
 		<div class="login-form">
 			<div class="col-md-12 col-lg-12">
 				<h3 class="section-title">Register an Account</h3>
+			</div>
+			<div class="col-md-12 col-lg-12">
+				<div class="help-block">This does not register you to search resale homes.</div>
 			</div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('fname', 'First Name') }}<br>
