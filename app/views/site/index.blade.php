@@ -1,7 +1,7 @@
 @extends('layouts.sitedefault')
 
 @section('content')
-    <div class="col-sm-12 col-md-5 col-md-push-7 col-lg-5 col-lg-push-7">
+    <div class="col-xs-11 col-sm-12 col-md-5 col-md-push-7 col-lg-5 col-lg-push-7">
 
         @if (Auth::guest())
             <div id="guestAlertWindow">
@@ -12,7 +12,7 @@
         @endif
 
         <div id="map-content">
-            <div id="map-container col-xs-8 col-sm-12 col-md-12 col-lg-12">
+            <div id="map-container col-md-12 col-lg-12">
                 <div id="map"></div>
             </div>
             <div id="inline-actions">
