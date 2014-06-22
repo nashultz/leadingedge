@@ -30,6 +30,7 @@ use Carbon\Carbon;
 				// Login Failure
 				$data['field'] = array('user', 'password');
 				$data['message'] = "Invalid Login";
+				
 				return Response::json($data, 400);
 			}
 
