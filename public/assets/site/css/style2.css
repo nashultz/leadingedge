@@ -604,6 +604,11 @@ background: rgb(164,42,31);
   height: 300px;
 }
 
+.neighborhood img {
+  width: 100%;
+  height: auto;
+}
+
 .logoimg, #youtubevid {
   float: left;
 }
