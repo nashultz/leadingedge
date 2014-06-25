@@ -3,7 +3,7 @@
 @section('content')
 <div class="login-register">
 	<div class="col-md-12 col-lg-12">
-		<h2 class="section-title">Communities</h2>
+		<h2 class="section-title">{{ $neighborhood->getName() }}</h2>
 	</div>
 	<div class="col-md-6 col-lg-6">
 		<div class="neighborhood">
@@ -30,7 +30,7 @@
 	<div class="col-md-6 col-lg-6">
 		<div class="neighborhood">
 			<div class="col-md-12 col-lg-12">
-				<h3 class="section-title">{{ $neighborhood->getName() }}</h3>
+				<h3 class="section-title">Community Info</h3>
 				<div><b>City</b>: {{$neighborhood->city}}</div>
 				<div><b>School District</b>: {{$neighborhood->district}}</div>
 			</div><div class="clearfix"></div>
