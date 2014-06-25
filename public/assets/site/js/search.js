@@ -44,6 +44,19 @@ $(document).on('click', '.delete_search', function(e) {
 
 });
 
+$(document).on('click', '.resale', function(e) {
+
+	e.preventDefault();
+
+	var form = $(this).parent().parent().parent().parent();
+
+	var response = $.ajax({
+		type: form.attr('method'),
+		url: form.attr('action'),
+		data: form.serialize()
+	});
+});
+
 $(document).on('change', '#search select', function(e) {
 
 	e.preventDefault();
@@ -64,6 +77,10 @@ $(document).on('change', '#search select', function(e) {
 		doMap(resp);
 
 		$('#guestAlertWindow').show();
+
+		setTimeout(function() {
+			$('#guestAlertWindow').hide();
+		}, 5000);
 
 	});
 
