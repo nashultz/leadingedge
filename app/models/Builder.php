@@ -37,6 +37,16 @@
 			return '$' . number_format($this->max_price, 2);
 		}
 
+		public function getMinSqFootage()
+		{
+			return number_format($this->min_size);
+		}
+
+		public function getMaxSqFootage()
+		{
+			return number_format($this->max_size);
+		}
+
 	}
 
 ?>

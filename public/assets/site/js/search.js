@@ -55,6 +55,7 @@ $(document).on('click', '.resale', function(e) {
 		url: form.attr('action'),
 		data: form.serialize()
 	});
+	
 });
 
 $(document).on('change', '#search select', function(e) {
