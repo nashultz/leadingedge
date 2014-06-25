@@ -176,8 +176,12 @@
         </div><div class="hidden-md hidden-lg space-30"></div>
         <div class="col-md-4 col-lg-4 print-hide">
             <h5 class="section-title">Member of</h5>
-            <div class="member">{{img('site','web_R_blue.jpg',array('title'=>'REALTOR&reg;'))}}</div>&nbsp;&nbsp;
+            
+            <!--
+                <div class="member">{{--img('site','web_R_blue.jpg',array('title'=>'REALTOR&reg;'))--}}</div>&nbsp;&nbsp;
+            -->
             <div class="member">{{img('site','equal-house-opp.gif',array('title'=>'Equal Housing Opportunity'))}}</div>
+            <div class="member">{{img('site','luxury_home.png',array('title'=>'Luxury Homes'))}}</div>
             <div class="member2">{{img('site','MLS-clear.png',array('title'=>'REALTOR&reg; Multiple Listing Service'))}}</div>
             <div class="clearfix"></div>
         </div>

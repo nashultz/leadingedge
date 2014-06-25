@@ -14,7 +14,7 @@
 				<p>Click <a href="neighborhoods/{{$neighborhood->slug}}">Here</a> for more details!<p>
 
 				{{ $neighborhood->city }}<br>
-				{{ $neighborhood->district }}<br>
+				{{ $neighborhood->district }} ISD<br>
 
 				<hr>
 
