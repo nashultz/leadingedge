@@ -1,6 +1,6 @@
   var buttonForm;
   var buttonFormTimeout;
-  var buttonFormTimeoutSeconds = 5000;
+  var buttonFormTimeoutSeconds = 30000;
 
   function startButtonFormTimer()
   {
