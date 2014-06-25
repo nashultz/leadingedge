@@ -6,13 +6,13 @@
 		<h2 class="section-title">Communities</h2>
 	</div>
 	<div class="col-md-6 col-lg-6">
-		<!-- <div class="neighborhood">
+		<div class="neighborhood">
 			<div class="col-md-12 col-lg-12">
 				<img src="http://maps.googleapis.com/maps/api/staticmap?center={{$neighborhood->latitude}},{{$neighborhood->longitude}}&zoom=13&size=600x300&maptype=roadmap%20&markers=color:red%7C{{$neighborhood->latitude}},{{$neighborhood->longitude}}&sensor=false"/>
 			</div>
 			<div class="clearfix"></div>
 		</div>
-		<div class="spacer-30"></div> -->
+		<div class="spacer-30"></div>
 		<div class="neighborhood">
 			<div class="col-md-12 col-lg-12">
 				<h3 class="section-title">Videos</h3>
