@@ -138,6 +138,86 @@ $(document).on('submit', '.ajaxForm', function(e) {
  
 });
 
+$(document).on('submit', '.ajaxLoginForm', function(e) {
+ 
+    e.preventDefault();
+ 
+    ajaxForm = $(this);
+ 
+    var ajaxStatus = $.ajax({
+        type: ajaxForm.attr('method'),
+        url: ajaxForm.attr('action'),
+        data: ajaxForm.serialize()
+    });
+ 
+    ajaxStatus.success(function(response) {
+        
+        $.growlUI('check','Success!', response.message);
+ 
+        if (typeof response.redirectUrl !== 'undefined')
+        {
+            $.unblockUI;
+            setTimeout(function() {
+                location.reload();
+            }, 100);
+        }
+
+        ajaxForm.reset();
+    });
+ 
+    ajaxStatus.fail(function(response) {
+        response = response.responseJSON;
+
+        console.log(response);
+ 
+        if (typeof response.field !== 'undefined')
+        {
+            ajaxForm.find('div').removeClass('has-error');
+ 
+            $.each(response.field, function(index, el) {
+                ajaxForm.find('#' + response.field[index]).parent().addClass('has-error');
+            });
+            $("#spanswer").val('');
+            $.growlUI('times','Error!', 'Please correct errors.');
+        }
+        else
+        {
+            ajaxForm.find('div').removeClass('has-error');
+            $.growlUI('times','Error', response.message);
+        }
+
+        if (typeof response.redirectUrl !== 'undefined')
+        {
+            setTimeout(function() {
+                window.location = response.redirectUrl;
+            }, 2500);
+        }
+
+        setTimeout(function() {
+            $.blockUI({ 
+                  message: $('#loginForm'),
+                  css: { 
+                      padding:        0, 
+                      margin:         0, 
+                      width:          '90%', 
+                      top:            '5%', 
+                      left:           '5%',
+                      bottom:         '5%', 
+                      color:          '#000', 
+                      border:         'none', 
+                      backgroundColor:'#fff', 
+                      cursor:         'wait',
+                      'overflow-x':       'hidden',
+                      'overflow-y': 'scroll', 
+                  }, 
+                  onOverlayClick: $.unblockUI,
+              });
+        }, 1200);
+ 
+    });
+ 
+});
+
 $(document).on('submit','.scrollTop', function(e) {
     e.preventDefault();
 

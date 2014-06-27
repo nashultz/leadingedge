@@ -42,7 +42,7 @@ use Carbon\Carbon;
 			}
 
 			// Login Success
-			$data['message'] = 'You have logged in! You will be redirected.';
+			$data['message'] = 'You have logged in! Page will be refreshed.';
 			$data['redirectUrl'] = URL::to('/');
 			return Response::json($data, 200);
 		}
@@ -124,7 +124,7 @@ use Carbon\Carbon;
 		public function getLogout()
 		{
 			Auth::logout();
-        	return Redirect::route('get.auth.login');
+        	return Redirect::to('/');
 		}
 
 	}

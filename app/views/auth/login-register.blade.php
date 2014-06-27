@@ -3,7 +3,7 @@
 @section('content')
 <div class="login-register">
 	<div class="col-md-6 col-lg-6">
-		{{ Form::open(array('method'=>'POST','route'=>'post.auth.login','class'=>'ajaxForm')) }}
+		{{ Form::open(array('method'=>'POST','route'=>'post.auth.login','class'=>'ajaxLoginForm')) }}
 
 		<div class="login-form">
 			<div class="col-md-12 col-lg-12">
@@ -39,7 +39,7 @@
 	</div>
 	<div class="hidden-md hidden-lg space-30"></div>
 	<div class="col-md-6 col-lg-6">
-		{{ Form::open(array('method'=>'POST','route'=>'post.auth.register','class'=>'ajaxForm')) }}
+		{{ Form::open(array('method'=>'POST','route'=>'post.auth.register','class'=>'ajaxLoginForm')) }}
 
 		<div class="login-form">
 			<div class="col-md-12 col-lg-12">

@@ -141,7 +141,7 @@
                             <li><a href="https://www.youtube.com/channel/UCfW9OSJ9FolOoqiN4tapg2w" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a></li>
                             <li class="hidden-xs hidden-sm divider-vertical"></li>
                             @if (!Auth::check())
-                                <li><a href="{{ URL::route('get.auth.login') }}" title="Login/Register">Login/Register</a></li>
+                                <li><a href="{{ URL::route('get.auth.login') }}" id="blockLogin" title="Login/Register">Login/Register</a></li>
                                 <!--<li class="divider-vertical"></li>
                                 <li><a href="{{-- URL::route('get.auth.register') --}}">Register</a></li>-->
                             @else 
@@ -205,7 +205,7 @@
     <div class="clearfix"></div>
     <div class="login-register">
         <div class="col-md-6 col-lg-6">
-            {{ Form::open(array('method'=>'POST','route'=>'post.auth.login','class'=>'ajaxForm')) }}
+            {{ Form::open(array('method'=>'POST','route'=>'post.auth.login','class'=>'ajaxLoginForm')) }}
 
             <div class="login-form">
                 <div class="col-md-12 col-lg-12">
@@ -241,7 +241,7 @@
         </div>
         <div class="hidden-md hidden-lg space-30"></div>
         <div class="col-md-6 col-lg-6">
-            {{ Form::open(array('method'=>'POST','route'=>'post.auth.register','class'=>'ajaxForm')) }}
+            {{ Form::open(array('method'=>'POST','route'=>'post.auth.register','class'=>'ajaxLoginForm')) }}
 
             <div class="login-form">
                 <div class="col-md-12 col-lg-12">
