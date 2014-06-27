@@ -43,6 +43,7 @@
 			@endif
 			<div class="hidden-md hidden-lg space-30 print-show"></div>
 			<div class="col-md-8 col-lg-8">
+				<a href="{{URL::to('/realtor')}}" class="btn btn-danger">Why use a realtor?</a>
 				@foreach($builderResults as $builder)
 				<div class="login-form">
 					<div class="col-md-12 col-lg-12">
