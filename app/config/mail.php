@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'host' => 'just21.justhost.com',
+	'host' => 'host251.hostmonster.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'info@louiesbarbque.com', 'name' => 'Leading Edge Realty'),
+	'from' => array('address' => 'accounts@searchnewhomesaustin.com', 'name' => 'Leading Edge Realty'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => 'info@louiesbarbque.com',
+	'username' => 'accounts@searchnewhomesaustin.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => 'Sy$3dg312',
+	'password' => 'Vpo8N72SDvpO',
 
 	/*
 	|--------------------------------------------------------------------------
