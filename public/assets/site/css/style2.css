@@ -12,6 +12,10 @@ body {
   color: rgb(59,59,61);
 }
 
+#loginForm {
+  display: none;
+}
+
 /* ==========================================================
 ! Print Adjustments
 ========================================================== */
@@ -628,7 +632,8 @@ background: rgb(164,42,31);
 
 #youtubevid2 {
   display: none;
-  width: 870px;
+  width: 100%;
+  height: 100%;
 }
 
 #youtubevid2 .vid,
@@ -637,16 +642,24 @@ background: rgb(164,42,31);
 }
 
 #youtubevid2 .vid {
-  width: 810px;
+  width: 100%;
+  height: 100%;
 }
 
-#youtubevid2 .close {
-  color: #fff;
+#youtubevid2 .vid iframe {
+  width: 100%;
+  height: 100%;
+}
+
+#youtubevid2 .close,
+#loginForm .close {
+  color: #000;
   width: 30px;
   opacity: 1.0;
 }
 
-#youtubevid2 .close:hover {
+#youtubevid2 .close:hover,
+#loginForm .close:hover {
   opacity: .7;
 }
 

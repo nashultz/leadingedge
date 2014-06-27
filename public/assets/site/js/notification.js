@@ -57,6 +57,29 @@ $(document).on('focusout', '.buttonForm', function(e) {
     startButtonFormTimer();
 });
 
+$(document).on('click','#blockLogin', function(e) {
+    e.preventDefault();
+
+    $.blockUI({ 
+              message: $('#loginForm'),
+              css: { 
+                  padding:        0, 
+                  margin:         0, 
+                  width:          '90%', 
+                  top:            '5%', 
+                  left:           '5%',
+                  bottom:         '5%', 
+                  color:          '#000', 
+                  border:         'none', 
+                  backgroundColor:'#fff', 
+                  cursor:         'wait',
+                  'overflow-x':       'hidden',
+                  'overflow-y': 'scroll', 
+              }, 
+              onOverlayClick: $.unblockUI,
+          });
+});
+
 $(document).on('submit', '.ajaxForm', function(e) {
  
     e.preventDefault();

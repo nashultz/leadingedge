@@ -10,13 +10,20 @@
 <div id="content">
 	<div class="container">
 		<div class="row">
-			@if (Auth::check())
 			<div class="col-md-4 col-lg-4 print-hide">
 				<div class="login-form">
 					<div class="col-md-12 col-lg-12">
 						@if (Auth::guest())
-							<a href="{{ URL::route('get.auth.login') }}">Login or Register</a> to Save Your Searches!
+							<div class="submit-container">
+								<a href="{{URL::to('/realtor')}}" class="btn btn-danger">Why use a realtor?</a>
+							</div>
+							<div class="spacer-10"></div>
+							<a href="{{ URL::route('get.auth.login') }}" id="blockLogin">Login or Register</a> to Save Your Searches!
 						@else
+							<div class="submit-container">
+								<a href="{{URL::to('/realtor')}}" class="btn btn-danger">Why use a realtor?</a>
+							</div>
+							<div class="spacer-10"></div>
 							{{ Form::label('saved_search', 'Saved Searches: ') }}
 							{{ Form::select('saved_search', $savedSearches, 0, array('class'=>'form-control', 'id'=>'saved_search')) }}
 							<div class="spacer-5"></div>
@@ -39,11 +46,11 @@
 					</div>
 					<div class="clearfix"></div>
 				</div>
+				<div class="spacer-30"></div>
+				@include('buttons.buttons')
 			</div>
-			@endif
 			<div class="hidden-md hidden-lg space-30 print-show"></div>
 			<div class="col-md-8 col-lg-8">
-				<a href="{{URL::to('/realtor')}}" class="btn btn-danger">Why use a realtor?</a>
 				@foreach($builderResults as $builder)
 				<div class="login-form">
 					<div class="col-md-12 col-lg-12">

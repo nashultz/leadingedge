@@ -46,7 +46,9 @@
 				<h3 class="section-title">Register an Account</h3>
 			</div>
 			<div class="col-md-12 col-lg-12">
-				<div class="help-block">This does not register you to search resale homes.</div>
+				<div class="help-block">
+					This does not register you to search resale homes. Searching resale homes is under a different database and also requires registration to save searches.
+				</div>
 			</div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('fname', 'First Name') }}<br>

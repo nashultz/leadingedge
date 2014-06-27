@@ -14,17 +14,19 @@ $(document).ready(function() {
 			$.blockUI({ 
 	            message: $('#youtubevid2'),
 	            css: { 
-	                padding:        0, 
-	                margin:         0, 
-	                width:          '870px', 
-	                top:            '15%', 
-	                left:           '20%', 
-	                textAlign:      'center', 
-	                color:          '#fff', 
-	                border:         'none', 
-	                backgroundColor:'#000', 
-	                cursor:         'wait' 
-	            }, 
+                  padding:        0, 
+                  margin:         0, 
+                  width:          '90%', 
+                  top:            '5%', 
+                  left:           '5%',
+                  bottom:         '5%', 
+                  color:          '#000', 
+                  border:         'none', 
+                  backgroundColor:'#fff', 
+                  cursor:         'wait',
+                  'overflow-x':       'scroll',
+                  'overflow-y': 'scroll', 
+              }, 
 	            onOverlayClick: $.unblockUI,
 	            onBlock: function()
 	            {
