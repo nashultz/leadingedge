@@ -33,7 +33,8 @@
 		$.unblockUI = function(opts) { remove(window, opts); };
 
 		// convenience method for quick growl-like notifications  (http://www.google.com/search?q=growl)
-		$.growlUI = function(type,title, message, timeout, onClose) {
+		$.growlUI = function(type,title, message, timeout, onClose, blockElement) {
+
 			var $m = $('<div class="growlUI"></div>');
 			if(type) $m.append('<i class="fa fa-'+type+'"></i>');
 			if (title) $m.append('<span class="title">'+title+':</span>');
@@ -41,19 +42,37 @@
 			if (timeout === undefined) timeout = 3000;
 
 			// Added by konapun: Set timeout to 30 seconds if this growl is moused over, like normal toast notifications
-			var callBlock = function(opts) {
-				opts = opts || {};
+				var callBlock = function(opts) {
+					opts = opts || {};
 
-				$.blockUI({
-					message: $m,
-					fadeIn : typeof opts.fadeIn  !== 'undefined' ? opts.fadeIn  : 700,
-					fadeOut: typeof opts.fadeOut !== 'undefined' ? opts.fadeOut : 1000,
-					timeout: typeof opts.timeout !== 'undefined' ? opts.timeout : timeout,
-					centerY: false,
-					showOverlay: false,
-					onUnblock: onClose,
-					css: $.blockUI.defaults.growlCSS
-				});
+					if (typeof blockElement !== 'undefined')
+					{
+						$(blockElement).block({
+							message: $m,
+							fadeIn : typeof opts.fadeIn  !== 'undefined' ? opts.fadeIn  : 700,
+							fadeOut: typeof opts.fadeOut !== 'undefined' ? opts.fadeOut : 1000,
+							timeout: typeof opts.timeout !== 'undefined' ? opts.timeout : timeout,
+							centerY: false,
+							centerX: false,
+							showOverlay: true,
+							onUnblock: onClose,
+							css: $.blockUI.defaults.growlCSS
+						});
+					}
+					else 
+					{
+						$.blockUI({
+							message: $m,
+							fadeIn : typeof opts.fadeIn  !== 'undefined' ? opts.fadeIn  : 700,
+							fadeOut: typeof opts.fadeOut !== 'undefined' ? opts.fadeOut : 1000,
+							timeout: typeof opts.timeout !== 'undefined' ? opts.timeout : timeout,
+							centerY: false,
+							centerX: false,
+							showOverlay: true,
+							onUnblock: onClose,
+							css: $.blockUI.defaults.growlCSS
+						});
+					}
 			};
 
 			callBlock();
@@ -266,8 +285,8 @@
 			msg = msg === undefined ? opts.message : msg;
 
 			// remove the current block (if there is one)
-			if (full && pageBlock)
-				remove(window, {fadeOut:0});
+			//if (full && pageBlock)
+			//	remove(window, {fadeOut:0});
 
 			// if an existing element is being used as the blocking content then we capture
 			// its current place in the DOM (and current display style) so we can restore

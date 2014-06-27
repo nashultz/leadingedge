@@ -1,6 +1,7 @@
   var buttonForm;
   var buttonFormTimeout;
   var buttonFormTimeoutSeconds = 30000;
+  var growl;
 
   function startButtonFormTimer()
   {
@@ -178,12 +179,12 @@ $(document).on('submit', '.ajaxLoginForm', function(e) {
                 ajaxForm.find('#' + response.field[index]).parent().addClass('has-error');
             });
             $("#spanswer").val('');
-            $.growlUI('times','Error!', 'Please correct errors.');
+            $.growlUI('times','Error!', 'Please correct errors.', 3000, function() {}, '.login-register');
         }
         else
         {
             ajaxForm.find('div').removeClass('has-error');
-            $.growlUI('times','Error', response.message);
+            $.growlUI('times','Error', response.message, 3000, function() {}, '.login-register');
         }
 
         if (typeof response.redirectUrl !== 'undefined')
@@ -193,7 +194,7 @@ $(document).on('submit', '.ajaxLoginForm', function(e) {
             }, 2500);
         }
 
-        setTimeout(function() {
+        /*setTimeout(function() {
             $.blockUI({ 
                   message: $('#loginForm'),
                   css: { 
@@ -212,7 +213,7 @@ $(document).on('submit', '.ajaxLoginForm', function(e) {
                   }, 
                   onOverlayClick: $.unblockUI,
               });
-        }, 1200);
+        }, 1200);*/
  
     });
  
