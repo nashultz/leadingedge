@@ -51,9 +51,15 @@ $(document).on('click', '.resale', function(e) {
 	var form = $(this).parent().parent().parent().parent();
 
 	var response = $.ajax({
-		type: form.attr('method'),
-		url: form.attr('action'),
+		type: 'POST',
+		url: '/idx',
 		data: form.serialize()
+	});
+
+	response.success(function(resp) {
+
+		window.location = resp.url;
+
 	});
 	
 });

@@ -44,7 +44,96 @@ Route::post('visitor/check', function() {
 });
 
 Route::get('idx',function() {
-	return View::make('idx.idx');
+
+	$args = array();
+	$appendString = '';
+
+	if (Input::get('search_city') != 'Any')
+	{
+		$args[] = 'search_city=' . Input::get('search_city');
+	}
+
+	if (Input::get('minimum_price') != '0')
+	{
+		$args[] = 'minimum_price=' . Input::get('minimum_price');
+	}
+
+	if (Input::get('maximum_price') != '0')
+	{
+		$args[] = 'maximum_price=' . Input::get('maximum_price');
+	}
+
+	if (Input::get('minimum_sqft') != '0')
+	{
+		$args[] = 'minimum_sqft=' . Input::get('minimum_sqft');
+	}
+
+	if (Input::get('maximum_sqft') != '0')
+	{
+		$args[] = 'maximum_sqft=' . Input::get('maximum_sqft');
+	}
+
+	foreach($args as $index=>$arg)
+	{
+		if ($index == 0)
+		{
+			$appendString .= '?' . $arg;
+		}
+		else
+		{
+			$appendString .= '&' . $arg;
+		}
+	}
+
+	return View::make('idx.idx', array('appendString'=>$appendString));
+});
+
+Route::post('idx', function() {
+
+	$args = array();
+	$appendString = '?';
+
+	if (Input::get('city') != 'Any')
+	{
+		$args[] = 'search_city=' . Input::get('city');
+	}
+
+	if (Input::get('min_price') != '0')
+	{
+		$args[] = 'minimum_price=' . Input::get('min_price');
+	}
+
+	if (Input::get('max_price') != '0')
+	{
+		$args[] = 'maximum_price=' . Input::get('max_price');
+	}
+
+	if (Input::get('min_sqft') != '0')
+	{
+		$args[] = 'minimum_sqft=' . Input::get('min_sqft');
+	}
+
+	if (Input::get('max_sqft') != '0')
+	{
+		$args[] = 'maximum_sqft=' . Input::get('max_sqft');
+	}
+
+	foreach($args as $index=>$arg)
+	{
+		if ($index == 0)
+		{
+			$appendString .= $arg;
+		}
+		else
+		{
+			$appendString .= '&' . $arg;
+		}
+	}
+
+	$data['url'] = URL::to('idx') . $appendString;
+
+	return Response::json($data, 200);
+
 });
 
 Route::get('neighborhood/getBuilders', function() {

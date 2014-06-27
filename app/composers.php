@@ -36,7 +36,7 @@ View::composer('*', function($view) {
 			$builders[$builder->name] = $builder->name;
 		}
 
-		for ($a = 100000; $a <= 1000000; $a += 10000)
+		for ($a = 50000; $a <= 10000000; $a += 25000)
 		{
 			$costOptions[$a] = '$' . number_format($a,2);
 		}
@@ -44,7 +44,7 @@ View::composer('*', function($view) {
 		// Add Last Option
 		$costOptions['99999999'] = "$1,000,000+";
 
-		for ($a = 1000; $a <= 5000; $a += 100)
+		for ($a = 500; $a <= 10000; $a += 500)
 		{
 			$sqFootageOptions[$a] = number_format($a, 0);
 		}
