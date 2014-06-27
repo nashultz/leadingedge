@@ -27,6 +27,11 @@
 			return $this->neighborhood->city;
 		}
 
+		public function getNeighborhoodISD()
+		{
+			return $this->neighborhood->district . ' ISD';
+		}
+
 		public function getMinPrice()
 		{
 			return '$' . number_format($this->min_price, 2);
