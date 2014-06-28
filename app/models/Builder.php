@@ -57,24 +57,24 @@
 			return number_format($this->max_size);
 		}
 
-		public function getAvgMinPrice()
+		public function getMinMinPrice()
 		{
-			return '$' . number_format($this->neighborhood->builders()->avg('min_price'), 2);
+			return '$' . number_format($this->neighborhood->builders()->min('min_price'));
 		}
 
-		public function getAvgMaxPrice()
+		public function getMaxMaxPrice()
 		{
-			return '$' . number_format($this->neighborhood->builders()->avg('max_price'), 2);
+			return '$' . number_format($this->neighborhood->builders()->max('max_price'));
 		}
 
-		public function getAvgMinSqFootage()
+		public function getMinMinSqFootage()
 		{
-			return number_format($this->neighborhood->builders()->avg('min_size'));
+			return number_format($this->neighborhood->builders()->min('min_size'));
 		}
 
-		public function getAvgMaxSqFootage()
+		public function getMaxMaxSqFootage()
 		{
-			return number_format($this->neighborhood->builders()->avg('max_size'));
+			return number_format($this->neighborhood->builders()->max('max_size'));
 		}
 
 	}

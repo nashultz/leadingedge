@@ -78,14 +78,14 @@
 
 					<div class="col-md-12 col-lg-12">
 						<div class="col-md-6 col-lg-6">
-							<b>Price Range:</b> {{ $builder->getMinPrice() }} - {{ $builder->getMaxPrice() }}
+							<b>Price Range:</b> {{ $builder->getMinMinPrice() }} - {{ $builder->getMaxMaxPrice() }}
 						</div>
 					</div>
 					<div class="clearfix"></div>
 
 					<div class="col-md-12 col-lg-12">
 						<div class="col-md-6 col-lg-6">
-							<b>Square Footage:</b> {{ $builder->getAvgMinSqFootage() }} - {{ $builder->getAvgMaxSqFootage() }}
+							<b>Square Footage:</b> {{ $builder->getMinMinSqFootage() }} - {{ $builder->getMaxMaxSqFootage() }}
 						</div>
 					</div>
 
