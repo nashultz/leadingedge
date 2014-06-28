@@ -52,6 +52,26 @@
 			return number_format($this->max_size);
 		}
 
+		public function getAvgMinPrice()
+		{
+			return '$' . number_format($this->avg('min_price'), 2);
+		}
+
+		public function getAvgMaxPrice()
+		{
+			return '$' . number_format($this->avg('max_price'), 2);
+		}
+
+		public function getAvgMinSqFootage()
+		{
+			return number_format($this->avg('min_size'));
+		}
+
+		public function getAvgMaxSqFootage()
+		{
+			return number_format($this->avg('max_size'));
+		}
+
 	}
 
 ?>
