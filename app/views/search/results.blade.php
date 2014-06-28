@@ -55,7 +55,7 @@
 				<div class="login-form">
 					<div class="col-md-12 col-lg-12">
 						<div class="col-md-6 col-lg-6">
-							<h2>{{ $builder->getNeighborhoodName() }}</h2>
+							<h2 class='section-title'><a href="../neighborhoods/{{$builder->getNeighborhoodSlug()}}">{{ $builder->getNeighborhoodName() }}</a></h2>
 						</div>
 					</div>
 					<div class="clearfix"></div>
@@ -85,7 +85,7 @@
 
 					<div class="col-md-12 col-lg-12">
 						<div class="col-md-6 col-lg-6">
-							<b>Square Footage:</b> {{ $builder->getMinSqFootage() }} - {{ $builder->getMaxSqFootage() }}
+							<b>Square Footage:</b> {{ $builder->getAvgMinSqFootage() }} - {{ $builder->getAvgMaxSqFootage() }}
 						</div>
 					</div>
 
