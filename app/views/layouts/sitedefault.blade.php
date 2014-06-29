@@ -125,7 +125,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Resources">Resources <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{URL::to('mortgage')}}" title="Mortgage Calculator">Mortgage Calculator</a></li>
-                                    <li><a href="{{URL::route('site.schoolratings')}}" target="_blank" title="2013 School Ratings">2013 School Ratings&nbsp;&nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
+                                    <li><a href="{{URL::route('site.schoolratings')}}" target="_blank" title="2014 School Ratings">2014 School Ratings&nbsp;&nbsp;<i class="fa fa-file-pdf-o"></i></a></li>
                                     <li><a href="{{URL::route('site.realtor')}}" title="Why Use a Realtor">Why Use a Realtor&reg;</a></li>
                                 </ul>
                             </li>
@@ -213,7 +213,7 @@
 
             <div class="login-form">
                 <div class="col-md-12 col-lg-12">
-                    <h3 class="section-title">Login</h3>
+                    <h3 class="section-title">Signin</h3>
                 </div>
                 <div class="col-md-6 col-lg-6">
                     {{ Form::label('user', 'Username / Email') }}<br>
@@ -231,7 +231,7 @@
                 <div class="spacer-20"></div>
                 <div class="col-md-12 col-lg-12">
                     <div class="submit-container">
-                    {{ Form::submit('Login',array('class'=>'btn btn-danger')) }}
+                    {{ Form::submit('Signin',array('class'=>'btn btn-danger')) }}
                     </div>
                 </div>
                 <div class="spacer-20"></div>
@@ -249,11 +249,11 @@
 
             <div class="login-form">
                 <div class="col-md-12 col-lg-12">
-                    <h3 class="section-title">Register an Account</h3>
+                    <h3 class="section-title">Sign Up for Full Access</h3>
                 </div>
                 <div class="col-md-12 col-lg-12">
                     <div class="help-block">
-                        This does not register you to search resale homes. Searching resale homes is under a different database and also requires registration to save searches.
+                        This will give you full access to search and save the new homes database. Searching resale homes is through a different database and you have to signup seperately to save searches on that search.
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6">
@@ -285,7 +285,7 @@
                 <div class="spacer-20"></div>
                 <div class="col-md-12 col-lg-12">
                     <div class="submit-container">
-                    {{ Form::submit('Register',array('class'=>'btn btn-danger')) }}
+                    {{ Form::submit('Submit',array('class'=>'btn btn-danger')) }}
                     </div>
                 </div>
                 <div class="clearfix"></div>
