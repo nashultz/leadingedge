@@ -8,7 +8,7 @@
     // Start the Timeout
       buttonFormTimeout = setTimeout(function() {
         buttonForm.slideToggle(800);
-        $.growlUI('exclamation-triangle','Attention!', 'Side Form Minimized due to Inactivity');
+        $.growlUI('Attention!', 'Side Form Minimized due to Inactivity');
       }, buttonFormTimeoutSeconds);
   }
 
@@ -95,7 +95,7 @@ $(document).on('submit', '.ajaxForm', function(e) {
  
     ajaxStatus.success(function(response) {
         
-        $.growlUI('check','Success!', response.message);
+        $.growlUI('Success!', response.message);
  
         if (typeof response.redirectUrl !== 'undefined')
         {
@@ -120,12 +120,12 @@ $(document).on('submit', '.ajaxForm', function(e) {
                 ajaxForm.find('#' + response.field[index]).parent().addClass('has-error');
             });
             $("#spanswer").val('');
-            $.growlUI('times','Error!', 'Please correct errors.');
+            $.growlUI('Error!', 'Please correct errors.');
         }
         else
         {
             ajaxForm.find('div').removeClass('has-error');
-            $.growlUI('times','Error', response.message);
+            $.growlUI('Error', response.message);
         }
 
         if (typeof response.redirectUrl !== 'undefined')
@@ -153,7 +153,7 @@ $(document).on('submit', '.ajaxLoginForm', function(e) {
  
     ajaxStatus.success(function(response) {
         
-        $.growlUI('check','Success!', response.message);
+        $.growlUI('Success!', response.message);
  
         if (typeof response.redirectUrl !== 'undefined')
         {
@@ -179,12 +179,12 @@ $(document).on('submit', '.ajaxLoginForm', function(e) {
                 ajaxForm.find('#' + response.field[index]).parent().addClass('has-error');
             });
             $("#spanswer").val('');
-            $.growlUI('times','Error!', 'Please correct errors.', 3000, function() {}, '.login-register');
+            $.growlUI('Error!', 'Please correct errors.', 3000, function() {}, '.login-register');
         }
         else
         {
             ajaxForm.find('div').removeClass('has-error');
-            $.growlUI('times','Error', response.message, 3000, function() {}, '.login-register');
+            $.growlUI('Error', response.message, 3000, function() {}, '.login-register');
         }
 
         if (typeof response.redirectUrl !== 'undefined')

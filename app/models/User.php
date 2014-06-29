@@ -58,6 +58,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+	public function getFullName()
+	{
+		return $this->fname . ' ' . $this->lname;
+	}
+
 	public function getConfirmationUrl()
 	{
 		return URL::route('get.auth.confirmation', array('user' => $this->username, 'code' => $this->confirmation_code));

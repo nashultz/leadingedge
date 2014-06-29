@@ -6,7 +6,7 @@
         @if (Auth::guest())
             <div id="guestAlertWindow">
             <div class="alert alert-info">
-                Total Results: <span class="totalResults"></span>. Limited to 3 for guests. <a href="{{ URL::route('get.auth.login') }}">Register</a> for All Results.
+                Total Results: <span class="totalResults"></span>. Limited to 3 for guests. <a href="{{ URL::route('get.auth.login') }}">Signin/Signup</a> for All Results.
             </div>
             </div>
         @endif

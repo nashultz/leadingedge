@@ -27,6 +27,9 @@ body {
   .print-hide {
     display:none !important;
   }
+  .print-show {
+    display: block !important;
+  }
   .about-photo img,
   .about-photo img.img-circle,
   .about-photo img.img-thumbnail {
@@ -34,6 +37,10 @@ body {
     float: left !important;
     margin-right: 10px !important;
   }
+}
+
+.print-show {
+  display: none;
 }
 
 /* ==========================================================

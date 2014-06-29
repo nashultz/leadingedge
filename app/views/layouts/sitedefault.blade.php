@@ -86,7 +86,7 @@
     <div class="container">
         <div class="row">
             <!-- HEADER -->
-            <div class="brand col-md-12 col-lg-12  print-show">
+            <div class="brand col-md-12 col-lg-12">
                 <div class="logoimg">
                     <a href="{{URL::to('/')}}" title="Leading Edge Realty - Home">{{img('site','mainlogo.png',array('class'=>'logo'))}}</a>
                 </div>
@@ -141,7 +141,7 @@
                             <li><a href="https://www.youtube.com/channel/UCfW9OSJ9FolOoqiN4tapg2w" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a></li>
                             <li class="hidden-xs hidden-sm divider-vertical"></li>
                             @if (!Auth::check())
-                                <li><a href="{{ URL::route('get.auth.login') }}" title="Login/Register">Login/Register</a></li>
+                                <li><a href="{{ URL::route('get.auth.login') }}" id="blockLogin" title="Login/Register">Signin/Signup</a></li>
                                 <!--<li class="divider-vertical"></li>
                                 <li><a href="{{-- URL::route('get.auth.register') --}}">Register</a></li>-->
                             @else 
@@ -174,10 +174,14 @@
 <div class="container">
     <div class="row">
     <div class="footer">
-        <div class="col-md-4 col-lg-4 print-show">
+        <div class="col-md-4 col-lg-4">
             <h5 class="section-title">Leading Edge Realty</h5>
             <div>Copyright &copy; <?php echo date('Y'); ?> <br> Leading Edge Realty &ndash; Austin, TX. <br> All Rights Reserved.</div>
         </div><div class="hidden-md hidden-lg space-30"></div>
+        <div class="col-md-4 col-lg-4 print-show">
+            <div>Tammy Young - 512-751-6119<br>David McCaleb - 512-289-0112<br>Email: LeadingEdgeRealtyAustin[at]gmail.com</div>
+            <div class="clearfix"></div>
+        </div>
         <div class="col-md-4 col-lg-4 print-hide">
             <h5 class="section-title">Member of</h5>
             
@@ -190,7 +194,7 @@
             <div class="clearfix"></div>
         </div>
         <div class="hidden-md hidden-lg space-30"></div>
-        <div class="col-md-4 col-lg-4 print-show">
+        <div class="col-md-4 col-lg-4">
             <h5 class="section-title">Disclaimer</h5>
             <p>Information found on this site is derived from third party sources and is deemed reliable. The developers and owners of this site cannot guarantee the accuracy of the information found here.</p>
         </div>
@@ -199,7 +203,7 @@
     </div>
 </div><div class='spacer-30'></div>
 
-<div id="loginForm">
+<div id="loginForm" class="print-hide">
     <div class="clearfix"></div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><div class="close pull-right text-right"><i class="fa fa-times-circle"></i></div></div>
     <div class="clearfix"></div>

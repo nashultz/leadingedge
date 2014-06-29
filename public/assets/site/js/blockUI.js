@@ -33,10 +33,11 @@
 		$.unblockUI = function(opts) { remove(window, opts); };
 
 		// convenience method for quick growl-like notifications  (http://www.google.com/search?q=growl)
-		$.growlUI = function(type,title, message, timeout, onClose, blockElement) {
+		$.growlUI = function(title, message, timeout, onClose, blockElement) {
+
+			console.log(title, message, timeout, onClose, blockElement);
 
 			var $m = $('<div class="growlUI"></div>');
-			if(type) $m.append('<i class="fa fa-'+type+'"></i>');
 			if (title) $m.append('<span class="title">'+title+':</span>');
 			if (message) $m.append('<span class="message">'+message+'</span>');
 			if (timeout === undefined) timeout = 3000;

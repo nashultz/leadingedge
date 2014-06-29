@@ -18,7 +18,7 @@
 								<a href="{{URL::to('/realtor')}}" class="btn btn-danger">Why use a realtor?</a>
 							</div>
 							<div class="spacer-10"></div>
-							<a href="{{ URL::route('get.auth.login') }}" id="blockLogin">Login or Register</a> to Save Your Searches!
+							<a href="{{ URL::route('get.auth.login') }}" id="blockLogin">Signin or Signup</a> to Save Your Searches!
 						@else
 							<div class="submit-container">
 								<a href="{{URL::to('/realtor')}}" class="btn btn-danger">Why use a realtor?</a>

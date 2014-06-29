@@ -13,7 +13,7 @@
 
 				<div class="search-form">
 					<div class="col-md-12 col-lg-12">
-						<h3 class="section-title">Login</h3>
+						<h3 class="section-title">Signin</h3>
 					</div>
 					<div class="col-md-4 col-lg-4">
 						{{ Form::label('user', 'Username / Email') }}<br>
@@ -26,7 +26,7 @@
 					</div>
 					<div class="spacer-20"></div>
 					<div class="col-md-12 col-lg-12">
-						{{ Form::submit('Login',array('class'=>'btn btn-success')) }}
+						{{ Form::submit('Signin',array('class'=>'btn btn-success')) }}
 					</div>
 					<div class="clearfix"></div>
 				</div>

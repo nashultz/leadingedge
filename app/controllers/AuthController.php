@@ -29,7 +29,7 @@ use Carbon\Carbon;
 			{
 				// Login Failure
 				$data['field'] = array('user', 'password');
-				$data['message'] = "Invalid Login";
+				$data['message'] = "Invalid Signin";
 				
 				return Response::json($data, 400);
 			}
@@ -42,7 +42,7 @@ use Carbon\Carbon;
 			}
 
 			// Login Success
-			$data['message'] = 'You have logged in! Page will be refreshed.';
+			$data['message'] = 'You have signed in! Page will be refreshed.';
 			$data['redirectUrl'] = URL::to('/');
 			return Response::json($data, 200);
 		}
@@ -105,7 +105,7 @@ use Carbon\Carbon;
 					$user->confirmation_expire_date = null;
 					$user->update();
 
-					Notifications::success('Your account has been confirmed')->save();
+					Notifications::success('Your sign up has been confirmed')->save();
 					return Redirect::route('get.auth.login');
 				}
 				
