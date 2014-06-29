@@ -85,10 +85,6 @@ $(document).on('change', '#search select', function(e) {
 
 		$('#guestAlertWindow').show();
 
-		setTimeout(function() {
-			$('#guestAlertWindow').hide();
-		}, 5000);
-
 	});
 
 });

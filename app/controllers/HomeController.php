@@ -61,8 +61,57 @@ class HomeController extends BaseController {
     public function testimonials()
     {
         //
-        //$agents = Employee::get();
-        return View::make('site.testimonials'/*,compact('agents')*/);
+        return View::make('site.testimonials');
+    }
+
+    public function testimonialform()
+    {
+        $spranone = rand(0,30);
+        $sprantwo = rand(0,30);
+        $sum = $spranone + $sprantwo;
+        return View::make('site.testimonialform', compact('spranone', 'sprantwo','sum'));
+    }
+
+    public function mailtestimonial()
+    {
+        if(Input::get('hvalue')) {
+            $data['message'] = 'Email has been sent.';
+            return Response::json($data, 200);
+        } else {
+            if(Input::get('spanswer')==Input::get('sum')) {
+                
+                $inputs = Input::all();
+                $rules = array(
+                    'fullname' => 'required',
+                    'email' => 'required|email',
+                    'msubject' => 'required',
+                    'mcontent' => 'required',
+                    'spanswer' => 'required',
+                );
+                $validator = Validator::make($inputs, $rules);
+                if ($validator->fails()) {
+                    $messages = $validator->messages();
+                    foreach($messages->toArray() as $key=>$value)
+                    {
+                        $data['message'][] = $value;
+                        $data['field'][] = $key;
+                    }
+                    return Response::json($data, 400);
+                } else {
+                    $inputs = Input::except('_token','spanswer','sum');
+                    Mail::send(array('emails.html.testimonials', 'emails.text.testimonials'),  compact('inputs'), function($message) {
+                        $message->to('nashultz07@gmail.com', 'Leading Edge Realty');
+                        $message->subject('Testimonial');
+                    });
+                    $data['message'] = 'Email has been sent.';
+                    return Response::json($data, 200);
+                }
+            } else {
+                $data['message'] = 'Incorrect Answer.';
+                return Response::json($data, 400);
+            }
+        }
+
     }
 
     public function neighborhood($neighborhood)

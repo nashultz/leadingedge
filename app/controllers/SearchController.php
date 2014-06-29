@@ -98,14 +98,7 @@
 			$builders = $builders->load('neighborhood');
 			$totalBuilders = $builders->count();
 
-			if (Auth::Guest())
-			{
-				$builders = $builders->take(3);
-			}
-			else
-			{
-				$builders = $builders;
-			}			
+			$builders = $builders;
 
 			if (Request::ajax())
 			{
@@ -120,7 +113,18 @@
 
 			$builderResults = $builders;
 
-			return View::make('search.results', compact('builderResults'));
+			$count = $builderResults->count();
+
+			if (Auth::Guest())
+			{
+				$buildResults = $builderResults->take(3);
+			}
+			else
+			{
+				$buildResults = $builderResults;
+			}
+
+			return View::make('search.results', compact('buildResults','count'));
 
 		}
 

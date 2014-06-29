@@ -442,6 +442,10 @@ background: rgb(164,42,31);
   display: none;
 }
 
+#guestResultsAlertWindow {
+  display: block;
+}
+
 .testimonial {
   margin-bottom: 30px;
 }

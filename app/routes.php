@@ -202,6 +202,8 @@ Route::get('about',array('uses'=>'HomeController@about','as'=>'site.about'));
 Route::get('school-ratings',array('uses'=>'HomeController@schoolratings','as'=>'site.schoolratings'));
 Route::get('realtor',array('uses'=>'HomeController@realtor','as'=>'site.realtor'));
 Route::get('testimonials',array('uses'=>'HomeController@testimonials','as'=>'site.testimonials'));
+Route::get('submit-a-testimonial',array('uses'=>'HomeController@testimonialform','as'=>'site.testimonial.form'));
+Route::post('testimonials',array('uses'=>'HomeController@mailtestimonial','as'=>'site.testimonials.send'));
 Route::get('neighborhoods/{neighborhoods}',array('uses'=>'HomeController@neighborhood','as'=>'site.neighborhood'));
 
 // Search

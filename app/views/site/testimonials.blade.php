@@ -4,9 +4,15 @@
 <div class="login-register">
 	<div class="col-md-12 col-lg-12">
 		<div>
-			<div class="col-md-12 col-lg-12">
+			<div class="col-md-8 col-lg-8">
 				<h2 class="section-title">What People Are Saying</h2>
 			</div>
+			<div class="col-md-4 col-lg-4">
+				<div class="submit-container text-right">
+					<a href="{{URL::route('site.testimonial.form')}}" class="btn btn-danger">Submit a Testimonial</a>
+				</div>
+			</div>
+			<div class="spacer-30"></div>
 			<div class="col-md-6 col-lg-6">
 				<div class="testimonial">
 					<div class="col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">

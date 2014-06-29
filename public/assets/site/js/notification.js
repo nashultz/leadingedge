@@ -236,3 +236,13 @@ $(document).on('submit', '#contactUsForm', function(e) {
     $('#splabel').html('What is ' + one + ' + ' + two);
     $('#sum').attr('value', one+two);
 });
+
+$(document).on('submit', '#testimonialForm', function(e) {
+    e.preventDefault();
+
+    var one = Math.ceil(Math.random() * 30);
+    var two = Math.ceil(Math.random() * 30);
+
+    $('#splabel').html('What is ' + one + ' + ' + two);
+    $('#sum').attr('value', one+two);
+});

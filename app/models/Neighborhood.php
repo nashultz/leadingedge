@@ -21,6 +21,11 @@
 			return $this->name;
 		}
 
+		public function count()
+		{
+			return $this->count();
+		}
+
 	}
 
 ?>

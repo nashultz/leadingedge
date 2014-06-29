@@ -51,10 +51,17 @@
 			</div>
 			<div class="hidden-md hidden-lg space-30 print-show"></div>
 			<div class="col-md-8 col-lg-8">
-				@foreach($builderResults as $builder)
+				@if (Auth::guest())
+		            <div id="guestResultsAlertWindow">
+		            <div class="alert alert-info">
+		                Total Results: {{$count}}. Limited to 3 for guests.<br><a href="{{ URL::route('get.auth.login') }}">Signin/Signup</a> for All Results.
+		            </div>
+		            </div>
+		        @endif
+				@foreach($buildResults as $builder)
 				<div class="login-form">
 					<div class="col-md-12 col-lg-12">
-						<div class="col-md-6 col-lg-6">
+						<div class="col-md-12 col-lg-12">
 							<h2 class='section-title'><a href="../neighborhoods/{{$builder->getNeighborhoodSlug()}}">{{ $builder->getNeighborhoodName() }}</a></h2>
 						</div>
 					</div>
