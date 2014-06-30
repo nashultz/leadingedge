@@ -57,7 +57,7 @@ use Mail;
 				$toRealtor = Mail::send(array('emails.html.buttons.sellhome_info','emails.text.buttons.sellhome_info'), $this->input, function($message) {
 					$message->to('RomanL@systemsedgeonline.com');
 					$message->cc('nathons@systemsedgeonline.com');
-					$message->subject('Filled out form');
+					$message->subject('Sell Home Form Submission');
 				});
 
 				if (!$toRealtor)

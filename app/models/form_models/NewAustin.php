@@ -58,7 +58,7 @@ use Mail;
 				$toRealtor = Mail::send(array('emails.text.buttons.newaustin_info','emails.html.buttons.newaustin_info'), $this->input, function($message) {
 					$message->to('RomanL@systemsedgeonline.com');
 					$message->cc('nathons@systemsedgeonline.com');
-					$message->subject('Filled out form');
+					$message->subject('New to Austin Form Submission');
 				});
 
 				if (!$toRealtor)
