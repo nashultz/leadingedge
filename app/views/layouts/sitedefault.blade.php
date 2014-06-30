@@ -143,7 +143,7 @@
                             <li><a href="https://www.youtube.com/channel/UCfW9OSJ9FolOoqiN4tapg2w" target="_blank" title="YouTube"><i class="fa fa-youtube"></i></a></li>
                             <li class="hidden-xs hidden-sm divider-vertical"></li>
                             @if (!Auth::check())
-                                <li><a href="{{ URL::route('get.auth.login') }}" id="blockLogin" title="Login/Register">Signin/Signup</a></li>
+                                <li><a href="{{ URL::route('get.auth.login') }}" id="blockLogin" title="Login/Register">Sign In/Sign Up</a></li>
                                 <!--<li class="divider-vertical"></li>
                                 <li><a href="{{-- URL::route('get.auth.register') --}}">Register</a></li>-->
                             @else 
@@ -215,7 +215,7 @@
 
             <div class="login-form">
                 <div class="col-md-12 col-lg-12">
-                    <h3 class="section-title">Signin</h3>
+                    <h3 class="section-title">Sign In</h3>
                 </div>
                 <div class="col-md-6 col-lg-6">
                     {{ Form::label('user', 'Username / Email') }}<br>
@@ -233,7 +233,7 @@
                 <div class="spacer-20"></div>
                 <div class="col-md-12 col-lg-12">
                     <div class="submit-container">
-                    {{ Form::submit('Signin',array('class'=>'btn btn-danger')) }}
+                    {{ Form::submit('Sign In',array('class'=>'btn btn-danger')) }}
                     </div>
                 </div>
                 <div class="spacer-20"></div>

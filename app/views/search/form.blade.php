@@ -54,7 +54,7 @@
 		</div>
 	</div>
 	<div class="col-md-12 col-lg-12">
-		<span class="help-block"><small>*Signin/Signup to save searches</small></span>
+		<span class="help-block"><small>*Sign In/Sign Up to save searches</small></span>
 	</div>
 	<div class="clearfix"></div>
 </div>

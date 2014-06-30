@@ -7,7 +7,7 @@
 
 		<div class="login-form">
 			<div class="col-md-12 col-lg-12">
-				<h3 class="section-title">Signin</h3>
+				<h3 class="section-title">Sign In</h3>
 			</div>
 			<div class="col-md-6 col-lg-6">
 				{{ Form::label('user', 'Username / Email') }}<br>
@@ -25,7 +25,7 @@
 			<div class="spacer-20"></div>
 			<div class="col-md-12 col-lg-12">
 				<div class="submit-container">
-				{{ Form::submit('Signin',array('class'=>'btn btn-danger')) }}
+				{{ Form::submit('Sign In',array('class'=>'btn btn-danger')) }}
 				</div>
 			</div>
 			<div class="spacer-20"></div>

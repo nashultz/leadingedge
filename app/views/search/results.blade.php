@@ -18,7 +18,7 @@
 								<a href="{{URL::to('/realtor')}}" class="btn btn-danger">Why use a realtor?</a>
 							</div>
 							<div class="spacer-10"></div>
-							<a href="{{ URL::route('get.auth.login') }}" id="blockLogin">Signin or Signup</a> to Save Your Searches!
+							<a href="{{ URL::route('get.auth.login') }}" id="blockLogin">Sign In or Sign Up</a> to Save Your Searches!
 						@else
 							<div class="submit-container">
 								<a href="{{URL::to('/realtor')}}" class="btn btn-danger">Why use a realtor?</a>
@@ -54,7 +54,7 @@
 				@if (Auth::guest())
 		            <div id="guestResultsAlertWindow">
 		            <div class="alert alert-info">
-		                Total Results: {{$count}}. Limited to 3 for guests.<br><a href="{{ URL::route('get.auth.login') }}">Signin/Signup</a> for All Results.
+		                Total Results: {{$count}}. Limited to 3 for guests.<br><a href="{{ URL::route('get.auth.login') }}">Sign In/Sign Up</a> for All Results.
 		            </div>
 		            </div>
 		        @endif
