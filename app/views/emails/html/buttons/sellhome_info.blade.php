@@ -100,11 +100,22 @@
 </head>
 <body>
 	<div>
-		{{img('site','mainlogo.png',array('class'=>'brand'))}}
+		<img src="<?php echo $message->embed('assets/site/img/mainlogo.png'); ?>">
 	</div>
 	<div>
 		<h3>Selling Home Submission Information</h3>
-		<p>Info sent to Tammy</p>
+		<p><strong>Name:</strong><br>{{$name}}</p>
+		<p><strong>Address:</strong><br>{{$address}}</p>
+		<p><strong>City:</strong><br>{{$city}}</p>
+		<p><strong>State:</strong><br>{{$state}}</p>
+		<p><strong>Zip:</strong><br>{{$zip}}</p>
+		<p><strong>Email Address:</strong><br>{{$emailadd}}</p>
+		<p><strong>Phone:</strong><br>{{$phone}}</p>
+		<p><strong>Maximum Price:</strong><br>{{$maxprice}}</p>
+		<p><strong>Maximum Sq. Foot:</strong><br>{{$maxsqft}}</p>
+		<p><strong>Move-in Date:</strong><br>{{$movedate}}</p>
+		<p><strong>Realtor:</strong><br>{{$realtor}}</p>
+		<p><strong>Comments:</strong><br>{{$comments}}</p>
 	</div>
 </body>
 </html>

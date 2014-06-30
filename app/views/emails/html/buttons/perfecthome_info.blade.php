@@ -100,14 +100,14 @@
 </head>
 <body>
 	<div>
-		{{img('site','mainlogo.png',array('class'=>'brand'))}}
+		<img src="<?php echo $message->embed('assets/site/img/mainlogo.png'); ?>">
 	</div>
 	<div>
 		<h3>Perfect Home Submission Information</h3>
 		<p><strong>Maximum Price:</strong><br>{{$maxprice}}</p>
 		<p><strong>Maximum Sq. Foot:</strong><br>{{$maxsqft}}</p>
-		<p><strong>City:</strong><br>{{$city}}</p>
-		<p><strong>School District:</strong><br>{{$schoold}}</p>
+		<p><strong>City:</strong><br>{{$cities}}</p>
+		<p><strong>School District:</strong><br>{{$isds}}</p>
 		<p><strong>Beds:</strong><br>{{$beds}}</p>
 		<p><strong>Study:</strong><br>{{$study}}</p>
 		<p><strong>Formal Living:</strong><br>{{$formalliving}}</p>
@@ -116,6 +116,8 @@
 		<p><strong>Move-in Date:</strong><br>{{$movedate}}</p>
 		<p><strong>Email Address:</strong><br>{{$emailadd}}</p>
 		<p><strong>Phone:</strong><br>{{$phone}}</p>
+		<p><strong>Realtor:</strong><br>{{$realtor}}</p>
+		<p><strong>Comments:</strong><br>{{$comments}}</p>
 	</div>
 </body>
 </html>

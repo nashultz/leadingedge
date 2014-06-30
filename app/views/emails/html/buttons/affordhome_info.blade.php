@@ -100,11 +100,19 @@
 </head>
 <body>
 	<div>
-		{{img('site','mainlogo.png',array('class'=>'brand'))}}
+		<img src="<?php echo $message->embed('assets/site/img/mainlogo.png'); ?>">
 	</div>
 	<div>
 		<h3>Afford Home Submission Information</h3>
-		<p>Info sent to Tammy</p>
+		<p><strong>Purchase Price:</strong><br>{{$pprice}}</p>
+		<p><strong>% Down Payment:</strong><br>{{$dpayment}}</p>
+		<p><strong>Credit:</strong><br>{{$credit}}</p>
+		<p><strong>Annual Income:</strong><br>{{$aincome}}</p>
+		<p><strong>Monthly Debt (exclude Rent):</strong><br>{{$mdebt}}</p>
+		<p><strong>Email Address:</strong><br>{{$emailadd}}</p>
+		<p><strong>Phone:</strong><br>{{$phone}}</p>
+		<p><strong>Realtor:</strong><br>{{$realtor}}</p>
+		<p><strong>Comments:</strong><br>{{$comments}}</p>
 	</div>
 </body>
 </html>

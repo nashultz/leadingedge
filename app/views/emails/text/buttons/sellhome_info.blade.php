@@ -1,4 +1,4 @@
-New to Austin Submission Information\r\n\r\n
+Sell Home Submission Information\r\n\r\n
 Name: {{$name}}\r\n
 Address: {{$address}}\r\n
 City: {{$city}}\r\n

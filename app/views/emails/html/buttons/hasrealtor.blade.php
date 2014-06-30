@@ -100,7 +100,7 @@
 </head>
 <body>
 	<div>
-		{{img('site','mainlogo.png',array('class'=>'brand'))}}
+		<img src="<?php echo $message->embed('assets/site/img/mainlogo.png'); ?>">
 	</div>
 	<div>
 		<h3>Thanks for choosing Leading Edge Realty</h3>
