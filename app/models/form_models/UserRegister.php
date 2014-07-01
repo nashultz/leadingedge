@@ -18,8 +18,8 @@ use Mail;
 		);
 
 		protected $messages = array(
-			'fname.required'=>'The First Name field is required',
-			'lname.required'=>'The Last name field is required',
+			'fname.required'=>'The First Name field is required.',
+			'lname.required'=>'The Last name field is required.',
 			'username.valid_username'=>'Username can only contain A-Z, 0-9 and _',
 			'username.unique'=>'Username is already in use.',
 			'email.unique'=>'Email is already in use.'

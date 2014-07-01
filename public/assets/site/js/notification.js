@@ -174,17 +174,20 @@ $(document).on('submit', '.ajaxLoginForm', function(e) {
         if (typeof response.field !== 'undefined')
         {
             ajaxForm.find('div').removeClass('has-error');
+
+            var messageString = '';
  
             $.each(response.field, function(index, el) {
                 ajaxForm.find('#' + response.field[index]).parent().addClass('has-error');
+                messageString += response.message[index] + '<br>';
             });
             $("#spanswer").val('');
-            $.growlUI('Error!', 'Please correct errors.', 3000, function() {}, '.login-register');
+            $.growlUI('Error', messageString, 3000, function() {}, '.login-register');
         }
         else
         {
             ajaxForm.find('div').removeClass('has-error');
-            $.growlUI('Error', response.message, 3000, function() {}, '.login-register');
+            $.growlUI(response.field, response.message, 3000, function() {}, '.login-register');
         }
 
         if (typeof response.redirectUrl !== 'undefined')
