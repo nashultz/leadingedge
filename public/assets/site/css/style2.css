@@ -16,6 +16,15 @@ body {
   display: none;
 }
 
+.callus {
+  margin-top: 15px;
+  color: rgb(164,42,31);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+}
+
 /* ==========================================================
 ! Print Adjustments
 ========================================================== */

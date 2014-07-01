@@ -352,8 +352,8 @@
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-12">
-						{{ Form::label('email','Email Address: ') }}<i class="fa fa-asterisk small req"></i>
-						{{ Form::text('email','',array('class'=>'form-control', 'id'=>'emailadd')) }}
+						{{ Form::label('emailadd','Email Address: ') }}<i class="fa fa-asterisk small req"></i>
+						{{ Form::text('emailadd','',array('class'=>'form-control', 'id'=>'emailadd')) }}
 					</div>
 					<div class="spacer-5"></div>
 					<div class="col-md-12">

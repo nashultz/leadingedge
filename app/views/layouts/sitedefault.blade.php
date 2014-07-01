@@ -116,7 +116,11 @@
                     </div>
                 </div>
             </div>
+            <div class="cleafix"></div>
             <!-- /HEADER -->
+            <div class="col-md-12 col-lg-12 print-hide">
+                <div class="callus">Call Us Today &mdash; (512) 751-6119</div>
+            </div>
             <!-- NAVIGATION -->
             <div class="col-md-12 col-lg-12 print-hide">
                 <div class="navbar navbar-inverse main-nav" role="navigation">
