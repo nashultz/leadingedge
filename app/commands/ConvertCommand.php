@@ -37,9 +37,9 @@ class ConvertCommand extends Command {
 	 */
 	public function fire()
 	{
-		$excel_dir = "/Users/romanlopez/Documents/";
+		$excel_dir = "D:\\";
 
-		$table = PHPExcel_IOFactory::load($excel_dir . 'NewConstruction603.ods');
+		$table = PHPExcel_IOFactory::load($excel_dir . 'NewConstruction629.xlsx');
 
 		$worksheet = $table->setActiveSheetIndexByName('Sheet1');
 
@@ -51,15 +51,15 @@ class ConvertCommand extends Command {
 				$nName = str_replace('@', 'at', $nName);
 
 				$nCity = $worksheet->getCellByColumnAndRow(1, $rowIndex);
-				$nISD = $worksheet->getCellByColumnAndRow(5, $rowIndex);
-				$nDistrict = $worksheet->getCellByColumnAndRow(6, $rowIndex);
+				$nISD = $worksheet->getCellByColumnAndRow(6, $rowIndex);
+				$nDistrict = $worksheet->getCellByColumnAndRow(5, $rowIndex);
 
 				$bName = $worksheet->getCellByColumnAndRow(2, $rowIndex);
 				$bPrice = $worksheet->getCellByColumnAndRow(3, $rowIndex);
 				$bSizes = $worksheet->getCellByColumnAndRow(4, $rowIndex);
 				$bWebsite = $worksheet->getCellByColumnAndRow(7, $rowIndex);
-				$bAgent = $worksheet->getCellByColumnAndRow(8, $rowIndex);
-				$bPhone = $worksheet->getCellByColumnAndRow(9, $rowIndex);
+				$bAgent = $worksheet->getCellByColumnAndRow(9, $rowIndex);
+				$bPhone = $worksheet->getCellByColumnAndRow(10, $rowIndex);
 
 				$builder = new Builder();
 

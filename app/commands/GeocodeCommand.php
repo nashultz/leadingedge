@@ -37,6 +37,9 @@ class GeocodeCommand extends Command {
 	 */
 	public function fire()
 	{
+
+		$this->info('Curl: ' . function_exists('curl_version') ? 'Curl is Enabled' : 'Curl is Disabled');
+
 		$n = Neighborhood::get();
 
 		foreach($n as $neighborhood)
@@ -48,14 +51,14 @@ class GeocodeCommand extends Command {
 			$string .= str_replace(" ", "+", $neighborhood->city);
 			$string .= ",";
 			$string .= str_replace(" ", "+", 'TX');
-			$string .= "&sendor=false&key=AIzaSyAEBmha5MZ-DEIYcTpyNmdPi5fbQZIyJBU";
+			$string .= "&sensor=true";
 
 			$url = "https://maps.googleapis.com/maps/api/geocode/json?address=".$string;
 
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, $url);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			$response = json_decode(curl_exec($ch), true);
+			$this->info($url);
+
+			$string = file_get_contents($url);
+			$response = json_decode($string, true);
 
 			if ($response['status'] != 'OK')
 			{
@@ -68,7 +71,8 @@ class GeocodeCommand extends Command {
 	    	$neighborhood->longitude = $geometry['location']['lng'];
 	    	$neighborhood->save();
 
-	    	$this->info('Neighborhood: ' . $neighborhood->name . ' Geocded!');
+	    	$this->info('Neighborhood: ' . $neighborhood->name . ' Geocoded!');
+
 		}
 
 	}
