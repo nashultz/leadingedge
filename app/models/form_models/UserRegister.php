@@ -58,6 +58,11 @@ use Mail;
 
 			});
 
+			Mail::send(array('emails.html.auth.newuser','emails.text.auth.newuser'),array('user'=>$user),function($message) use ($user) {
+				$message->to('leadingedgerealtyaustin@gmail.com');
+				$message->subject('New User Has Signed Up');
+			});
+
 			if (!$mail)
 			{
 				$this->validationErrors->add('failedEmail', 'There was a problem with the Email System. Please Contact the System Administrator.');
