@@ -100,6 +100,8 @@
 
 			$builders = $builders;
 
+			
+
 			if (Request::ajax())
 			{
 				$array = array(

@@ -12,7 +12,7 @@
 		}
 
 		// Getters
-		public function getName()
+		public function getBuilderName()
 		{
 			return $this->name;
 		}
