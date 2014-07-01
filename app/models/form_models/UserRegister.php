@@ -12,15 +12,17 @@ use Mail;
 		protected $rules = array(
 			'fname'=>'required',
 			'lname'=>'required',
-			'username'=>'required|validUsername',
+			'username'=>'required|unique:users,username|validUsername',
 			'password'=>'required|min:6|confirmed',
-			'email'=>'required|email'
+			'email'=>'required|unique:users,email|email'
 		);
 
 		protected $messages = array(
 			'fname.required'=>'The First Name field is required',
 			'lname.required'=>'The Last name field is required',
-			'username.valid_username'=>'Username can only contain A-Z, 0-9 and _'
+			'username.valid_username'=>'Username can only contain A-Z, 0-9 and _',
+			'username.unique'=>'Username is already in use.',
+			'email.unique'=>'Email is already in use.'
 		);
 
 		public function __construct()
