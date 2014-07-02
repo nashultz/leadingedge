@@ -17,6 +17,11 @@
 			return $this->name;
 		}
 
+		public function getName()
+		{
+			return $this->name;
+		}
+
 		public function getNeighborhoodName()
 		{
 			return $this->neighborhood->name;
