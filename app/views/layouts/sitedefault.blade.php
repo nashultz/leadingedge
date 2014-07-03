@@ -97,6 +97,14 @@
 <body>
 <div class="header">
     <div class="container">
+        <noscript>
+            <div class="row">
+                <div class="alert alert-danger col-md-12 col-lg-12">
+                    You must have Javascript enabled to view this site correctly
+                </div>
+            </div>
+        </noscript>
+
         <div class="row">
             <!-- HEADER -->
             <div class="brand col-md-12 col-lg-12">
