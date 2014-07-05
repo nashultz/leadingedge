@@ -56,7 +56,7 @@
 				}
 				else
 				{
-					$builders->where('builders.min_price', '>=', (int)$minCost);	
+					$builders->whereRaw((int)$minCost . ' BETWEEN builders.min_price AND builders.max_price');	
 				}
 			}
 
