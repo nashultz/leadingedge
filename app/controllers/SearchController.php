@@ -32,7 +32,7 @@
 					$builders->where('builders.min_size', '>', 5000);
 				}
 				else {
-					$builders->where('builders.min_size', '>=', (int)$minSqFootage);
+					$builders->whereRaw((int)$minSqFootage . ' BETWEEN builders.min_size AND builders.max_size');
 				}
 			}
 
