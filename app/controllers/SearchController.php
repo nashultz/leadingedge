@@ -94,7 +94,7 @@
 
 			});
 
-			$builders = $builders->get();
+			$builders = $builders->groupBy('neighborhood_id')->get();
 			$builders = $builders->load('neighborhood');
 			$totalBuilders = $builders->count();
 
